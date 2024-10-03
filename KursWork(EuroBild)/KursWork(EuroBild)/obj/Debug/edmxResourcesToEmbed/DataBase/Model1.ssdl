@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище EuroBuldModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="customers">
+    <Key>
+      <PropertyRef Name="ID_customers" />
+    </Key>
+    <Property Name="ID_customers" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Users" Type="int" />
+    <Property Name="ID_service" Type="int" />
+    <Property Name="Order_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="customers_order">
+    <Key>
+      <PropertyRef Name="ID_Сustomers_order" />
+    </Key>
+    <Property Name="ID_Сustomers_order" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_customers" Type="int" />
+    <Property Name="Manager_ID" Type="int" />
+    <Property Name="Foreman_ID" Type="int" />
+    <Property Name="Project_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Construction_Status" Type="varchar" MaxLength="20" />
+    <Property Name="Date_Start" Type="date" />
+    <Property Name="Date_Ending" Type="date" />
+    <Property Name="Price" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID_Role" />
+    </Key>
+    <Property Name="ID_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_Role" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="ID_service" />
+    </Key>
+    <Property Name="ID_service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Item_Description" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID_Users" />
+    </Key>
+    <Property Name="ID_Users" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="ID_Role" Type="int" />
+  </EntityType>
+  <Association Name="FK__customers__Forem__4316F928">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="customers_order" Type="Self.customers_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID_Users" />
+      </Principal>
+      <Dependent Role="customers_order">
+        <PropertyRef Name="Foreman_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__customers__ID_cu__4222D4EF">
+    <End Role="customers" Type="Self.customers" Multiplicity="0..1" />
+    <End Role="customers_order" Type="Self.customers_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="customers">
+        <PropertyRef Name="ID_customers" />
+      </Principal>
+      <Dependent Role="customers_order">
+        <PropertyRef Name="ID_customers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__customers__ID_se__3E52440B">
+    <End Role="service" Type="Self.service" Multiplicity="0..1" />
+    <End Role="customers" Type="Self.customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="service">
+        <PropertyRef Name="ID_service" />
+      </Principal>
+      <Dependent Role="customers">
+        <PropertyRef Name="ID_service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__customers__ID_Us__3F466844">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="customers" Type="Self.customers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID_Users" />
+      </Principal>
+      <Dependent Role="customers">
+        <PropertyRef Name="ID_Users" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__customers__Manag__440B1D61">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="customers_order" Type="Self.customers_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID_Users" />
+      </Principal>
+      <Dependent Role="customers_order">
+        <PropertyRef Name="Manager_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Users__ID_Role__398D8EEE">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID_Role" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="ID_Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище EuroBuldModelContainer">
+    <EntitySet Name="customers" EntityType="Self.customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="customers_order" EntityType="Self.customers_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="service" EntityType="Self.service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__customers__Forem__4316F928" Association="Self.FK__customers__Forem__4316F928">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="customers_order" EntitySet="customers_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__customers__ID_cu__4222D4EF" Association="Self.FK__customers__ID_cu__4222D4EF">
+      <End Role="customers" EntitySet="customers" />
+      <End Role="customers_order" EntitySet="customers_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__customers__ID_se__3E52440B" Association="Self.FK__customers__ID_se__3E52440B">
+      <End Role="service" EntitySet="service" />
+      <End Role="customers" EntitySet="customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__customers__ID_Us__3F466844" Association="Self.FK__customers__ID_Us__3F466844">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="customers" EntitySet="customers" />
+    </AssociationSet>
+    <AssociationSet Name="FK__customers__Manag__440B1D61" Association="Self.FK__customers__Manag__440B1D61">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="customers_order" EntitySet="customers_order" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Users__ID_Role__398D8EEE" Association="Self.FK__Users__ID_Role__398D8EEE">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

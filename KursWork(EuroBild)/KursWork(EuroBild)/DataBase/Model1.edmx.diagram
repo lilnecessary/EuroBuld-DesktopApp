@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="eb1fd5e31b4741daa740ed68173e14da" Name="Diagram1">
+        <EntityTypeShape EntityType="EuroBuldModel.customers" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.customers_order" Width="1.5" PointX="7.5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Role" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.service" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Users" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="EuroBuldModel.FK__customers__ID_cu__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__customers__ID_se__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__customers__ID_Us__3F466844" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__customers__Forem__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__customers__Manag__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Users__ID_Role__398D8EEE" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
