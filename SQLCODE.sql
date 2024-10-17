@@ -4,20 +4,13 @@ USE EuroBuld;
 
 CREATE TABLE Role (
     ID_Role INT PRIMARY KEY IDENTITY(1,1),
-    Job_title VARCHAR(20),
-    Wages VARCHAR(20)
-);
-
-CREATE TABLE Companies (
-    ID_Company INT PRIMARY KEY IDENTITY(1,1),
-    Company_Name VARCHAR(50) NOT NULL,
-    Address VARCHAR(100),
-    Phone_Number VARCHAR(20),
-    Email VARCHAR(40)
+    roll_name VARCHAR(20),
+  salary VARCHAR(20)
 );
 
 CREATE TABLE Users (
     ID_Users INT PRIMARY KEY IDENTITY(1,1),
+  ID_Company INT,
     Login VARCHAR(20) NOT NULL,
     Password VARCHAR(20) NOT NULL,
     Email VARCHAR(40),
@@ -25,17 +18,22 @@ CREATE TABLE Users (
     Last_name VARCHAR(20),
     Patronymic VARCHAR(20),
     Passport_details VARCHAR(20),
-    Date_birth DATE,
-    ID_Company INT,
-    FOREIGN KEY (ID_Company) REFERENCES Companies(ID_Company) -- Связь с таблицей Companies
+    Date_birth DATE
 );
 
 CREATE TABLE Staff (
     ID_Staff INT PRIMARY KEY IDENTITY(1,1),
     ID_Users INT,
     ID_Role INT,
+  Login VARCHAR(20) NOT NULL,
+    Password VARCHAR(20) NOT NULL,
+    Email VARCHAR(40),
+    First_name VARCHAR(20),
+    Last_name VARCHAR(20),
+    Patronymic VARCHAR(20),
+    Passport_details VARCHAR(20),
+    Date_birth DATE,
     Date_employment DATE,
-    FOREIGN KEY (ID_Users) REFERENCES Users(ID_Users),
     FOREIGN KEY (ID_Role) REFERENCES Role(ID_Role)
 );
 
@@ -57,27 +55,25 @@ CREATE TABLE Customer_orders (
     FOREIGN KEY (ID_Users) REFERENCES Users(ID_Users)
 );
 
+CREATE TABLE Construction_Status (
+    ID_Construction_Status INT PRIMARY KEY IDENTITY(1,1),
+    Status_Description VARCHAR(50) NOT NULL 
+);
+
+
 CREATE TABLE Processed_customer_orders (
     ID_Processed_customer_orders INT PRIMARY KEY IDENTITY(1,1),
     ID_Customer_orders INT,
     ID_Staff INT,
+  ID_Construction_Status INT,
     Project_Name VARCHAR(20),
-    Construction_Status VARCHAR(20),
     Date_Start DATE,
     Date_Ending DATE,
+  Final_sum VARCHAR(20),
     FOREIGN KEY (ID_Customer_orders) REFERENCES Customer_orders(ID_Customers_orders),
-    FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff)
+    FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff),
+  FOREIGN KEY (ID_Construction_Status) REFERENCES Construction_Status(ID_Construction_Status),
 );
 
-CREATE TABLE Requests (
-    ID_Request INT PRIMARY KEY IDENTITY(1,1),
-    ID_Users INT NOT NULL,
-    ID_Staff INT NOT NULL,
-    Request_Date DATETIME DEFAULT GETDATE(),
-    Request_Content VARCHAR(255) NOT NULL,
-    Status VARCHAR(20),
-    FOREIGN KEY (ID_Users) REFERENCES Users(ID_Users),
-    FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff)
-);
 
 ALTER AUTHORIZATION ON DATABASE::EuroBuld TO sa;
