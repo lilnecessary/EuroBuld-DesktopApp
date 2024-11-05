@@ -3,8 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\desktop_main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\desktop_main.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\desktop_auth.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\desktop_auth.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\desktop_reg.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\desktop_reg.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\eurobuld\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -21,11 +29,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "Desktop_Main.xaml",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Desktop_Main.xaml",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\Desktop_Main.xaml",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Desktop_Main.xaml",
+              "RelativeToolTip": "EuroBuld\\Page\\Desktop_Main.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-05T13:43:41.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Desktop_Reg.xaml",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Desktop_Reg.xaml",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\Desktop_Reg.xaml",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Desktop_Reg.xaml",
+              "RelativeToolTip": "EuroBuld\\Page\\Desktop_Reg.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-05T13:41:12.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "App.xaml",
               "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\App.xaml",
               "RelativeDocumentMoniker": "EuroBuld\\App.xaml",
@@ -37,7 +69,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Desktop_Auth.xaml",
               "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Desktop_Auth.xaml",
               "RelativeDocumentMoniker": "EuroBuld\\Page\\Desktop_Auth.xaml",
@@ -49,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "EuroBuld",
               "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
               "RelativeDocumentMoniker": "EuroBuld\\EuroBuld.csproj",

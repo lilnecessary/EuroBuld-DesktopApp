@@ -7,15 +7,11 @@
       "RelativeMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\desktop_auth.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\eurobuld\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|EuroBuld||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
-      "RelativeMoniker": "D:0:0:{EB46A43F-A40F-457D-983E-B4B8B2908F1A}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\properties\\resources.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
   "DocumentGroupContainers": [
@@ -60,8 +56,7 @@
               "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
               "RelativeToolTip": "EuroBuld\\EuroBuld.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-05T11:21:16.023Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T11:21:16.023Z"
             }
           ]
         }
