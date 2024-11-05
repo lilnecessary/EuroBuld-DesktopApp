@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EB46A43F-A40F-457D-983E-B4B8B2908F1A}</ProjectGuid>
+    <ProjectGuid>{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>EuroBuld</RootNamespace>
     <AssemblyName>EuroBuld</AssemblyName>
@@ -62,14 +62,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Page\Desktop_Auth.xaml.cs">
-      <DependentUpon>Desktop_Auth.xaml</DependentUpon>
+    <Compile Include="Page\Authorization.xaml.cs">
+      <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Desktop_Main.xaml.cs">
-      <DependentUpon>Desktop_Main.xaml</DependentUpon>
+    <Compile Include="Page\MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\Desktop_Reg.xaml.cs">
-      <DependentUpon>Desktop_Reg.xaml</DependentUpon>
+    <Compile Include="Page\Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -97,28 +97,28 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Assets\" />
-    <Folder Include="DataBase\" />
+    <Page Include="Page\Authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\Registration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\gorod.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\fon1.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\gorod.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="Page\Desktop_Auth.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Page\Desktop_Main.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Page\Desktop_Reg.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Folder Include="Assets\" />
+    <Folder Include="DataBase\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

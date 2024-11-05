@@ -51,7 +51,6 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-
                 <Button Margin="0,375,0,57" HorizontalAlignment="Center" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">

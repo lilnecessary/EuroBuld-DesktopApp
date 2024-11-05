@@ -15,13 +15,20 @@ using System.Windows.Shapes;
 namespace EuroBuld.Page
 {
     /// <summary>
-    /// Логика взаимодействия для Window1.xaml
+    /// Логика взаимодействия для Authorization.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class Authorization : Window
     {
-        public Window1()
+        public Authorization()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_Registration(object sender, MouseButtonEventArgs e)
+        {
+           Registration registration = new Registration();
+           registration.Show();
+           this.Visibility = Visibility.Collapsed;
         }
     }
 }

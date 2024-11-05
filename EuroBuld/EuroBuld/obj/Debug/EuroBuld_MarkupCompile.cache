@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\
+C:\Users\kazaxx\source\repos\EuroBuld\EuroBuld\obj\Debug\
 EuroBuld
 none
 false
 DEBUG;TRACE
-C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\App.xaml
-1-957470868
+C:\Users\kazaxx\source\repos\EuroBuld\EuroBuld\App.xaml
+31994307980
 
-6-305190460
+71252993730
 14-1656046352
-Page\Desktop_Auth.xaml;
+Page\Authorization.xaml;Page\MainWindow.xaml;Page\Registration.xaml;
 
-True
+False
 

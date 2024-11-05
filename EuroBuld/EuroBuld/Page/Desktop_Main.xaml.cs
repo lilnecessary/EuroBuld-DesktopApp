@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +23,13 @@ namespace EuroBuld.Page
         public Desktop_Main()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click_vhod(object sender, RoutedEventArgs e)
+        {
+            //Desktop_Auth authorization = new Desktop_Auth();
+            //authorization.Show();
+            //this.Visibility = Visibility.Collapsed;
         }
     }
 }

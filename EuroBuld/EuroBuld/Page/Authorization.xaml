@@ -1,11 +1,11 @@
-﻿<Window x:Class="EuroBuld.Page.Window1"
+﻿<Window x:Class="EuroBuld.Page.Authorization"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
-        WindowStartupLocation="CenterScreen"
+              WindowStartupLocation="CenterScreen"
         Title="Window1" Height="713px" Width="1240" Top="-22" >
     <Grid>
         <Grid.Background>
@@ -51,7 +51,7 @@
                     </TextBox.Template>
                 </TextBox>
 
-                <Button Margin="168,337,0,95" HorizontalAlignment="Left" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold">
+                <Button Margin="168,350,0,82" HorizontalAlignment="Left" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" 
@@ -63,11 +63,12 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <TextBlock HorizontalAlignment="Left" Margin="188,418,0,-400" FontSize="12">
+                <TextBlock HorizontalAlignment="Left" Margin="186,429,0,-411" FontSize="12">
                     <Run Text="Нет аккаунта?" Foreground="DarkGray" />
-                    <Run Text="Зарегистрируйтесь"  FontWeight="Bold"/>
+                    <Run Text=" Зарегистрируйтесь" FontWeight="Bold" MouseDown="Button_Click_Registration" Cursor="Hand"/> 
                 </TextBlock>
             </Grid>
         </Border>
     </Grid>
 </Window>
+

@@ -6,9 +6,9 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Desktop_Main" Height="713px" Width="1240" Top="-22">
+        Title="Desktop_Main" Height="600px" Width="1000" Top="-22">
     <Grid Margin="0,0,0,0">
-        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="150,24,0,0">
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,32,0,0">
             <StackPanel Orientation="Horizontal">
                 <Button Background="White" BorderBrush="White" Content="Главная" FontSize="15" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold"/>
                 <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="15" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold"/>
@@ -24,5 +24,23 @@
                 </Rectangle.Fill>
             </Rectangle>
         </StackPanel>
+        <StackPanel Orientation="Horizontal" Margin="720,-390,0,57">
+            <Button Width="130" Height="48" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold" Click="Button_Click_vhod">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="34">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button Background="White" BorderBrush="White" Content="Регистрация" FontSize="15" Height="30"  Foreground="#430113" FontWeight="Bold" Margin="10,0,0,0"/>
+        </StackPanel>
+        <Image Source="/Resources/gorod.jpg" Margin="0,108,468,29"/>
+        <TextBlock FontSize="28" FontFamily="DM Sans 24pt 24pt Black" FontWeight="Bold" HorizontalAlignment="Left" Margin="583,233,0,-36" Width="364"><Run Text="Добро пожаловать в"/><LineBreak/><Run Text="компании EuroBuld."/></TextBlock>
+        <TextBlock FontSize="15" HorizontalAlignment="Left" FontWeight="Bold" Margin="583,332,0,144" Width="407"><Run Text="Мы предоставляем современные проекты "/><LineBreak/><Run Text="по строительству любой сложности  для вас "/><LineBreak/><Run Text="и для ваших близких"/></TextBlock>
     </Grid>
 </Window>
