@@ -1,0 +1,71 @@
+﻿<Window x:Class="EuroBuld.Page.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EuroBuld.Page"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Window1" Height="713px" Width="1240" Top="-22" >
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                <GradientStop Color="#200122" Offset="1.0" />
+                <GradientStop Color="#6F0000" Offset="0.0" />
+            </LinearGradientBrush>
+
+        </Grid.Background>
+
+        <Image Source="/Resources/fon1.jpg"
+               Opacity="0.6" 
+               Stretch="Fill" Margin="-180,0,656,-87"/>
+
+        <Border Background="#DBCCCF" Width="580" Height="500" Margin="408,46,112,45" CornerRadius="45">
+            <Grid>
+                <TextBlock Text="Войдите в аккаунт" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,180,0,20"/>
+                <TextBox Margin="70,227,70,234" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" >
+                    <TextBox.Template>
+                        <ControlTemplate TargetType="TextBox" >
+                            <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="23">
+                                <ScrollViewer x:Name="PART_ContentHost"/>
+                            </Border>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+                <TextBox Margin="70,271,70,190" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold">
+                    <TextBox.Template>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="20">  
+                                <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
+                            </Border>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+
+                <Button Margin="0,315,0,100" HorizontalAlignment="Center" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="34">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <TextBlock HorizontalAlignment="Center" Margin="0,410,0,-391" FontSize="12">
+                    <Run Text="Нет аккаунта?" Foreground="DarkGray" />
+                    <Run Text="Зарегистрируйтесь"  FontWeight="Bold"/>
+                </TextBlock>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
