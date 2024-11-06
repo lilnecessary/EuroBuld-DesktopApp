@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EuroBuld.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,5 +31,62 @@ namespace EuroBuld.Page
             authorization.Show();
             this.Visibility = Visibility.Collapsed;
         }
+
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            string email = EmailTextBox.Text.Trim();
+            string password = PasswordTextBox.Text.Trim();
+            string repeatPassword = RepeatPasswordTextBox.Text.Trim();
+
+            // Проверка, что пароли совпадают
+            if (password != repeatPassword)
+            {
+                MessageBox.Show("Пароли не совпадают. Пожалуйста, повторите ввод.");
+                return;
+            }
+
+            // Проверка, что email не пустой
+            if (string.IsNullOrWhiteSpace(email))
+            {
+                MessageBox.Show("Введите правильный email.");
+                return;
+            }
+
+            // Проверка, что пароль не пустой
+            if (string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Введите пароль.");
+                return;
+            }
+
+            using (var context = new EuroBuldEntities2()) // Используйте ваш контекст базы данных
+            {
+                // Проверка, существует ли уже такой email
+                var existingUser = context.Users.FirstOrDefault(u => u.Email == email);
+                if (existingUser != null)
+                {
+                    MessageBox.Show("Пользователь с таким email уже существует.");
+                    return;
+                }
+
+                var newUser = new Users
+                {
+                    Email = email,
+                    Password = password,
+                };
+
+                context.Users.Add(newUser);
+                context.SaveChanges();
+
+                MessageBox.Show("Регистрация прошла успешно!");
+
+                this.Close();
+                Authorization authorizationPage = new Authorization();
+                authorizationPage.Show();
+            }
+        }
+
+
     }
 }

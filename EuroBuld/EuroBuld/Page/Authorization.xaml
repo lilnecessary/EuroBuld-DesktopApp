@@ -25,7 +25,7 @@
                 <TextBlock Text="Войдите в аккаунт" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,140,0,58"/>
                 <TextBlock Text="Введите адрес электронной почты" FontSize="15" HorizontalAlignment="Left" Margin="87,200,0,0"/>
                 <TextBlock Text="Введите пароль" FontSize="15" HorizontalAlignment="Left" Margin="87,271,0,-71"/>
-                <TextBox Margin="70,227,70,234" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" >
+                <TextBox Margin="70,227,70,234" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" Name="EmailTextBox">
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox" >
                             <Border Background="{TemplateBinding Background}" 
@@ -37,7 +37,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBox Margin="70,293,70,168" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold">
+                <TextBox Margin="70,293,70,168" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" Name="PasswordTextBox" >
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border 
@@ -51,7 +51,7 @@
                     </TextBox.Template>
                 </TextBox>
 
-                <Button Margin="168,350,0,82" HorizontalAlignment="Left" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold">
+                <Button Margin="168,350,0,82" HorizontalAlignment="Left" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold" Click="Button_Click_Authoriathion">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" 

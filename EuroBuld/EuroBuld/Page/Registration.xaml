@@ -26,7 +26,7 @@
                 <TextBlock Text="Введите адрес электронной почты" FontSize="15" HorizontalAlignment="Left" Margin="87,157,0,43"/>
                 <TextBlock Text="Введите пароль" FontSize="15" HorizontalAlignment="Left" Margin="87,225,0,-25"/>
                 <TextBlock Text="Повторите пароль" FontSize="15" HorizontalAlignment="Left" Margin="87,294,0,-94"/>
-                <TextBox Margin="70,181,70,280" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" >
+                <TextBox Margin="70,181,70,280" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" Name="EmailTextBox">
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox" >
                             <Border Background="{TemplateBinding Background}" 
@@ -38,7 +38,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBox Margin="70,250,70,211" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold">
+                <TextBox Margin="70,250,70,211" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" Name="PasswordTextBox">
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox">
                             <Border 
@@ -51,14 +51,14 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <Button Margin="0,375,0,57" HorizontalAlignment="Center" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold">
+                <Button Margin="0,375,0,57" HorizontalAlignment="Center" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold" Click="RegisterButton_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" 
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}" 
                                 CornerRadius="34">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти"/>
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Зарегестрироваться"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -67,7 +67,7 @@
                     <Run Text="Уже есть аккаунт?" Foreground="Gray" />
                     <Run Text="Войти" FontWeight="Bold" MouseDown="Button_Click_Authorization"/>
                 </TextBlock>
-                <TextBox Margin="70,319,70,142" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold">
+                <TextBox Margin="70,319,70,142" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" Name="RepeatPasswordTextBox">
                     <TextBox.Template>
                         <ControlTemplate TargetType="{x:Type TextBox}">
                             <Border 

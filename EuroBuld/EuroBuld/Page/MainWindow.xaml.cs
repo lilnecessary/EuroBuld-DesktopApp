@@ -37,5 +37,17 @@ namespace EuroBuld.Page
             registration.Show();
             this.Visibility = Visibility.Collapsed;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_Service(object sender, RoutedEventArgs e)
+        {
+            Service service = new Service();
+            service.Show();
+            this.Visibility = Visibility.Collapsed;
+        }
     }
 }

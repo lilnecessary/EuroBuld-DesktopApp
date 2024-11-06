@@ -1,22 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EuroBuld.DataBase;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace EuroBuld.Page
 {
-    /// <summary>
-    /// Логика взаимодействия для Authorization.xaml
-    /// </summary>
     public partial class Authorization : Window
     {
         public Authorization()
@@ -26,9 +15,67 @@ namespace EuroBuld.Page
 
         private void Button_Click_Registration(object sender, MouseButtonEventArgs e)
         {
-           Registration registration = new Registration();
-           registration.Show();
-           this.Visibility = Visibility.Collapsed;
+            Registration registration = new Registration();
+            registration.Show();
+            this.Visibility = Visibility.Collapsed;
         }
+
+        private void Button_Click_Authoriathion(object sender, RoutedEventArgs e)
+        {
+            string email = EmailTextBox.Text.Trim();
+            string password = PasswordTextBox.Text.Trim();
+
+            using (var context = new EuroBuldEntities2())
+            {
+                var staffUser = context.Staff
+                    .FirstOrDefault(s => s.Email == email && s.Password == password);
+
+                if (staffUser != null)
+                {
+                    var role = context.Role.FirstOrDefault(r => r.ID_Role == staffUser.ID_Role);
+
+                    if (role != null)
+                    {
+                        if (role.roll_name == "Admin")
+                        {
+                            AdminPage adminPage = new AdminPage();
+                            adminPage.Show();
+                            this.Visibility = Visibility.Collapsed;
+                        }
+                        else if (role.roll_name == "Manager")
+                        {
+                            ManagerPage managerPage = new ManagerPage();
+                            managerPage.Show();
+                            this.Visibility = Visibility.Collapsed;
+                        }
+                        else
+                        {
+                            MessageBox.Show("У вас нет прав доступа.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Роль не найдена для сотрудника.");
+                    }
+                }
+                else
+                {
+                    var user = context.Users
+                        .FirstOrDefault(u => u.Email == email && u.Password == password);
+
+                    if (user != null)
+                    {
+                        PersonalAccount personalAccount = new PersonalAccount();
+                        personalAccount.Show();
+                        this.Visibility = Visibility.Collapsed;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Неправильный логин или пароль.");
+                    }
+                }
+            }
+        }
+
     }
 }

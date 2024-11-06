@@ -2,32 +2,29 @@ CREATE DATABASE EuroBuld;
 
 USE EuroBuld;
 
-CREATE TABLE Role (
-    ID_Role INT PRIMARY KEY IDENTITY(1,1),
-    roll_name VARCHAR(20),
-  salary VARCHAR(20)
-);
 
 CREATE TABLE Users (
     ID_Users INT PRIMARY KEY IDENTITY(1,1),
-  ID_Company INT,
-    Login VARCHAR(20) NOT NULL,
+	Email VARCHAR(40) NOT NULL,
     Password VARCHAR(20) NOT NULL,
-    Email VARCHAR(40),
     First_name VARCHAR(20),
     Last_name VARCHAR(20),
     Patronymic VARCHAR(20),
     Passport_details VARCHAR(20),
-    Date_birth DATE
+);
+
+CREATE TABLE Role (
+  ID_Role INT PRIMARY KEY IDENTITY(1,1),
+  roll_name VARCHAR(20),
+  salary VARCHAR(20)
 );
 
 CREATE TABLE Staff (
     ID_Staff INT PRIMARY KEY IDENTITY(1,1),
     ID_Users INT,
     ID_Role INT,
-  Login VARCHAR(20) NOT NULL,
+	Email VARCHAR(40) NOT NULL,
     Password VARCHAR(20) NOT NULL,
-    Email VARCHAR(40),
     First_name VARCHAR(20),
     Last_name VARCHAR(20),
     Patronymic VARCHAR(20),

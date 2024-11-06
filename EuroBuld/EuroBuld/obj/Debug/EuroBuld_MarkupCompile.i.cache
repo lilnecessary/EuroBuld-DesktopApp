@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\kazaxx\source\repos\EuroBuld\EuroBuld\obj\Debug\
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\
 EuroBuld
 none
 false
 DEBUG;TRACE
-C:\Users\kazaxx\source\repos\EuroBuld\EuroBuld\App.xaml
-31994307980
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\App.xaml
+11763257088
+51963743923
+2682434240
+222145171707
+Page\AboutUs.xaml;Page\AdminPage.xaml;Page\Authorization.xaml;Page\CaptchaWindow.xaml;Page\Contact.xaml;Page\MainWindow.xaml;Page\ManagerPage.xaml;Page\PersonalAccount.xaml;Page\Registration.xaml;Page\Service.xaml;Page\ServiceCard.xaml;
 
-8-829094888
-14-1656046352
-Page\Authorization.xaml;Page\MainWindow.xaml;Page\Registration.xaml;
-
-False
+True
 

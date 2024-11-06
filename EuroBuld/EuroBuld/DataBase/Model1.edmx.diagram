@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="689aa00ceccf4caf810e8b89339d4eb7" Name="Diagram1">
+        <EntityTypeShape EntityType="EuroBuldModel.Construction_Status" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Customer_orders" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Processed_customer_orders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Role" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Service" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Staff" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Users" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Co__59FA5E80" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Se__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Us__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Cu__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_St__59063A47" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Staff__ID_Role__4D94879B" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
