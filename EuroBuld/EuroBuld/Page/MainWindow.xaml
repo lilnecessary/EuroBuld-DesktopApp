@@ -12,7 +12,7 @@
                 <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold"/>
                 <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_Service" Width="72"/>
                 <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="55" Click="Button_Click_AboutUs"/>
-                <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold"/>
+                <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_Contact"/>
 
             <StackPanel Width="301">
                 <Rectangle Width="500"/>

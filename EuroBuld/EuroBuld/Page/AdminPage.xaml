@@ -28,6 +28,6 @@
 
             <Button Content="Добавить" Click="Add_Click" Width="150"/>
         </StackPanel>
-        <Button Content="Добавить пользователя" Click="AddUser_Click" Margin="14,542,500,10"/>
+        <Button Content="Добавить пользователя" Click="AddUser_Click" Margin="257,292,257,260"/>
     </Grid>
 </Window>

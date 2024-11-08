@@ -35,7 +35,6 @@ namespace EuroBuld.Page
 
         private async void Add_Click(object sender, RoutedEventArgs e)
         {
-            // Проверка обязательных полей
             if (string.IsNullOrWhiteSpace(EmailTextBox.Text) ||
                 string.IsNullOrWhiteSpace(PasswordTextBox.Text) ||
                 string.IsNullOrWhiteSpace(NameTextBox.Text) ||
@@ -49,7 +48,6 @@ namespace EuroBuld.Page
                 return;
             }
 
-            // Получение ID_Role из таблицы Role
             var role = _context.Role.FirstOrDefault(r => r.roll_name == RoleTextBox.Text);
             if (role == null)
             {
@@ -57,7 +55,6 @@ namespace EuroBuld.Page
                 return;
             }
 
-            // Создание нового объекта Staff
             var newStaff = new Staff
             {
                 ID_Role = role.ID_Role,
@@ -74,12 +71,9 @@ namespace EuroBuld.Page
 
             try
             {
-                // Добавление нового сотрудника в базу данных
                 _context.Staff.Add(newStaff);
                 await _context.SaveChangesAsync();
                 MessageBox.Show("Сотрудник успешно добавлен!");
-
-                // Очистка полей после успешного добавления
                 ClearFields();
             }
             catch (Exception ex)
@@ -96,6 +90,7 @@ namespace EuroBuld.Page
             NameTextBox.Clear();
             lastNameTextBox.Clear();
             PatronymicTextBox.Clear();
+            RoleTextBox.Clear();
             PassportdetailsTextBox.Clear();
             DataBirthTextBox.SelectedDate = null;
             DataEmployment.SelectedDate = null;

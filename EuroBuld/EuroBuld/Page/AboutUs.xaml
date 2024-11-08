@@ -50,9 +50,7 @@
                     <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulpate fames ut." 
                                FontSize="16" Foreground="Gray" HorizontalAlignment="Center" Margin="0,0,0,20"/>
 
-                    <UniformGrid x:Name="uniformGridStaff" Columns="4" Margin="0,0,0,20" HorizontalAlignment="Center" Rows="1" VerticalAlignment="Top">
-                        <!-- Данные сотрудников будут добавляться программно -->
-                    </UniformGrid>
+                    <UniformGrid x:Name="uniformGridStaff" Columns="4" Margin="0,0,0,20" HorizontalAlignment="Center" Rows="1" VerticalAlignment="Top"></UniformGrid>
                 </StackPanel>
             </StackPanel>
         </ScrollViewer>

@@ -56,5 +56,12 @@ namespace EuroBuld.Page
             aboutUs.Show();
             this.Visibility = Visibility.Collapsed;
         }
+
+        private void Button_Click_Contact(object sender, RoutedEventArgs e)
+        {
+            Contact contact = new Contact();
+            contact.Show();
+            this.Visibility = Visibility.Collapsed;
+        }
     }
 }

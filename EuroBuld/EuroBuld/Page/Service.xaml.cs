@@ -48,7 +48,7 @@ namespace EuroBuld.Page
 		private async void LoadCarsAsync()
 		{
 			var services = await GetAllCarsAsync();
-			CarsItemsControl.ItemsSource = services; // Обновлено с CarsListView на CarsItemsControl
+			CarsItemsControl.ItemsSource = services; 
 		}
 
 
@@ -80,6 +80,13 @@ namespace EuroBuld.Page
         {
             AboutUs aboutUs = new AboutUs();
             aboutUs.Show();
+            this.Visibility= Visibility.Collapsed;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Contact contact = new Contact();    
+            contact.Show();
             this.Visibility= Visibility.Collapsed;
         }
     }

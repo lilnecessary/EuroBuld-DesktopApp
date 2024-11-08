@@ -40,7 +40,6 @@ namespace EuroBuld.Page
 
 			if (openFileDialog.ShowDialog() == true)
 			{
-				// Load the image and display the file name
 				_Image = File.ReadAllBytes(openFileDialog.FileName);
 				ImageFileNameTextBlock.Text = System.IO.Path.GetFileName(openFileDialog.FileName);
 			}
@@ -48,11 +47,10 @@ namespace EuroBuld.Page
 
 		private async void Add_Click(object sender, RoutedEventArgs e)
 		{
-			// Validate inputs
 			if (string.IsNullOrWhiteSpace(Item_NameTextBox.Text) ||
 				string.IsNullOrWhiteSpace(Item_DesTextBox.Text) ||
 				string.IsNullOrWhiteSpace(PriceTextBox.Text) ||
-				_Image == null) // Ensure an image is selected
+				_Image == null)
 			{
 				MessageBox.Show("Пожалуйста, заполните все поля и выберите изображение.");
 				return;
@@ -66,7 +64,6 @@ namespace EuroBuld.Page
 				Image = _Image
 			};
 
-			// Use DBHelper to add the car
 			try
 			{
 				_context.Service.Add(newService);

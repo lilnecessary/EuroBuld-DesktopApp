@@ -13,7 +13,7 @@
             <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_MainWindow"/>
             <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="18" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold"/>
             <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="55" Click="Button_Click_AboutUs"/>
-            <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold"/>
+            <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click"/>
 
             <StackPanel Width="302">
                 <Rectangle Width="500"/>
@@ -43,46 +43,38 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="300">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="300" Margin="0">
             <ItemsControl Name="CarsItemsControl" Background="Transparent" Foreground="Black" MouseDoubleClick="CarsItemsControl_MouseDoubleClick">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Columns="3" />
+                        <UniformGrid Columns="3" Margin="0" />
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border x:Name="CarBorder" Background="White" BorderBrush="#ccc" BorderThickness="1" CornerRadius="8" 
-                        Padding="5" Margin="5">
+                        <Border Background="White" BorderBrush="#430113" BorderThickness="1" CornerRadius="15" Margin="2">
                             <StackPanel>
-                                <Image Source="{Binding Image}" Stretch="UniformToFill" Height="120" Margin="0,0,0,5" />
-                                <TextBlock Text="{Binding Model}" FontWeight="Bold" FontSize="14" 
-                                   Margin="5,5,5,0" Foreground="Black" TextAlignment="Center"/>
-                                <TextBlock Text="{Binding Year}" Margin="5,0,5,5" Foreground="DarkGray" TextAlignment="Center"/>
-                                <TextBlock Text="{Binding Price, StringFormat='{}{0:C}'}" 
-                                   Margin="5,0,5,5" Foreground="Green" FontSize="16" FontWeight="Bold" 
-                                   TextAlignment="Center"/>
+                                <!-- Изображение -->
+                                <Border Height="150" Background="Black" CornerRadius="15,15,0,0">
+                                    <Image Source="{Binding Image}" Stretch="Uniform" Height="150" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                </Border>
+
+                                <!-- Название услуги -->
+                                <TextBlock Text="{Binding Item_Name}" FontWeight="Bold" FontSize="28" Foreground="#430113"
+                                   Margin="10,35,10,5" HorizontalAlignment="Center" TextAlignment="Center"/>
+
+                                <!-- Кнопка "Подробнее" -->
+                                <Button Content="Подробнее ➤" Foreground="White" Background="#430113" BorderBrush="#430113" 
+                                FontWeight="Bold" Width="100" Height="35" HorizontalAlignment="Center"
+                                Margin="0,5,0,10" Cursor="Hand" />
                             </StackPanel>
-                            <Border.Style>
-                                <Style TargetType="Border">
-                                    <Setter Property="Background" Value="White"/>
-                                    <Setter Property="BorderBrush" Value="#ccc"/>
-                                    <Setter Property="Cursor" Value="Hand"/>
-                                    <Style.Triggers>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Background" Value="#f0f0f0"/>
-                                            <Setter Property="BorderBrush" Value="Blue"/>
-                                        </Trigger>
-                                        <Trigger Property="IsMouseOver" Value="True">
-                                            <Setter Property="Opacity" Value="1"/>
-                                        </Trigger>
-                                    </Style.Triggers>
-                                </Style>
-                            </Border.Style>
                         </Border>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
+
+
+
     </Grid>
 </Window>
