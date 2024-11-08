@@ -271,3 +271,5 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\sv\Xceed
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.csproj.SuggestedBindingRedirects.cache
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.exe.config
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\AddUser.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\AddUser.baml

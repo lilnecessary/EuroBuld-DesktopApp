@@ -56,22 +56,13 @@
     <Property Name="ID_Role" Type="int" />
     <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
     <Property Name="First_name" Type="varchar" MaxLength="20" />
     <Property Name="Last_name" Type="varchar" MaxLength="20" />
     <Property Name="Patronymic" Type="varchar" MaxLength="20" />
     <Property Name="Passport_details" Type="varchar" MaxLength="20" />
     <Property Name="Date_birth" Type="date" />
     <Property Name="Date_employment" Type="date" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -80,6 +71,7 @@
     <Property Name="ID_Users" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
     <Property Name="First_name" Type="varchar" MaxLength="20" />
     <Property Name="Last_name" Type="varchar" MaxLength="20" />
     <Property Name="Patronymic" Type="varchar" MaxLength="20" />
@@ -164,7 +156,6 @@
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__Customer___ID_Se__52593CB8" Association="Self.FK__Customer___ID_Se__52593CB8">
       <End Role="Service" EntitySet="Service" />

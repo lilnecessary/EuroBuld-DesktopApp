@@ -7,6 +7,7 @@ CREATE TABLE Users (
     ID_Users INT PRIMARY KEY IDENTITY(1,1),
 	Email VARCHAR(40) NOT NULL,
     Password VARCHAR(20) NOT NULL,
+	Image VARBINARY(MAX),
     First_name VARCHAR(20),
     Last_name VARCHAR(20),
     Patronymic VARCHAR(20),
@@ -21,10 +22,10 @@ CREATE TABLE Role (
 
 CREATE TABLE Staff (
     ID_Staff INT PRIMARY KEY IDENTITY(1,1),
-    ID_Users INT,
-    ID_Role INT,
+	ID_Role INT,
 	Email VARCHAR(40) NOT NULL,
     Password VARCHAR(20) NOT NULL,
+	Image VARBINARY(MAX),
     First_name VARCHAR(20),
     Last_name VARCHAR(20),
     Patronymic VARCHAR(20),
