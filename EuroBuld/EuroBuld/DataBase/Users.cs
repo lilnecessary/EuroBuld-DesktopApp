@@ -27,7 +27,6 @@ namespace EuroBuld.DataBase
         public string Last_name { get; set; }
         public string Patronymic { get; set; }
         public string Passport_details { get; set; }
-        public Nullable<System.DateTime> Date_birth { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer_orders> Customer_orders { get; set; }

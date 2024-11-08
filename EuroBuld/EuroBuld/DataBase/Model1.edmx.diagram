@@ -4,14 +4,15 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="689aa00ceccf4caf810e8b89339d4eb7" Name="Diagram1">
+      <Diagram DiagramId="9aa94195fcc04fbda9634a4df9c88293" Name="Diagram1">
         <EntityTypeShape EntityType="EuroBuldModel.Construction_Status" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Customer_orders" Width="1.5" PointX="3" PointY="1.25" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Processed_customer_orders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="EuroBuldModel.Role" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Role" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Service" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Staff" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="EuroBuldModel.Users" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Users" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
         <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Co__59FA5E80" ManuallyRouted="false" />
         <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Se__52593CB8" ManuallyRouted="false" />
         <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Us__534D60F1" ManuallyRouted="false" />

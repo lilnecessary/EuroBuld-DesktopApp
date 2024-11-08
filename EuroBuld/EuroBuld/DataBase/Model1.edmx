@@ -58,7 +58,6 @@
             <PropertyRef Name="ID_Staff" />
           </Key>
           <Property Name="ID_Staff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ID_Users" Type="int" />
           <Property Name="ID_Role" Type="int" />
           <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
@@ -68,6 +67,16 @@
           <Property Name="Passport_details" Type="varchar" MaxLength="20" />
           <Property Name="Date_birth" Type="date" />
           <Property Name="Date_employment" Type="date" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Users">
           <Key>
@@ -80,7 +89,6 @@
           <Property Name="Last_name" Type="varchar" MaxLength="20" />
           <Property Name="Patronymic" Type="varchar" MaxLength="20" />
           <Property Name="Passport_details" Type="varchar" MaxLength="20" />
-          <Property Name="Date_birth" Type="date" />
         </EntityType>
         <Association Name="FK__Customer___ID_Se__52593CB8">
           <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
@@ -161,6 +169,7 @@
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Customer___ID_Se__52593CB8" Association="Self.FK__Customer___ID_Se__52593CB8">
             <End Role="Service" EntitySet="Service" />
@@ -254,7 +263,6 @@
             <PropertyRef Name="ID_Staff" />
           </Key>
           <Property Name="ID_Staff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ID_Users" Type="Int32" />
           <Property Name="ID_Role" Type="Int32" />
           <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -267,6 +275,16 @@
           <NavigationProperty Name="Processed_customer_orders" Relationship="Self.FK__Processed__ID_St__59063A47" FromRole="Staff" ToRole="Processed_customer_orders" />
           <NavigationProperty Name="Role" Relationship="Self.FK__Staff__ID_Role__4D94879B" FromRole="Staff" ToRole="Role" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="Users">
           <Key>
             <PropertyRef Name="ID_Users" />
@@ -278,7 +296,6 @@
           <Property Name="Last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="Passport_details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="Date_birth" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Customer_orders" Relationship="Self.FK__Customer___ID_Us__534D60F1" FromRole="Users" ToRole="Customer_orders" />
         </EntityType>
         <Association Name="FK__Processed__ID_Co__59FA5E80">
@@ -353,13 +370,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EuroBuldEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EuroBuldEntities4" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Construction_Status" EntityType="Self.Construction_Status" />
           <EntitySet Name="Customer_orders" EntityType="Self.Customer_orders" />
           <EntitySet Name="Processed_customer_orders" EntityType="Self.Processed_customer_orders" />
           <EntitySet Name="Role" EntityType="Self.Role" />
           <EntitySet Name="Service" EntityType="Self.Service" />
           <EntitySet Name="Staff" EntityType="Self.Staff" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <AssociationSet Name="FK__Processed__ID_Co__59FA5E80" Association="Self.FK__Processed__ID_Co__59FA5E80">
             <End Role="Construction_Status" EntitySet="Construction_Status" />
@@ -391,7 +409,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities2">
+        <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities4">
           <EntitySetMapping Name="Construction_Status">
             <EntityTypeMapping TypeName="EuroBuldModel.Construction_Status">
               <MappingFragment StoreEntitySet="Construction_Status">
@@ -449,7 +467,6 @@
             <EntityTypeMapping TypeName="EuroBuldModel.Staff">
               <MappingFragment StoreEntitySet="Staff">
                 <ScalarProperty Name="ID_Staff" ColumnName="ID_Staff" />
-                <ScalarProperty Name="ID_Users" ColumnName="ID_Users" />
                 <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
@@ -459,6 +476,17 @@
                 <ScalarProperty Name="Passport_details" ColumnName="Passport_details" />
                 <ScalarProperty Name="Date_birth" ColumnName="Date_birth" />
                 <ScalarProperty Name="Date_employment" ColumnName="Date_employment" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="EuroBuldModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -472,7 +500,6 @@
                 <ScalarProperty Name="Last_name" ColumnName="Last_name" />
                 <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
                 <ScalarProperty Name="Passport_details" ColumnName="Passport_details" />
-                <ScalarProperty Name="Date_birth" ColumnName="Date_birth" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

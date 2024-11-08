@@ -23,5 +23,28 @@ namespace EuroBuld.Page
         {
             InitializeComponent();
         }
+
+
+
+        private void Button_Click_Authorizathion(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Visibility = Visibility.Visible;
+        }
+
+        private void Button_Click_Service(object sender, RoutedEventArgs e)
+        {
+            Service service = new Service();
+            service.Show();
+            this.Visibility=Visibility.Visible;
+        }
+
+        private void Button_Click_Contact(object sender, RoutedEventArgs e)
+        {
+            Contact contact = new Contact();
+            contact.Show();
+            this.Visibility = Visibility.Visible;
+        }
     }
 }

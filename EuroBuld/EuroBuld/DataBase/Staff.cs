@@ -21,7 +21,6 @@ namespace EuroBuld.DataBase
         }
     
         public int ID_Staff { get; set; }
-        public Nullable<int> ID_Users { get; set; }
         public Nullable<int> ID_Role { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }

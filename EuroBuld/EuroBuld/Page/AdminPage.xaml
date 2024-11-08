@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
-        Title="AdminPage" Height="450" Width="800">
+        Title="AdminPage" Height="480" Width="800">
     <Grid>
-        
+        <StackPanel>
+            <TextBlock Text="Добавить новую машину" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+
+            <TextBlock Text="Название:"/>
+            <TextBox x:Name="Item_NameTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Описание:"/>
+            <TextBox x:Name="Item_DesTextBox" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Цена:"/>
+            <TextBox x:Name="PriceTextBox" Margin="0,0,0,10"/>
+
+           
+
+            <TextBlock Text="Изображение:"/>
+            <Button Content="Загрузить изображение" Click="LoadImage_Click" Margin="0,0,0,10"/>
+            <TextBlock x:Name="ImageFileNameTextBlock" Margin="0,0,0,10"/>
+
+            <Button Content="Добавить" Click="Add_Click" Width="150"/>
+        </StackPanel>
     </Grid>
 </Window>

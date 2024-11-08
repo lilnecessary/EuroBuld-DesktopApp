@@ -3,10 +3,111 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
-        Title="AboutUs" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="Desktop_Main" Height="600" Width="1000">
+
     <Grid>
-        
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,15,50,0">
+                    <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_Authorizathion"/>
+                    <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="72" Click="Button_Click_Service"/>
+                    <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold" Width="55"/>
+                    <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_Contact"/>
+                </StackPanel>
+
+                <Rectangle Width="336" Height="4" HorizontalAlignment="Left" Margin="47,0,0,10">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#200122" Offset="1.0" />
+                            <GradientStop Color="#6F0000" Offset="0.0" />
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,-43,50,0">
+                    <Button Background="#430113" Content="Войти" FontSize="15" Height="50" Foreground="White" Width="120" FontWeight="Bold" Margin="10,0,0,0">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Background="{TemplateBinding Background}" 
+                                        BorderBrush="{TemplateBinding BorderBrush}" 
+                                        BorderThickness="{TemplateBinding BorderThickness}" 
+                                        CornerRadius="34">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                    <Button Background="White" BorderBrush="White" Content="Регистрация" FontSize="15" Height="30" Foreground="#430113" FontWeight="Bold" Margin="10,0,0,0"/>
+                </StackPanel>
+
+                <TextBlock Text="О нашей компании" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,20"/>
+                <StackPanel Orientation="Horizontal" Margin="40,0,40,20">
+                    <Image Width="250" Height="200" Source="/Resources/history.jpeg" Margin="0,0,20,0"/>
+                    <StackPanel Width="600">
+                        <TextBlock Text="История EuroBuld" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <TextBlock Text="Компания EuroBuld была основана с целью создать надежного партнера в сфере строительства, ориентированного на качество и современные технологии. С самого начала своей деятельности EuroBuld стремится воплощать амбициозные проекты, которые улучшают городской облик и создают комфортные условия для жизни и работы." 
+                                   FontSize="16" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="40,0,40,20">
+                    <StackPanel Width="600">
+                        <TextBlock Text="Цель EuroBuld" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
+                        <TextBlock Text="EuroBuld предоставление высококачественных и инновационных строительных услуг, соответствующих современным стандартам и требованиям клиентов. Мы стремимся создавать надежные, безопасные и функциональные объекты, обеспечивая комплексный подход в проектировании, строительстве и обслуживании. Наша миссия заключается в улучшении городской инфраструктуры и жилых пространств." 
+                                   FontSize="16" TextWrapping="Wrap" Margin="0,0,0,10"/>
+                    </StackPanel>
+                    <Image Width="250" Height="200" Source="/Resources/original.jpg" Margin="20,0,0,0"/>
+                </StackPanel>
+
+                <StackPanel Margin="40,0,40,20">
+                    <TextBlock Text="Наши сотрудники" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,10"/>
+                    <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulpate fames ut." 
+                               FontSize="16" Foreground="Gray" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                    <UniformGrid Columns="4" Margin="0,0,0,20" HorizontalAlignment="Center">
+                        <StackPanel HorizontalAlignment="Center" Width="200" Margin="10">
+                            <Border Background="#F0F1F5" Width="150" Height="150" CornerRadius="10">
+                                <Image Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <TextBlock Text="Фамилия Имя" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                            <TextBlock Text="ДОЛЖНОСТЬ" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulpate fames ut." 
+                                       FontSize="12" Foreground="Gray" TextWrapping="Wrap" TextAlignment="Center" Margin="0,5,0,0"/>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Width="200" Margin="10">
+                            <Border Background="#F0F1F5" Width="150" Height="150" CornerRadius="10">
+                                <Image Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <TextBlock Text="Фамилия Имя" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                            <TextBlock Text="ДОЛЖНОСТЬ" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulpate fames ut." 
+                                       FontSize="12" Foreground="Gray" TextWrapping="Wrap" TextAlignment="Center" Margin="0,5,0,0"/>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Width="200" Margin="10">
+                            <Border Background="#F0F1F5" Width="150" Height="150" CornerRadius="10">
+                                <Image Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <TextBlock Text="Фамилия Имя" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                            <TextBlock Text="ДОЛЖНОСТЬ" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulpate fames ut." 
+                                       FontSize="12" Foreground="Gray" TextWrapping="Wrap" TextAlignment="Center" Margin="0,5,0,0"/>
+                        </StackPanel>
+
+                        <StackPanel HorizontalAlignment="Center" Width="200" Margin="10">
+                            <Border Background="#F0F1F5" Width="150" Height="150" CornerRadius="10">
+                                <Image Width="50" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <TextBlock Text="Фамилия Имя" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,10,0,5"/>
+                            <TextBlock Text="ДОЛЖНОСТЬ" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" FontWeight="Bold"/>
+                            <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulpate fames ut." 
+                                       FontSize="12" Foreground="Gray" TextWrapping="Wrap" TextAlignment="Center" Margin="0,5,0,0"/>
+                        </StackPanel>
+                    </UniformGrid>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

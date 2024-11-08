@@ -60,7 +60,7 @@ namespace EuroBuld.Page
                 return;
             }
 
-            using (var context = new EuroBuldEntities2()) // Используйте ваш контекст базы данных
+            using (var context = new EuroBuldEntities4()) // Используйте ваш контекст базы данных
             {
                 // Проверка, существует ли уже такой email
                 var existingUser = context.Users.FirstOrDefault(u => u.Email == email);

@@ -21,6 +21,7 @@ namespace EuroBuld.Page
         public Service()
         {
             InitializeComponent();
+			LoadCarsAsync();
         }
 
         private void Button_Click_Authorization(object sender, RoutedEventArgs e)
@@ -44,6 +45,42 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Collapsed;
         }
 
-        
+		private async void LoadCarsAsync()
+		{
+			var services = await GetAllCarsAsync();
+			CarsItemsControl.ItemsSource = services; // Обновлено с CarsListView на CarsItemsControl
+		}
+
+
+		private void CarsItemsControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+		{
+			//if (e.OriginalSource is FrameworkElement fe && fe.DataContext is CarViewModel selectedCar)
+			//{
+			//	// Открываем новое окно с подробной информацией об автомобиле
+			//	var carDetailsWindow = new CarDetailsWindow(selectedCar);
+			//	carDetailsWindow.Show();
+			//}
+		}
+
+		public async Task<List<ServiceViewModel>> GetAllCarsAsync()
+		{
+			using (var context = new EuroBuldEntities4())
+			{
+				return await context.Service.Select(service => new ServiceViewModel
+				{
+					ServiceID = service.ID_Service,
+					Item_Name = service.Item_Name,
+					Price = service.Price,
+					Image = service.Image
+				}).ToListAsync();
+			}
+		}
+
+        private void Button_Click_AboutUs(object sender, RoutedEventArgs e)
+        {
+            AboutUs aboutUs = new AboutUs();
+            aboutUs.Show();
+            this.Visibility= Visibility.Collapsed;
+        }
     }
 }

@@ -62,7 +62,6 @@
       <PropertyRef Name="ID_Staff" />
     </Key>
     <Property Name="ID_Staff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_Users" Type="Int32" />
     <Property Name="ID_Role" Type="Int32" />
     <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -75,6 +74,16 @@
     <NavigationProperty Name="Processed_customer_orders" Relationship="Self.FK__Processed__ID_St__59063A47" FromRole="Staff" ToRole="Processed_customer_orders" />
     <NavigationProperty Name="Role" Relationship="Self.FK__Staff__ID_Role__4D94879B" FromRole="Staff" ToRole="Role" />
   </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
   <EntityType Name="Users">
     <Key>
       <PropertyRef Name="ID_Users" />
@@ -86,7 +95,6 @@
     <Property Name="Last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Patronymic" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Passport_details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Date_birth" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Customer_orders" Relationship="Self.FK__Customer___ID_Us__534D60F1" FromRole="Users" ToRole="Customer_orders" />
   </EntityType>
   <Association Name="FK__Processed__ID_Co__59FA5E80">
@@ -161,13 +169,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="EuroBuldEntities2" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="EuroBuldEntities4" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Construction_Status" EntityType="Self.Construction_Status" />
     <EntitySet Name="Customer_orders" EntityType="Self.Customer_orders" />
     <EntitySet Name="Processed_customer_orders" EntityType="Self.Processed_customer_orders" />
     <EntitySet Name="Role" EntityType="Self.Role" />
     <EntitySet Name="Service" EntityType="Self.Service" />
     <EntitySet Name="Staff" EntityType="Self.Staff" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Users" EntityType="Self.Users" />
     <AssociationSet Name="FK__Processed__ID_Co__59FA5E80" Association="Self.FK__Processed__ID_Co__59FA5E80">
       <End Role="Construction_Status" EntitySet="Construction_Status" />

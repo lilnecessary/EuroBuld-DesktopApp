@@ -12,7 +12,7 @@
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="50,15,50,0">
             <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_MainWindow"/>
             <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="18" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold"/>
-            <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="55"/>
+            <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="55" Click="Button_Click_AboutUs"/>
             <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold"/>
 
             <StackPanel Width="302">
@@ -43,7 +43,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <!--<ScrollViewer VerticalScrollBarVisibility="Auto" Height="300">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="300">
             <ItemsControl Name="CarsItemsControl" Background="Transparent" Foreground="Black" MouseDoubleClick="CarsItemsControl_MouseDoubleClick">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -83,6 +83,6 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-        </ScrollViewer>-->
+        </ScrollViewer>
     </Grid>
 </Window>

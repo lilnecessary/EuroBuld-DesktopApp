@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities2">
+  <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities4">
     <EntitySetMapping Name="Construction_Status">
       <EntityTypeMapping TypeName="EuroBuldModel.Construction_Status">
         <MappingFragment StoreEntitySet="Construction_Status">
@@ -58,7 +58,6 @@
       <EntityTypeMapping TypeName="EuroBuldModel.Staff">
         <MappingFragment StoreEntitySet="Staff">
           <ScalarProperty Name="ID_Staff" ColumnName="ID_Staff" />
-          <ScalarProperty Name="ID_Users" ColumnName="ID_Users" />
           <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Password" ColumnName="Password" />
@@ -68,6 +67,17 @@
           <ScalarProperty Name="Passport_details" ColumnName="Passport_details" />
           <ScalarProperty Name="Date_birth" ColumnName="Date_birth" />
           <ScalarProperty Name="Date_employment" ColumnName="Date_employment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EuroBuldModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -81,7 +91,6 @@
           <ScalarProperty Name="Last_name" ColumnName="Last_name" />
           <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
           <ScalarProperty Name="Passport_details" ColumnName="Passport_details" />
-          <ScalarProperty Name="Date_birth" ColumnName="Date_birth" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

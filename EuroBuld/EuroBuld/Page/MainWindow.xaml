@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Desktop_Main" Height="600px" Width="1000" Top="-22">
-    <Grid Margin="0,0,0,0">
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="50,15,50,0">
-            <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold"/>
-            <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_Service" Width="72"/>
-            <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="55"/>
-            <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold"/>
+        <Grid Margin="0,0,0,0">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="50,15,50,0">
+                <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold"/>
+                <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_Service" Width="72"/>
+                <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="55" Click="Button_Click_AboutUs"/>
+                <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold"/>
 
             <StackPanel Width="301">
                 <Rectangle Width="500"/>
