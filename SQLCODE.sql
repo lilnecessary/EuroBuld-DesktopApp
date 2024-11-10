@@ -58,20 +58,30 @@ CREATE TABLE Construction_Status (
     Status_Description VARCHAR(50) NOT NULL 
 );
 
+CREATE TABLE Requests (
+    ID_Request INT PRIMARY KEY IDENTITY(1,1),
+    ID_Service INT,
+    Request_Date DATE DEFAULT GETDATE(),
+    First_name VARCHAR(20),
+    Last_name VARCHAR(20),
+    Email VARCHAR(40),
+    Additional_Info VARCHAR(200),
+    Status VARCHAR(20) DEFAULT 'Pending',
+    FOREIGN KEY (ID_Service) REFERENCES Service(ID_Service)
+);
 
 CREATE TABLE Processed_customer_orders (
     ID_Processed_customer_orders INT PRIMARY KEY IDENTITY(1,1),
     ID_Customer_orders INT,
     ID_Staff INT,
-  ID_Construction_Status INT,
+	ID_Construction_Status INT,
     Project_Name VARCHAR(20),
     Date_Start DATE,
     Date_Ending DATE,
-  Final_sum VARCHAR(20),
+	Final_sum VARCHAR(20),
     FOREIGN KEY (ID_Customer_orders) REFERENCES Customer_orders(ID_Customers_orders),
     FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff),
-  FOREIGN KEY (ID_Construction_Status) REFERENCES Construction_Status(ID_Construction_Status),
+	FOREIGN KEY (ID_Construction_Status) REFERENCES Construction_Status(ID_Construction_Status)
 );
-
 
 ALTER AUTHORIZATION ON DATABASE::EuroBuld TO sa;
