@@ -9,13 +9,13 @@ namespace EuroBuld.Page
 {
     public partial class AddUser : Window
     {
-        private EuroBuldEntities5 _context;
+        private EuroBuldEntities6 _context;
         private byte[] _Image;
 
         public AddUser()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities5();
+            _context = new EuroBuldEntities6();
         }
 
         private void LoadImage_Click(object sender, RoutedEventArgs e)

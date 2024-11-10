@@ -1,27 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using EuroBuld.DataBase;
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace EuroBuld.Page
 {
-    /// <summary>
-    /// Логика взаимодействия для Contact.xaml
-    /// </summary>
     public partial class Contact : Window
     {
         public Contact()
         {
             InitializeComponent();
+            LoadGoogleMap();
+            LoadServices();
+        }
+
+        private void LoadServices()
+        {
+            using (var context = new EuroBuldEntities6())
+            {
+                var services = context.Service.ToList();
+                ServiceComboBox.ItemsSource = services;
+            }
+        }
+
+        private async void LoadGoogleMap()
+        {
+            string googleMapUrl = "https://maps.app.goo.gl/aycxSABty2mXM5mR7";
+            await CartaBrowser.EnsureCoreWebView2Async();
+            CartaBrowser.Source = new Uri(googleMapUrl);
         }
 
         private void Button_Click_Main(object sender, RoutedEventArgs e)
@@ -33,8 +41,8 @@ namespace EuroBuld.Page
 
         private void Button_Click_Service(object sender, RoutedEventArgs e)
         {
-            Service service = new Service();
-            service.Show();
+            Service seervice = new Service();
+            seervice.Show();
             this.Visibility = Visibility.Visible;
         }
 
@@ -51,5 +59,28 @@ namespace EuroBuld.Page
             contact.Show();
             this.Visibility = Visibility.Visible;
         }
+
+        private void SubmitRequestButton_Click(object sender, RoutedEventArgs e)
+        {
+            using (var context = new EuroBuldEntities6())
+            {
+                var request = new Requests
+                {
+                    ID_Service = (int)ServiceComboBox.SelectedValue,
+                    Request_Date = DateTime.Now,
+                    First_name = FirstNameTextBox.Text,
+                    Last_name = LastNameTextBox.Text,
+                    Email = EmailTextBox.Text,
+                    Additional_Info = AdditionalInfoTextBox.Text,
+                    Status = "Pending"
+                };
+
+                context.Requests.Add(request);
+                context.SaveChanges();
+            }
+
+            MessageBox.Show("Заявка успешно отправлена!");
+        }
+
     }
 }

@@ -6,7 +6,6 @@
     </Key>
     <Property Name="ID_Construction_Status" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Status_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-    <NavigationProperty Name="Processed_customer_orders" Relationship="Self.FK__Processed__ID_Co__59FA5E80" FromRole="Construction_Status" ToRole="Processed_customer_orders" />
   </EntityType>
   <EntityType Name="Customer_orders">
     <Key>
@@ -19,23 +18,21 @@
     <Property Name="Quantity" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Service" Relationship="Self.FK__Customer___ID_Se__52593CB8" FromRole="Customer_orders" ToRole="Service" />
     <NavigationProperty Name="Users" Relationship="Self.FK__Customer___ID_Us__534D60F1" FromRole="Customer_orders" ToRole="Users" />
-    <NavigationProperty Name="Processed_customer_orders" Relationship="Self.FK__Processed__ID_Cu__5812160E" FromRole="Customer_orders" ToRole="Processed_customer_orders" />
   </EntityType>
-  <EntityType Name="Processed_customer_orders">
+  <EntityType Name="Requests">
     <Key>
-      <PropertyRef Name="ID_Processed_customer_orders" />
+      <PropertyRef Name="ID_Request" />
     </Key>
-    <Property Name="ID_Processed_customer_orders" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="ID_Customer_orders" Type="Int32" />
-    <Property Name="ID_Staff" Type="Int32" />
-    <Property Name="ID_Construction_Status" Type="Int32" />
-    <Property Name="Project_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="Date_Start" Type="DateTime" Precision="0" />
-    <Property Name="Date_Ending" Type="DateTime" Precision="0" />
-    <Property Name="Final_sum" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Construction_Status" Relationship="Self.FK__Processed__ID_Co__59FA5E80" FromRole="Processed_customer_orders" ToRole="Construction_Status" />
-    <NavigationProperty Name="Customer_orders" Relationship="Self.FK__Processed__ID_Cu__5812160E" FromRole="Processed_customer_orders" ToRole="Customer_orders" />
-    <NavigationProperty Name="Staff" Relationship="Self.FK__Processed__ID_St__59063A47" FromRole="Processed_customer_orders" ToRole="Staff" />
+    <Property Name="ID_Request" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_Service" Type="Int32" />
+    <Property Name="Request_Date" Type="DateTime" Precision="0" />
+    <Property Name="Quantity" Type="Int32" />
+    <Property Name="First_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Last_name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Email" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="Additional_Info" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Service" Relationship="Self.FK__Requests__ID_Ser__59FA5E80" FromRole="Requests" ToRole="Service" />
   </EntityType>
   <EntityType Name="Role">
     <Key>
@@ -56,6 +53,7 @@
     <Property Name="Price" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="Customer_orders" Relationship="Self.FK__Customer___ID_Se__52593CB8" FromRole="Service" ToRole="Customer_orders" />
+    <NavigationProperty Name="Requests" Relationship="Self.FK__Requests__ID_Ser__59FA5E80" FromRole="Service" ToRole="Requests" />
   </EntityType>
   <EntityType Name="Staff">
     <Key>
@@ -72,7 +70,6 @@
     <Property Name="Passport_details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="Date_birth" Type="DateTime" Precision="0" />
     <Property Name="Date_employment" Type="DateTime" Precision="0" />
-    <NavigationProperty Name="Processed_customer_orders" Relationship="Self.FK__Processed__ID_St__59063A47" FromRole="Staff" ToRole="Processed_customer_orders" />
     <NavigationProperty Name="Role" Relationship="Self.FK__Staff__ID_Role__4D94879B" FromRole="Staff" ToRole="Role" />
   </EntityType>
   <EntityType Name="Users">
@@ -89,18 +86,6 @@
     <Property Name="Passport_details" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Customer_orders" Relationship="Self.FK__Customer___ID_Us__534D60F1" FromRole="Users" ToRole="Customer_orders" />
   </EntityType>
-  <Association Name="FK__Processed__ID_Co__59FA5E80">
-    <End Role="Construction_Status" Type="Self.Construction_Status" Multiplicity="0..1" />
-    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Construction_Status">
-        <PropertyRef Name="ID_Construction_Status" />
-      </Principal>
-      <Dependent Role="Processed_customer_orders">
-        <PropertyRef Name="ID_Construction_Status" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Customer___ID_Se__52593CB8">
     <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
     <End Role="Customer_orders" Type="Self.Customer_orders" Multiplicity="*" />
@@ -125,27 +110,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__Processed__ID_Cu__5812160E">
-    <End Role="Customer_orders" Type="Self.Customer_orders" Multiplicity="0..1" />
-    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
+  <Association Name="FK__Requests__ID_Ser__59FA5E80">
+    <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="Requests" Type="Self.Requests" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="Customer_orders">
-        <PropertyRef Name="ID_Customers_orders" />
+      <Principal Role="Service">
+        <PropertyRef Name="ID_Service" />
       </Principal>
-      <Dependent Role="Processed_customer_orders">
-        <PropertyRef Name="ID_Customer_orders" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Processed__ID_St__59063A47">
-    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
-    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Staff">
-        <PropertyRef Name="ID_Staff" />
-      </Principal>
-      <Dependent Role="Processed_customer_orders">
-        <PropertyRef Name="ID_Staff" />
+      <Dependent Role="Requests">
+        <PropertyRef Name="ID_Service" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -161,18 +134,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="EuroBuldEntities5" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="EuroBuldEntities6" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Construction_Status" EntityType="Self.Construction_Status" />
     <EntitySet Name="Customer_orders" EntityType="Self.Customer_orders" />
-    <EntitySet Name="Processed_customer_orders" EntityType="Self.Processed_customer_orders" />
+    <EntitySet Name="Requests" EntityType="Self.Requests" />
     <EntitySet Name="Role" EntityType="Self.Role" />
     <EntitySet Name="Service" EntityType="Self.Service" />
     <EntitySet Name="Staff" EntityType="Self.Staff" />
     <EntitySet Name="Users" EntityType="Self.Users" />
-    <AssociationSet Name="FK__Processed__ID_Co__59FA5E80" Association="Self.FK__Processed__ID_Co__59FA5E80">
-      <End Role="Construction_Status" EntitySet="Construction_Status" />
-      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
-    </AssociationSet>
     <AssociationSet Name="FK__Customer___ID_Se__52593CB8" Association="Self.FK__Customer___ID_Se__52593CB8">
       <End Role="Service" EntitySet="Service" />
       <End Role="Customer_orders" EntitySet="Customer_orders" />
@@ -181,13 +150,9 @@
       <End Role="Users" EntitySet="Users" />
       <End Role="Customer_orders" EntitySet="Customer_orders" />
     </AssociationSet>
-    <AssociationSet Name="FK__Processed__ID_Cu__5812160E" Association="Self.FK__Processed__ID_Cu__5812160E">
-      <End Role="Customer_orders" EntitySet="Customer_orders" />
-      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Processed__ID_St__59063A47" Association="Self.FK__Processed__ID_St__59063A47">
-      <End Role="Staff" EntitySet="Staff" />
-      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
+    <AssociationSet Name="FK__Requests__ID_Ser__59FA5E80" Association="Self.FK__Requests__ID_Ser__59FA5E80">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Requests" EntitySet="Requests" />
     </AssociationSet>
     <AssociationSet Name="FK__Staff__ID_Role__4D94879B" Association="Self.FK__Staff__ID_Role__4D94879B">
       <End Role="Role" EntitySet="Role" />

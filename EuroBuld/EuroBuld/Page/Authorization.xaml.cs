@@ -25,7 +25,7 @@ namespace EuroBuld.Page
             string email = EmailTextBox.Text.Trim();
             string password = PasswordTextBox.Text.Trim();
 
-            using (var context = new EuroBuldEntities5())
+            using (var context = new EuroBuldEntities6())
             {
                 var staffUser = context.Staff
                     .FirstOrDefault(s => s.Email == email && s.Password == password);

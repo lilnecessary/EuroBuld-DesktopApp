@@ -18,6 +18,7 @@ namespace EuroBuld.DataBase
         public Service()
         {
             this.Customer_orders = new HashSet<Customer_orders>();
+            this.Requests = new HashSet<Requests>();
         }
     
         public int ID_Service { get; set; }
@@ -28,5 +29,7 @@ namespace EuroBuld.DataBase
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Customer_orders> Customer_orders { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Requests> Requests { get; set; }
     }
 }

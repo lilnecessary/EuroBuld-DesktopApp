@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище EuroBuldModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Construction_Status">
+    <Key>
+      <PropertyRef Name="ID_Construction_Status" />
+    </Key>
+    <Property Name="ID_Construction_Status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Status_Description" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customer_orders">
+    <Key>
+      <PropertyRef Name="ID_Customers_orders" />
+    </Key>
+    <Property Name="ID_Customers_orders" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Service" Type="int" />
+    <Property Name="ID_Users" Type="int" />
+    <Property Name="Order_Date" Type="date" />
+    <Property Name="Quantity" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Processed_customer_orders">
+    <Key>
+      <PropertyRef Name="ID_Processed_customer_orders" />
+    </Key>
+    <Property Name="ID_Processed_customer_orders" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Customer_orders" Type="int" />
+    <Property Name="ID_Staff" Type="int" />
+    <Property Name="ID_Construction_Status" Type="int" />
+    <Property Name="Project_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Date_Start" Type="date" />
+    <Property Name="Date_Ending" Type="date" />
+    <Property Name="Final_sum" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID_Role" />
+    </Key>
+    <Property Name="ID_Role" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="roll_name" Type="varchar" MaxLength="20" />
+    <Property Name="salary" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="ID_Service" />
+    </Key>
+    <Property Name="ID_Service" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Item_Name" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Item_Description" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Price" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="ID_Staff" />
+    </Key>
+    <Property Name="ID_Staff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Role" Type="int" />
+    <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="First_name" Type="varchar" MaxLength="20" />
+    <Property Name="Last_name" Type="varchar" MaxLength="20" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="20" />
+    <Property Name="Passport_details" Type="varchar" MaxLength="20" />
+    <Property Name="Date_birth" Type="date" />
+    <Property Name="Date_employment" Type="date" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="ID_Users" />
+    </Key>
+    <Property Name="ID_Users" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="First_name" Type="varchar" MaxLength="20" />
+    <Property Name="Last_name" Type="varchar" MaxLength="20" />
+    <Property Name="Patronymic" Type="varchar" MaxLength="20" />
+    <Property Name="Passport_details" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Customer___ID_Se__52593CB8">
+    <End Role="Service" Type="Self.Service" Multiplicity="0..1" />
+    <End Role="Customer_orders" Type="Self.Customer_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="ID_Service" />
+      </Principal>
+      <Dependent Role="Customer_orders">
+        <PropertyRef Name="ID_Service" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Customer___ID_Us__534D60F1">
+    <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+    <End Role="Customer_orders" Type="Self.Customer_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="ID_Users" />
+      </Principal>
+      <Dependent Role="Customer_orders">
+        <PropertyRef Name="ID_Users" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Processed__ID_Co__59FA5E80">
+    <End Role="Construction_Status" Type="Self.Construction_Status" Multiplicity="0..1" />
+    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Construction_Status">
+        <PropertyRef Name="ID_Construction_Status" />
+      </Principal>
+      <Dependent Role="Processed_customer_orders">
+        <PropertyRef Name="ID_Construction_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Processed__ID_Cu__5812160E">
+    <End Role="Customer_orders" Type="Self.Customer_orders" Multiplicity="0..1" />
+    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_orders">
+        <PropertyRef Name="ID_Customers_orders" />
+      </Principal>
+      <Dependent Role="Processed_customer_orders">
+        <PropertyRef Name="ID_Customer_orders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Processed__ID_St__59063A47">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID_Staff" />
+      </Principal>
+      <Dependent Role="Processed_customer_orders">
+        <PropertyRef Name="ID_Staff" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Staff__ID_Role__4D94879B">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID_Role" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="ID_Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище EuroBuldModelContainer">
+    <EntitySet Name="Construction_Status" EntityType="Self.Construction_Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer_orders" EntityType="Self.Customer_orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Processed_customer_orders" EntityType="Self.Processed_customer_orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Customer___ID_Se__52593CB8" Association="Self.FK__Customer___ID_Se__52593CB8">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="Customer_orders" EntitySet="Customer_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Customer___ID_Us__534D60F1" Association="Self.FK__Customer___ID_Us__534D60F1">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Customer_orders" EntitySet="Customer_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Processed__ID_Co__59FA5E80" Association="Self.FK__Processed__ID_Co__59FA5E80">
+      <End Role="Construction_Status" EntitySet="Construction_Status" />
+      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Processed__ID_Cu__5812160E" Association="Self.FK__Processed__ID_Cu__5812160E">
+      <End Role="Customer_orders" EntitySet="Customer_orders" />
+      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Processed__ID_St__59063A47" Association="Self.FK__Processed__ID_St__59063A47">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Staff__ID_Role__4D94879B" Association="Self.FK__Staff__ID_Role__4D94879B">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -14,16 +14,7 @@ namespace EuroBuld.DataBase
     
     public partial class Construction_Status
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Construction_Status()
-        {
-            this.Processed_customer_orders = new HashSet<Processed_customer_orders>();
-        }
-    
         public int ID_Construction_Status { get; set; }
         public string Status_Description { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Processed_customer_orders> Processed_customer_orders { get; set; }
     }
 }

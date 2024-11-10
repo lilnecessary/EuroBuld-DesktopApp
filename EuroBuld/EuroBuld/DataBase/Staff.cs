@@ -14,12 +14,6 @@ namespace EuroBuld.DataBase
     
     public partial class Staff
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Staff()
-        {
-            this.Processed_customer_orders = new HashSet<Processed_customer_orders>();
-        }
-    
         public int ID_Staff { get; set; }
         public Nullable<int> ID_Role { get; set; }
         public string Email { get; set; }
@@ -32,8 +26,6 @@ namespace EuroBuld.DataBase
         public Nullable<System.DateTime> Date_birth { get; set; }
         public Nullable<System.DateTime> Date_employment { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Processed_customer_orders> Processed_customer_orders { get; set; }
         public virtual Role Role { get; set; }
     }
 }

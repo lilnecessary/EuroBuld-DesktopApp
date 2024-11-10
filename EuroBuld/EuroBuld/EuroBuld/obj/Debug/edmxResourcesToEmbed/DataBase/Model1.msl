@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities5">
+    <EntitySetMapping Name="Construction_Status">
+      <EntityTypeMapping TypeName="EuroBuldModel.Construction_Status">
+        <MappingFragment StoreEntitySet="Construction_Status">
+          <ScalarProperty Name="ID_Construction_Status" ColumnName="ID_Construction_Status" />
+          <ScalarProperty Name="Status_Description" ColumnName="Status_Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customer_orders">
+      <EntityTypeMapping TypeName="EuroBuldModel.Customer_orders">
+        <MappingFragment StoreEntitySet="Customer_orders">
+          <ScalarProperty Name="ID_Customers_orders" ColumnName="ID_Customers_orders" />
+          <ScalarProperty Name="ID_Service" ColumnName="ID_Service" />
+          <ScalarProperty Name="ID_Users" ColumnName="ID_Users" />
+          <ScalarProperty Name="Order_Date" ColumnName="Order_Date" />
+          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Processed_customer_orders">
+      <EntityTypeMapping TypeName="EuroBuldModel.Processed_customer_orders">
+        <MappingFragment StoreEntitySet="Processed_customer_orders">
+          <ScalarProperty Name="ID_Processed_customer_orders" ColumnName="ID_Processed_customer_orders" />
+          <ScalarProperty Name="ID_Customer_orders" ColumnName="ID_Customer_orders" />
+          <ScalarProperty Name="ID_Staff" ColumnName="ID_Staff" />
+          <ScalarProperty Name="ID_Construction_Status" ColumnName="ID_Construction_Status" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Date_Start" ColumnName="Date_Start" />
+          <ScalarProperty Name="Date_Ending" ColumnName="Date_Ending" />
+          <ScalarProperty Name="Final_sum" ColumnName="Final_sum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Role">
+      <EntityTypeMapping TypeName="EuroBuldModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+          <ScalarProperty Name="roll_name" ColumnName="roll_name" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="EuroBuldModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="ID_Service" ColumnName="ID_Service" />
+          <ScalarProperty Name="Item_Name" ColumnName="Item_Name" />
+          <ScalarProperty Name="Item_Description" ColumnName="Item_Description" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staff">
+      <EntityTypeMapping TypeName="EuroBuldModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="ID_Staff" ColumnName="ID_Staff" />
+          <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="First_name" ColumnName="First_name" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Passport_details" ColumnName="Passport_details" />
+          <ScalarProperty Name="Date_birth" ColumnName="Date_birth" />
+          <ScalarProperty Name="Date_employment" ColumnName="Date_employment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="EuroBuldModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="ID_Users" ColumnName="ID_Users" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="First_name" ColumnName="First_name" />
+          <ScalarProperty Name="Last_name" ColumnName="Last_name" />
+          <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+          <ScalarProperty Name="Passport_details" ColumnName="Passport_details" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

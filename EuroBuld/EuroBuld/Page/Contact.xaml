@@ -3,11 +3,21 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
          WindowStartupLocation="CenterScreen"
         Title="Desktop_Main" Height="600" Width="1000">
+    
     <Grid>
+        <ComboBox x:Name="ServiceComboBox"
+          DisplayMemberPath="Item_Name"
+          SelectedValuePath="ID_Service"
+           
+          Width="400" Height="30"
+          Margin="-500,-280,0,0">
+        </ComboBox>
+
         <StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,15,50,0">
                 <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_Main"/>
@@ -25,14 +35,12 @@
                 </Rectangle.Fill>
             </Rectangle>
         </StackPanel>
-        <TextBlock Text="Оставте заявку" FontSize="25" FontWeight="Bold" HorizontalAlignment="Left" Margin="50,106,0,429" Width="400"/>
         <StackPanel Margin="0,10,0,0">
-            <ComboBox SelectedIndex="0" Margin="-500,150,0,0" Width="400"></ComboBox>
-            <TextBox Width="190" Margin="-710,30,0,0"/>
-            <TextBox Width="190" Margin="-290,-18,0,0"/>
-            <TextBox Width="400" Margin="-500,20,0,0"/>
-            <TextBox Width="400" Height="80" Margin="-500,20,0,0"/>
-            <Button Background="#141416" FontSize="15" Height="40" Foreground="White" Width="200" FontWeight="Bold" Margin="-700,10,0,0">
+            <TextBox x:Name="FirstNameTextBox" Width="190" Height="25" Margin="-710,190,0,0"/>
+            <TextBox x:Name="LastNameTextBox" Width="190" Height="25" Margin="-290,-25,0,0"/>
+            <TextBox x:Name="EmailTextBox" Width="400" Height="25" Margin="-500,28,0,0"/>
+            <TextBox x:Name="AdditionalInfoTextBox" Width="400" Height="80" Margin="-500,30,0,0"/>
+            <Button Background="#141416" FontSize="15" Height="40" Foreground="White" Width="200" FontWeight="Bold" Margin="-700,10,0,0" Click="SubmitRequestButton_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
@@ -45,6 +53,13 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-        
+        <StackPanel>
+            <TextBlock Text="Оставьте зявку" FontSize="22" FontWeight="Bold" Margin="50,90,550,447"/>
+            <TextBlock Text="Имя:" FontSize="22" FontWeight="Bold" Margin="50,-395,550,447"/>
+            <TextBlock Text="Фамилия:" FontSize="22" FontWeight="Bold" Margin="260,-475,550,447"/>
+            <TextBlock Text="Адрес эл.почты:" FontSize="22" FontWeight="Bold" Margin="50,-425,550,447"/>
+            <TextBlock Text="Описание:" FontSize="22" FontWeight="Bold" Margin="50,-420,550,447"/>
+        </StackPanel>
+        <wv2:WebView2 Name="CartaBrowser" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="484,0,0,0" Width="500" Height="500"/>
     </Grid>
 </Window>

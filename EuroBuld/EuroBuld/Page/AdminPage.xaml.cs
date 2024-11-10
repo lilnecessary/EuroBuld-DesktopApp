@@ -22,12 +22,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class AdminPage : Window
     {
-		EuroBuldEntities5 _context;
+		EuroBuldEntities6 _context;
 		private byte[] _Image;
 		public AdminPage()
         {
             InitializeComponent();
-			_context = new EuroBuldEntities5();
+			_context = new EuroBuldEntities6();
 		}
 
 		private void LoadImage_Click(object sender, RoutedEventArgs e)
