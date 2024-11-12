@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
-        Title="ManagerPage" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Title="Window1" Height="600" Width="1000" Top="-22" >
     <Grid>
         
     </Grid>

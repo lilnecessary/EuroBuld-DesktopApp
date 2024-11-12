@@ -90,6 +90,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataBase\Processed_customer_orders.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Requests.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -123,6 +126,9 @@
     <Compile Include="Page\Contact.xaml.cs">
       <DependentUpon>Contact.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page\HistoryUserOrder.xaml.cs">
+      <DependentUpon>HistoryUserOrder.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
@@ -140,6 +146,9 @@
     </Compile>
     <Compile Include="Page\ServiceCard.xaml.cs">
       <DependentUpon>ServiceCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\UserOrder.xaml.cs">
+      <DependentUpon>UserOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -198,6 +207,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Page\HistoryUserOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -219,6 +232,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page\ServiceCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\UserOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

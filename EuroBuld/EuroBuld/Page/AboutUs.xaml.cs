@@ -36,9 +36,10 @@ namespace EuroBuld.Page
             public int? ID_Role { get; set; }
         }
 
+
         private void LoadStaff()
         {
-            using (var context = new EuroBuldEntities6())
+            using (var context = new EuroBuldEntities7())
             {
                 var staffList = context.Staff
                     .Select(s => new StaffInfo
@@ -56,7 +57,8 @@ namespace EuroBuld.Page
             }
         }
 
-        private void DisplayStaff(List<StaffInfo> staffList, EuroBuldEntities6 context)
+
+        private void DisplayStaff(List<StaffInfo> staffList, EuroBuldEntities7 context)
         {
             foreach (var staffMember in staffList)
             {
@@ -140,12 +142,14 @@ namespace EuroBuld.Page
             return bitmapImage;
         }
 
+
         private void Button_Click_Authorizathion(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Visibility = Visibility.Visible;
         }
+
 
         private void Button_Click_Service(object sender, RoutedEventArgs e)
         {
@@ -154,11 +158,14 @@ namespace EuroBuld.Page
             this.Visibility=Visibility.Visible;
         }
 
+
         private void Button_Click_Contact(object sender, RoutedEventArgs e)
         {
             Contact contact = new Contact();
             contact.Show();
             this.Visibility = Visibility.Visible;
         }
+
+
     }
 }

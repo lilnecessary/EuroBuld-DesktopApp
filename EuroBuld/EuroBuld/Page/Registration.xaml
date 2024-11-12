@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
-                WindowStartupLocation="CenterScreen"
+        WindowStartupLocation="CenterScreen"
         Title="Window1" Height="713px" Width="1240" Top="-22" >
     <Grid>
         <Grid.Background>

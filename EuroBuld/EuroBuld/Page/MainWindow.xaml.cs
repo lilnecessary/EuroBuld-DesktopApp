@@ -24,12 +24,14 @@ namespace EuroBuld.Page
             InitializeComponent();
         }
 
+
         private void Button_Click_Authorization(object sender, RoutedEventArgs e)
         {
             Authorization authorization = new Authorization();
             authorization.Show();
             this.Visibility = Visibility.Collapsed;
         }
+
 
         private void Button_Click_Registration(object sender, RoutedEventArgs e)
         {
@@ -38,10 +40,12 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Collapsed;
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
 
         }
+
 
         private void Button_Click_Service(object sender, RoutedEventArgs e)
         {
@@ -50,6 +54,7 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Collapsed;
         }
 
+
         private void Button_Click_AboutUs(object sender, RoutedEventArgs e)
         {
             AboutUs aboutUs = new AboutUs();
@@ -57,11 +62,14 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Collapsed;
         }
 
+
         private void Button_Click_Contact(object sender, RoutedEventArgs e)
         {
             Contact contact = new Contact();
             contact.Show();
             this.Visibility = Visibility.Collapsed;
         }
+
+
     }
 }

@@ -17,6 +17,19 @@
     <Property Name="Order_Date" Type="date" />
     <Property Name="Quantity" Type="varchar" MaxLength="20" />
   </EntityType>
+  <EntityType Name="Processed_customer_orders">
+    <Key>
+      <PropertyRef Name="ID_Processed_customer_orders" />
+    </Key>
+    <Property Name="ID_Processed_customer_orders" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_Customer_orders" Type="int" />
+    <Property Name="ID_Staff" Type="int" />
+    <Property Name="ID_Construction_Status" Type="int" />
+    <Property Name="Project_Name" Type="varchar" MaxLength="20" />
+    <Property Name="Date_Start" Type="date" />
+    <Property Name="Date_Ending" Type="date" />
+    <Property Name="Final_sum" Type="varchar" MaxLength="20" />
+  </EntityType>
   <EntityType Name="Requests">
     <Key>
       <PropertyRef Name="ID_Request" />
@@ -24,7 +37,6 @@
     <Property Name="ID_Request" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ID_Service" Type="int" />
     <Property Name="Request_Date" Type="date" />
-    <Property Name="Quantity" Type="int" />
     <Property Name="First_name" Type="varchar" MaxLength="20" />
     <Property Name="Last_name" Type="varchar" MaxLength="20" />
     <Property Name="Email" Type="varchar" MaxLength="40" />
@@ -73,6 +85,7 @@
     <Property Name="Email" Type="varchar" MaxLength="40" Nullable="false" />
     <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Image" Type="varbinary(max)" />
+    <Property Name="Number_Phone" Type="varchar" MaxLength="20" />
     <Property Name="First_name" Type="varchar" MaxLength="20" />
     <Property Name="Last_name" Type="varchar" MaxLength="20" />
     <Property Name="Patronymic" Type="varchar" MaxLength="20" />
@@ -99,6 +112,42 @@
       </Principal>
       <Dependent Role="Customer_orders">
         <PropertyRef Name="ID_Users" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Processed__ID_Co__5EBF139D">
+    <End Role="Construction_Status" Type="Self.Construction_Status" Multiplicity="0..1" />
+    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Construction_Status">
+        <PropertyRef Name="ID_Construction_Status" />
+      </Principal>
+      <Dependent Role="Processed_customer_orders">
+        <PropertyRef Name="ID_Construction_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Processed__ID_Cu__5CD6CB2B">
+    <End Role="Customer_orders" Type="Self.Customer_orders" Multiplicity="0..1" />
+    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer_orders">
+        <PropertyRef Name="ID_Customers_orders" />
+      </Principal>
+      <Dependent Role="Processed_customer_orders">
+        <PropertyRef Name="ID_Customer_orders" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Processed__ID_St__5DCAEF64">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="0..1" />
+    <End Role="Processed_customer_orders" Type="Self.Processed_customer_orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="ID_Staff" />
+      </Principal>
+      <Dependent Role="Processed_customer_orders">
+        <PropertyRef Name="ID_Staff" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -129,6 +178,7 @@
   <EntityContainer Name="Хранилище EuroBuldModelContainer">
     <EntitySet Name="Construction_Status" EntityType="Self.Construction_Status" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer_orders" EntityType="Self.Customer_orders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Processed_customer_orders" EntityType="Self.Processed_customer_orders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Requests" EntityType="Self.Requests" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
@@ -141,6 +191,18 @@
     <AssociationSet Name="FK__Customer___ID_Us__534D60F1" Association="Self.FK__Customer___ID_Us__534D60F1">
       <End Role="Users" EntitySet="Users" />
       <End Role="Customer_orders" EntitySet="Customer_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Processed__ID_Co__5EBF139D" Association="Self.FK__Processed__ID_Co__5EBF139D">
+      <End Role="Construction_Status" EntitySet="Construction_Status" />
+      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Processed__ID_Cu__5CD6CB2B" Association="Self.FK__Processed__ID_Cu__5CD6CB2B">
+      <End Role="Customer_orders" EntitySet="Customer_orders" />
+      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Processed__ID_St__5DCAEF64" Association="Self.FK__Processed__ID_St__5DCAEF64">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="Processed_customer_orders" EntitySet="Processed_customer_orders" />
     </AssociationSet>
     <AssociationSet Name="FK__Requests__ID_Ser__59FA5E80" Association="Self.FK__Requests__ID_Ser__59FA5E80">
       <End Role="Service" EntitySet="Service" />

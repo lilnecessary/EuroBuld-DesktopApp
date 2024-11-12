@@ -4,16 +4,20 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8ce2bceedaee4b2ab882e531d14f8a1a" Name="Diagram1">
-        <EntityTypeShape EntityType="EuroBuldModel.Construction_Status" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
+      <Diagram DiagramId="854910038007441ea02ad442fbd6a582" Name="Diagram1" ZoomLevel="58">
+        <EntityTypeShape EntityType="EuroBuldModel.Construction_Status" Width="1.5" PointX="3" PointY="12.625" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Customer_orders" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="EuroBuldModel.Requests" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EuroBuldModel.Role" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Processed_customer_orders" Width="1.5" PointX="5.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Requests" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Role" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Service" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="EuroBuldModel.Staff" Width="1.5" PointX="8" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.Staff" Width="1.5" PointX="3" PointY="14.875" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Co__5EBF139D" ManuallyRouted="false" />
         <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Se__52593CB8" ManuallyRouted="false" />
         <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Us__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Cu__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_St__5DCAEF64" ManuallyRouted="false" />
         <AssociationConnector Association="EuroBuldModel.FK__Requests__ID_Ser__59FA5E80" ManuallyRouted="false" />
         <AssociationConnector Association="EuroBuldModel.FK__Staff__ID_Role__4D94879B" ManuallyRouted="false" />
       </Diagram>

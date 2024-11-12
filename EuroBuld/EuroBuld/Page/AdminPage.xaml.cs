@@ -22,13 +22,14 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class AdminPage : Window
     {
-		EuroBuldEntities6 _context;
+		EuroBuldEntities7 _context;
 		private byte[] _Image;
 		public AdminPage()
         {
             InitializeComponent();
-			_context = new EuroBuldEntities6();
+			_context = new EuroBuldEntities7();
 		}
+
 
 		private void LoadImage_Click(object sender, RoutedEventArgs e)
 		{
@@ -44,6 +45,7 @@ namespace EuroBuld.Page
 				ImageFileNameTextBlock.Text = System.IO.Path.GetFileName(openFileDialog.FileName);
 			}
 		}
+
 
 		private async void Add_Click(object sender, RoutedEventArgs e)
 		{
@@ -77,6 +79,7 @@ namespace EuroBuld.Page
 			}
 		}
 
+
 		private void ClearFields()
 		{
 			Item_NameTextBox.Clear();
@@ -86,12 +89,15 @@ namespace EuroBuld.Page
 			ImageFileNameTextBlock.Text = string.Empty;
 		}
 
+
         private void AddUser_Click(object sender, RoutedEventArgs e)
         {
 			AddUser addUser = new AddUser();
 			addUser.Show();
 			this.Visibility = Visibility.Visible;
         }
+
+
     }
 
 }

@@ -22,9 +22,9 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
-          BorderBrush="{TemplateBinding BorderBrush}" 
-          BorderThickness="{TemplateBinding BorderThickness}" 
-          CornerRadius="34">
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="34">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти"/>
                         </Border>
                     </ControlTemplate>

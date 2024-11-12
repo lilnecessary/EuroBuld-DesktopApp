@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities6">
+  <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities7">
     <EntitySetMapping Name="Construction_Status">
       <EntityTypeMapping TypeName="EuroBuldModel.Construction_Status">
         <MappingFragment StoreEntitySet="Construction_Status">
@@ -20,13 +20,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Processed_customer_orders">
+      <EntityTypeMapping TypeName="EuroBuldModel.Processed_customer_orders">
+        <MappingFragment StoreEntitySet="Processed_customer_orders">
+          <ScalarProperty Name="ID_Processed_customer_orders" ColumnName="ID_Processed_customer_orders" />
+          <ScalarProperty Name="ID_Customer_orders" ColumnName="ID_Customer_orders" />
+          <ScalarProperty Name="ID_Staff" ColumnName="ID_Staff" />
+          <ScalarProperty Name="ID_Construction_Status" ColumnName="ID_Construction_Status" />
+          <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+          <ScalarProperty Name="Date_Start" ColumnName="Date_Start" />
+          <ScalarProperty Name="Date_Ending" ColumnName="Date_Ending" />
+          <ScalarProperty Name="Final_sum" ColumnName="Final_sum" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Requests">
       <EntityTypeMapping TypeName="EuroBuldModel.Requests">
         <MappingFragment StoreEntitySet="Requests">
           <ScalarProperty Name="ID_Request" ColumnName="ID_Request" />
           <ScalarProperty Name="ID_Service" ColumnName="ID_Service" />
           <ScalarProperty Name="Request_Date" ColumnName="Request_Date" />
-          <ScalarProperty Name="Quantity" ColumnName="Quantity" />
           <ScalarProperty Name="First_name" ColumnName="First_name" />
           <ScalarProperty Name="Last_name" ColumnName="Last_name" />
           <ScalarProperty Name="Email" ColumnName="Email" />
@@ -79,6 +92,7 @@
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="Number_Phone" ColumnName="Number_Phone" />
           <ScalarProperty Name="First_name" ColumnName="First_name" />
           <ScalarProperty Name="Last_name" ColumnName="Last_name" />
           <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />

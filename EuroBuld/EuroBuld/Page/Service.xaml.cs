@@ -24,12 +24,14 @@ namespace EuroBuld.Page
 			LoadCarsAsync();
         }
 
+
         private void Button_Click_Authorization(object sender, RoutedEventArgs e)
         {
             Authorization authorization = new Authorization();
             authorization.Show();
             this.Visibility = Visibility.Collapsed;
         }
+
 
         private void Button_Click_Registration(object sender, RoutedEventArgs e)
         {
@@ -38,12 +40,14 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Collapsed;
         }
 
+
         private void Button_Click_MainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();
             window.Show();
             this.Visibility = Visibility.Collapsed;
         }
+
 
 		private async void LoadCarsAsync()
 		{
@@ -62,9 +66,10 @@ namespace EuroBuld.Page
 			//}
 		}
 
+
 		public async Task<List<ServiceViewModel>> GetAllCarsAsync()
 		{
-			using (var context = new EuroBuldEntities6())
+			using (var context = new EuroBuldEntities7())
 			{
 				return await context.Service.Select(service => new ServiceViewModel
 				{
@@ -76,12 +81,14 @@ namespace EuroBuld.Page
 			}
 		}
 
+
         private void Button_Click_AboutUs(object sender, RoutedEventArgs e)
         {
             AboutUs aboutUs = new AboutUs();
             aboutUs.Show();
             this.Visibility= Visibility.Collapsed;
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

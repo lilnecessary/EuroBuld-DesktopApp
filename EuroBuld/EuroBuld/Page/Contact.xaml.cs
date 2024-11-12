@@ -16,14 +16,16 @@ namespace EuroBuld.Page
             LoadServices();
         }
 
+
         private void LoadServices()
         {
-            using (var context = new EuroBuldEntities6())
+            using (var context = new EuroBuldEntities7())
             {
                 var services = context.Service.ToList();
                 ServiceComboBox.ItemsSource = services;
             }
         }
+
 
         private async void LoadGoogleMap()
         {
@@ -32,12 +34,14 @@ namespace EuroBuld.Page
             CartaBrowser.Source = new Uri(googleMapUrl);
         }
 
+
         private void Button_Click_Main(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Visibility = Visibility.Collapsed;
         }
+
 
         private void Button_Click_Service(object sender, RoutedEventArgs e)
         {
@@ -46,12 +50,14 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Visible;
         }
 
+
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AboutUs aboutUs = new AboutUs();
             aboutUs.Show();
             this.Visibility = Visibility.Visible;
         }
+
 
         private void Button_Click_Contact(object sender, RoutedEventArgs e)
         {
@@ -60,9 +66,10 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Visible;
         }
 
+
         private void SubmitRequestButton_Click(object sender, RoutedEventArgs e)
         {
-            using (var context = new EuroBuldEntities6())
+            using (var context = new EuroBuldEntities7())
             {
                 var request = new Requests
                 {
@@ -81,6 +88,8 @@ namespace EuroBuld.Page
 
             MessageBox.Show("Заявка успешно отправлена!");
         }
+
+
 
     }
 }

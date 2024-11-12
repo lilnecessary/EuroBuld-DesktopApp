@@ -17,7 +17,6 @@ namespace EuroBuld.DataBase
         public int ID_Request { get; set; }
         public Nullable<int> ID_Service { get; set; }
         public Nullable<System.DateTime> Request_Date { get; set; }
-        public Nullable<int> Quantity { get; set; }
         public string First_name { get; set; }
         public string Last_name { get; set; }
         public string Email { get; set; }

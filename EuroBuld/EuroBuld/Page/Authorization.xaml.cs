@@ -8,10 +8,13 @@ namespace EuroBuld.Page
 {
     public partial class Authorization : Window
     {
+        public static string UserEmail { get; private set; } // Статическое свойство для хранения почты
+
         public Authorization()
         {
             InitializeComponent();
         }
+
 
         private void Button_Click_Registration(object sender, MouseButtonEventArgs e)
         {
@@ -20,12 +23,13 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Collapsed;
         }
 
+
         private void Button_Click_Authoriathion(object sender, RoutedEventArgs e)
         {
             string email = EmailTextBox.Text.Trim();
             string password = PasswordTextBox.Text.Trim();
 
-            using (var context = new EuroBuldEntities6())
+            using (var context = new EuroBuldEntities7())
             {
                 var staffUser = context.Staff
                     .FirstOrDefault(s => s.Email == email && s.Password == password);
@@ -65,10 +69,12 @@ namespace EuroBuld.Page
 
                     if (user != null)
                     {
+                        UserEmail = user.Email; // Сохраняем почту пользователя
                         PersonalAccount personalAccount = new PersonalAccount();
                         personalAccount.Show();
                         this.Visibility = Visibility.Collapsed;
                     }
+
                     else
                     {
                         MessageBox.Show("Неправильный логин или пароль.");
@@ -76,6 +82,7 @@ namespace EuroBuld.Page
                 }
             }
         }
+
 
     }
 }

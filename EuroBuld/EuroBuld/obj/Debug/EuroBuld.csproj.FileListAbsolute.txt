@@ -273,3 +273,7 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.exe.config
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\AddUser.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\AddUser.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\HistoryUserOrder.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\UserOrder.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\HistoryUserOrder.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\UserOrder.baml

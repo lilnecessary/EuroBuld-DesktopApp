@@ -6,75 +6,66 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Desktop_Main" Height="600px" Width="1000" Top="-22">
-        
-    <Grid Margin="0,0,0,0">
+        Title="Desktop_Main" Height="700px" Width="1200px" Top="-22">
+
+    <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="50,15,50,0">
             <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_MainWindow"/>
-            <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="18" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold"/>
+            <Button Background="White" BorderBrush="White" Content="Услуги" FontSize="18" Height="30" Margin="5" Foreground="#430113" FontWeight="Bold" Width="72"/>
             <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="55" Click="Button_Click_AboutUs"/>
             <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click"/>
-
-            <StackPanel Width="302">
-                <Rectangle Width="500"/>
-            </StackPanel>
-
-            <Button Background="#430113"  Content="Войти" FontSize="15" Height="50" Foreground="White" Width="120" FontWeight="Bold" Margin="10,0,0,0" Click="Button_Click_Authorization">
-                <Button.Template>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" 
-                  BorderBrush="{TemplateBinding BorderBrush}" 
-                  BorderThickness="{TemplateBinding BorderThickness}" 
-                  CornerRadius="34">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Войти"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
-            <Button Background="White" BorderBrush="White" Content="Регистрация" FontSize="15" Height="30" Foreground="#430113" FontWeight="Bold" Margin="10,0,0,0" Click="Button_Click_Registration"/>
         </StackPanel>
-
-        <Rectangle Width="336" HorizontalAlignment="Left" Margin="42,55,0,526">
-            <Rectangle.Fill>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="#200122" Offset="1.0" />
-                    <GradientStop Color="#6F0000" Offset="0.0" />
-                </LinearGradientBrush>
-            </Rectangle.Fill>
-        </Rectangle>
-
-        <ScrollViewer VerticalScrollBarVisibility="Auto" Height="300" Margin="0">
-            <ItemsControl Name="CarsItemsControl" Background="Transparent" Foreground="Black" MouseDoubleClick="CarsItemsControl_MouseDoubleClick">
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,193,0,0">
+            <ItemsControl Name="CarsItemsControl" Background="Transparent" Foreground="Black" MouseDoubleClick="CarsItemsControl_MouseDoubleClick" Margin="10,0,10,0">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
-                        <UniformGrid Columns="3" Margin="0" />
+                        <UniformGrid Columns="3" HorizontalAlignment="Center"/>
                     </ItemsPanelTemplate>
                 </ItemsControl.ItemsPanel>
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>
-                        <Border Background="White" BorderBrush="#430113" BorderThickness="1" CornerRadius="15" Margin="2">
+                        <Border Background="White" BorderBrush="#430113" BorderThickness="1" CornerRadius="15" Margin="20" Width="280" Height="250">
                             <StackPanel>
-                                <!-- Изображение -->
-                                <Border Height="150" Background="Black" CornerRadius="15,15,0,0">
-                                    <Image Source="{Binding Image}" Stretch="Uniform" Height="150" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                
+                                <Border Height="160" Background="Transparent" CornerRadius="15,15,0,0">
+                                    <Image Source="{Binding Image}" Stretch="Uniform" Height="150" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 </Border>
 
-                                <!-- Название услуги -->
-                                <TextBlock Text="{Binding Item_Name}" FontWeight="Bold" FontSize="28" Foreground="#430113"
-                                   Margin="10,35,10,5" HorizontalAlignment="Center" TextAlignment="Center"/>
+                                <!-- Service Name -->
+                                <TextBlock Text="{Binding Item_Name}" FontWeight="Bold" FontSize="20" Foreground="#430113"
+                                           Margin="10,0,10,10" HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap"/>
 
-                                <!-- Кнопка "Подробнее" -->
+                                <!-- Button -->
                                 <Button Content="Подробнее ➤" Foreground="White" Background="#430113" BorderBrush="#430113" 
-                                FontWeight="Bold" Width="100" Height="35" HorizontalAlignment="Center"
-                                Margin="0,5,0,10" Cursor="Hand" />
+                                FontWeight="Bold" Width="120" Height="35" HorizontalAlignment="Center"
+                                Margin="0,10,0,10" Cursor="Hand">
+                                    <Button.Template>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border Background="{TemplateBinding Background}" 
+                                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                                CornerRadius="15">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                  Content="{TemplateBinding Content}"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Button.Template>
+                                </Button>
                             </StackPanel>
                         </Border>
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </ScrollViewer>
-
-
-
+        <StackPanel Margin="0,55,0,562">
+            <Rectangle Width="340" HorizontalAlignment="Left" Margin="45,1,0,0" Height="3">
+                <Rectangle.Fill>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#200122" Offset="1.0" />
+                        <GradientStop Color="#6F0000" Offset="0.0" />
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </StackPanel>
     </Grid>
 </Window>

@@ -25,6 +25,7 @@ namespace EuroBuld.Page
             InitializeComponent();
         }
 
+
         private void Button_Click_Authorization(object sender, MouseButtonEventArgs e)
         {
             Authorization authorization = new Authorization();
@@ -39,28 +40,25 @@ namespace EuroBuld.Page
             string password = PasswordTextBox.Text.Trim();
             string repeatPassword = RepeatPasswordTextBox.Text.Trim();
 
-            // Проверка, что пароли совпадают
             if (password != repeatPassword)
             {
                 MessageBox.Show("Пароли не совпадают. Пожалуйста, повторите ввод.");
                 return;
             }
 
-            // Проверка, что email не пустой
             if (string.IsNullOrWhiteSpace(email))
             {
                 MessageBox.Show("Введите правильный email.");
                 return;
             }
 
-            // Проверка, что пароль не пустой
             if (string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Введите пароль.");
                 return;
             }
 
-            using (var context = new EuroBuldEntities6()) // Используйте ваш контекст базы данных
+            using (var context = new EuroBuldEntities7())
             {
                 // Проверка, существует ли уже такой email
                 var existingUser = context.Users.FirstOrDefault(u => u.Email == email);
