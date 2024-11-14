@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Assets\ByteArrayToImageSourceConverter .cs" />
     <Compile Include="Assets\ServiceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -111,17 +112,14 @@
     <Compile Include="Page\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\AddUser.xaml.cs">
-      <DependentUpon>AddUser.xaml</DependentUpon>
+    <Compile Include="Page\add.xaml.cs">
+      <DependentUpon>add.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page\Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Page\CaptchaWindow.xaml.cs">
-      <DependentUpon>CaptchaWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page\Contact.xaml.cs">
       <DependentUpon>Contact.xaml</DependentUpon>
@@ -135,6 +133,9 @@
     <Compile Include="Page\ManagerPage.xaml.cs">
       <DependentUpon>ManagerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page\PasswordWindow.xaml.cs">
+      <DependentUpon>PasswordWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page\PersonalAccount.xaml.cs">
       <DependentUpon>PersonalAccount.xaml</DependentUpon>
     </Compile>
@@ -146,6 +147,9 @@
     </Compile>
     <Compile Include="Page\ServiceCard.xaml.cs">
       <DependentUpon>ServiceCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\UserAdd.xaml.cs">
+      <DependentUpon>UserAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page\UserOrder.xaml.cs">
       <DependentUpon>UserOrder.xaml</DependentUpon>
@@ -187,7 +191,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page\AddUser.xaml">
+    <Page Include="Page\add.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -196,10 +200,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page\Authorization.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Page\CaptchaWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -219,6 +219,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Page\PasswordWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page\PersonalAccount.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -232,6 +236,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page\ServiceCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\UserAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -255,7 +263,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="EntityFramework">
-      <Version>6.2.0</Version>
+      <Version>6.5.1</Version>
     </PackageReference>
     <PackageReference Include="EntityFramework.ru">
       <Version>6.2.0</Version>
@@ -273,19 +281,19 @@
       <Version>1.0.2849.39</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Windows.SDK.Contracts">
-      <Version>10.0.18362.2005</Version>
+      <Version>10.0.26100.1742</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf">
-      <Version>1.1.39</Version>
+      <Version>1.1.135</Version>
     </PackageReference>
     <PackageReference Include="ModernWpfUI">
       <Version>0.9.6</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.WindowsRuntime">
-      <Version>4.6.0</Version>
+      <Version>4.7.0</Version>
     </PackageReference>
     <PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml">
-      <Version>4.6.0</Version>
+      <Version>4.7.0</Version>
     </PackageReference>
     <PackageReference Include="System.ValueTuple">
       <Version>4.5.0</Version>

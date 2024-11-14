@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EuroBuld.DataBase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,16 @@ namespace EuroBuld.Page
     {
         public ServiceCard()
         {
+
             InitializeComponent();
+
         }
+
+        public class ServiceViewModel
+        {
+
+        }
+
+
     }
 }

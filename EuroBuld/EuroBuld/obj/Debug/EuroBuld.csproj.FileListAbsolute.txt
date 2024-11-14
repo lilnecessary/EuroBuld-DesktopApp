@@ -31,11 +31,9 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\Microsof
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\ru\EntityFramework.resources.dll
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.csproj.AssemblyReference.cache
-C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\CaptchaWindow.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\AboutUs.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\AdminPage.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\Authorization.g.cs
-C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\CaptchaWindow.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\Contact.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\MainWindow.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\ManagerPage.g.cs
@@ -271,9 +269,13 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\sv\Xceed
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.csproj.SuggestedBindingRedirects.cache
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.exe.config
-C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\AddUser.g.cs
-C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\AddUser.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\HistoryUserOrder.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\UserOrder.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\HistoryUserOrder.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\UserOrder.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\add.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\add.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\UserAdd.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\UserAdd.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\PasswordWindow.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\PasswordWindow.baml

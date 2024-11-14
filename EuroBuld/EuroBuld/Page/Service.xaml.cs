@@ -56,18 +56,7 @@ namespace EuroBuld.Page
 		}
 
 
-		private void CarsItemsControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-		{
-			//if (e.OriginalSource is FrameworkElement fe && fe.DataContext is CarViewModel selectedCar)
-			//{
-			//	// Открываем новое окно с подробной информацией об автомобиле
-			//	var carDetailsWindow = new CarDetailsWindow(selectedCar);
-			//	carDetailsWindow.Show();
-			//}
-		}
-
-
-		public async Task<List<ServiceViewModel>> GetAllCarsAsync()
+        public async Task<List<ServiceViewModel>> GetAllCarsAsync()
 		{
 			using (var context = new EuroBuldEntities7())
 			{

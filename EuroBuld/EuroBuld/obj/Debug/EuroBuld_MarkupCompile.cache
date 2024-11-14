@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\App.xaml
-14949577615
+151693253730
 566172065
-30868206782
-223-1163417063
-Page\AboutUs.xaml;Page\AddUser.xaml;Page\AdminPage.xaml;Page\Authorization.xaml;Page\CaptchaWindow.xaml;Page\Contact.xaml;Page\HistoryUserOrder.xaml;Page\MainWindow.xaml;Page\ManagerPage.xaml;Page\PersonalAccount.xaml;Page\Registration.xaml;Page\Service.xaml;Page\ServiceCard.xaml;Page\UserOrder.xaml;
+32-1207305518
+2301000774047
+Page\AboutUs.xaml;Page\add.xaml;Page\AdminPage.xaml;Page\Authorization.xaml;Page\Contact.xaml;Page\HistoryUserOrder.xaml;Page\MainWindow.xaml;Page\ManagerPage.xaml;Page\PasswordWindow.xaml;Page\PersonalAccount.xaml;Page\Registration.xaml;Page\Service.xaml;Page\ServiceCard.xaml;Page\UserAdd.xaml;Page\UserOrder.xaml;
 
 False
 

@@ -6,28 +6,266 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Desktop_Main" Height="600px" Width="1000" Top="-22">
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="Добавить новую машину" FontSize="24" FontWeight="Bold" Margin="0,0,0,20"/>
+        Title="Desktop_Main"
+        Height="600"
+        Width="1000">
 
-            <TextBlock Text="Название:"/>
-            <TextBox x:Name="Item_NameTextBox" Margin="0,0,0,10"/>
-
-            <TextBlock Text="Описание:"/>
-            <TextBox x:Name="Item_DesTextBox" Margin="0,0,0,10"/>
-
-            <TextBlock Text="Цена:"/>
-            <TextBox x:Name="PriceTextBox" Margin="0,0,0,10"/>
-
-
-
-            <TextBlock Text="Изображение:"/>
-            <Button Content="Загрузить изображение" Click="LoadImage_Click" Margin="0,0,0,10"/>
-            <TextBlock x:Name="ImageFileNameTextBlock" Margin="0,0,0,10"/>
-
-            <Button Content="Добавить" Click="Add_Click" Width="150"/>
+    <Window.Resources>
+        <!-- Стиль для DataGrid -->
+        <Style TargetType="DataGrid">
+            <Setter Property="AutoGenerateColumns" Value="False" />
+            <Setter Property="HeadersVisibility" Value="Column" />
+            <Setter Property="GridLinesVisibility" Value="None" />
+            <Setter Property="RowHeight" Value="50" />
+            <Setter Property="ColumnHeaderHeight" Value="50" />
+            <Setter Property="Background" Value="#F8F8F8"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="RowStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Background" Value="White"/>
+                        <Setter Property="Margin" Value="0,5,0,5"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ColumnHeaderStyle">
+                <Setter.Value>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="Background" Value="#F8F8F8"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="Foreground" Value="#430113"/>
+                        <Setter Property="FontSize" Value="14"/>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#FFFFFF">
+        <StackPanel Background="#E0BFBF" Margin="0,0,795,0"></StackPanel>
+        <StackPanel Background="#E0BFBF" Width="200" Margin="2,100,798,0" VerticalAlignment="Top" Height="342">
+            <Button Content="Клиенты" Margin="0" Background="Transparent" Click="LoadClients_Click" Foreground="#430113" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#880000"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="Foreground" Value="#880000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Сотрудники" Margin="10" Click="LoadStaff_Click" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#880000"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="Foreground" Value="#880000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Услуги" Margin="10" Background="Transparent" Click="LoadServices_Click" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#880000"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="Foreground" Value="#880000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Заказы" Margin="10" Background="Transparent" Foreground="Gray" Click="LoadOrders_Click" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#880000"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="Foreground" Value="#880000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Заявки" Margin="10" Background="Transparent" Click="LoadRequests" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#880000"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="Foreground" Value="#880000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Роли" Margin="10" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" Click="LoadRole">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#880000"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="Foreground" Value="#880000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Отчеты" Margin="10" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#880000"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="Foreground" Value="#880000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Content="Настройки" Margin="10" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Foreground" Value="#880000"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Padding" Value="10,5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#D9D9D9"/>
+                                <Setter Property="Foreground" Value="#880000"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
         </StackPanel>
-        <Button Content="Добавить пользователя" Click="AddUser_Click" Margin="186,242,614,292" Width="200" Height="50"/>
+        
+        <Grid Margin="200,0,10,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <DataGrid x:Name="usersDataGrid" 
+          ItemsSource="{Binding Users}" 
+          VirtualizingStackPanel.IsVirtualizing="True" 
+          VirtualizingStackPanel.VirtualizationMode="Recycling" 
+          Margin="-12,78,-9,90" 
+          Grid.Row="1" Grid.RowSpan="2" 
+          CanUserAddRows="True"
+                CanUserDeleteRows="True"
+                IsReadOnly="False"
+                AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID_Users}" IsReadOnly="True" Width="100" />
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
+                    <DataGridTextColumn Header="Password" Binding="{Binding Password}" Width="100" />
+                    <DataGridTextColumn Header="Телефон" Binding="{Binding Number_Phone}" Width="120"/>
+                    <DataGridTextColumn Header="Адрес" Binding="{Binding Address}" Width="120"/>
+                    <DataGridTextColumn Header="Имя" Binding="{Binding First_name}" Width="100"/>
+                    <DataGridTextColumn Header="Фамилия" Binding="{Binding Last_name}" Width="100"/>
+                    <DataGridTextColumn Header="Отчество" Binding="{Binding Patronymic}" Width="100"/>
+                    <DataGridTextColumn Header="Паспортные даные" Binding="{Binding Passport_details}" Width="150"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
+                <Button Content="Добавить" Width="100" Margin="20" Background="#430113" Foreground="White" Click="Button_Click_Add" Height="40">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Добавить"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Content="Изменить" Width="100" Margin="20" Background="#430113" Foreground="White" Click="Add_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Изменить"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Content="Удалить" Width="100" Margin="20" Background="#430113" Foreground="White" Click="DeleteUser_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="{TemplateBinding BorderThickness}" 
+                                    CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Удалить"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

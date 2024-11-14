@@ -8,7 +8,8 @@ namespace EuroBuld.Page
 {
     public partial class Authorization : Window
     {
-        public static string UserEmail { get; private set; } // Статическое свойство для хранения почты
+        public static string UserEmail { get; private set; }
+        public static int StaffId { get; private set; }  // Статическое свойство для хранения ID сотрудника
 
         public Authorization()
         {
@@ -40,6 +41,7 @@ namespace EuroBuld.Page
 
                     if (role != null)
                     {
+                        StaffId = staffUser.ID_Staff; // Сохраняем staff_id
                         if (role.roll_name == "Admin")
                         {
                             AdminPage adminPage = new AdminPage();
@@ -69,12 +71,11 @@ namespace EuroBuld.Page
 
                     if (user != null)
                     {
-                        UserEmail = user.Email; // Сохраняем почту пользователя
+                        UserEmail = user.Email; // Присваиваем почту из переменной user
                         PersonalAccount personalAccount = new PersonalAccount();
                         personalAccount.Show();
                         this.Visibility = Visibility.Collapsed;
                     }
-
                     else
                     {
                         MessageBox.Show("Неправильный логин или пароль.");
@@ -82,7 +83,5 @@ namespace EuroBuld.Page
                 }
             }
         }
-
-
     }
 }

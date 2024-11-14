@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="ServiceCard" Height="450" Width="800">
     <Grid>
-        
+        <Image x:Name="ServiceImage" Width="350" Height="350" Margin="35,42,415,42"/>
+        <TextBlock x:Name="ServiceNameText" Margin="400,98,10,276" FontSize="18" FontWeight="Bold"/>
+        <TextBlock x:Name="ServicePriceText" Margin="400,163,10,211" FontSize="18" FontWeight="Bold"/>
+        <TextBlock x:Name="ServiceDescriptionText" Margin="400,228,10,146" FontSize="10" FontWeight="Bold" TextWrapping="Wrap"/>
+        <Button Background="Aqua" Content="Купить" Margin="400,334,86,77"/>
     </Grid>
+
 </Window>
