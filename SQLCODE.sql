@@ -40,7 +40,7 @@ CREATE TABLE Service (
     ID_Service INT PRIMARY KEY IDENTITY(1,1),
     Item_Name VARCHAR(20) NOT NULL,
     Item_Description VARCHAR(50) NOT NULL,
-    Price VARCHAR(10) NOT NULL,
+    Price NVARCHAR(10) NOT NULL,
     Image VARBINARY(MAX)
 );
 

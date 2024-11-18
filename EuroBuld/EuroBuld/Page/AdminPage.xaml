@@ -43,7 +43,7 @@
     <Grid Background="#FFFFFF">
         <StackPanel Background="#E0BFBF" Margin="0,0,795,0"></StackPanel>
         <StackPanel Background="#E0BFBF" Width="200" Margin="2,100,798,0" VerticalAlignment="Top" Height="342">
-            <Button Content="Клиенты" Margin="0" Background="Transparent" Click="LoadClients_Click" Foreground="#430113" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
+            <Button Content="Клиенты" Margin="0" Background="Transparent" Click="LoadClients_Click" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="Transparent"/>
@@ -157,7 +157,7 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button Content="Отчеты" Margin="10" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
+            <Button Content="Отчеты" Margin="10" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" Click="Reports_Click">
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="Transparent"/>
@@ -241,18 +241,6 @@
                         </ControlTemplate>
                     </Button.Template>
                 </Button>
-                <Button Content="Изменить" Width="100" Margin="20" Background="#430113" Foreground="White" Click="Add_Click">
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="10">
-                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Изменить"/>
-                            </Border>
-                        </ControlTemplate>
-                    </Button.Template>
-                </Button>
                 <Button Content="Удалить" Width="100" Margin="20" Background="#430113" Foreground="White" Click="DeleteUser_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -266,6 +254,7 @@
                     </Button.Template>
                 </Button>
             </StackPanel>
+
         </Grid>
     </Grid>
 </Window>

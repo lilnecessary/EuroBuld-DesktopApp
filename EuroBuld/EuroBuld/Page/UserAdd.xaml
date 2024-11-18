@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="UserAdd" Height="500" Width="400">
+        Title="UserAdd" Height="550" Width="400">
     <Grid Background="#DBCCCF">
-        <StackPanel Margin="0,21,0,18" HorizontalAlignment="Center">
-            <TextBlock Text="Email" FontSize="12" HorizontalAlignment="Center" Margin="0,0,170,0"/>
-            <TextBox x:Name="emailTextBox" Width="200" Margin="10" Height="21">
+        <StackPanel Margin="0,20,0,19" HorizontalAlignment="Center">
+            <TextBlock Text="Электронная-почта" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox x:Name="emailTextBox" Width="225" Margin="10" Height="25">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox">
                         <Border 
@@ -23,8 +23,8 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBlock Text="Password" FontSize="12" HorizontalAlignment="Center" Margin="0,0,150,0"/>
-            <TextBox x:Name="passwordTextBox" Width="200" Margin="5" Height="21">
+            <TextBlock Text="Пароль" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox x:Name="passwordTextBox" Width="225" Margin="5" Height="25">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox">
                         <Border 
@@ -37,8 +37,8 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBlock Text="Number_Phone" FontSize="12" HorizontalAlignment="Center" Margin="0,0,115,0"/>
-            <TextBox x:Name="numberPhoneTextBox" Width="200" Margin="5" Height="21">
+            <TextBlock Text="Номер-телефона" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox x:Name="numberPhoneTextBox" Width="225" Margin="5" Height="25">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox">
                         <Border 
@@ -51,8 +51,8 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBlock Text="Address" FontSize="12" HorizontalAlignment="Center" Margin="0,0,150,0"/>
-            <TextBox x:Name="addressTextBox" Width="200" Margin="5" Height="21">
+            <TextBlock Text="Адрес" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox x:Name="addressTextBox" Width="225" Margin="5" Height="25">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox">
                         <Border 
@@ -65,8 +65,8 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBlock Text="First_name" FontSize="12" HorizontalAlignment="Center" Margin="0,0,140,0"/>
-            <TextBox x:Name="firstNameTextBox" Width="200" Margin="5" Height="21">
+            <TextBlock Text="Имя" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox x:Name="firstNameTextBox" Width="225" Margin="5" Height="25">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox">
                         <Border 
@@ -79,8 +79,8 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBlock Text="Last_name" FontSize="12" HorizontalAlignment="Center" Margin="0,0,140,0"/>
-            <TextBox x:Name="lastNameTextBox" Width="200" Margin="5" Height="21">
+            <TextBlock Text="Фамилия" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox x:Name="lastNameTextBox" Width="225" Margin="5" Height="25">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox">
                         <Border 
@@ -93,8 +93,8 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBlock Text="Patronymic" FontSize="12" HorizontalAlignment="Center" Margin="0,0,140,0"/>
-            <TextBox x:Name="patronymicTextBox" Width="200" Margin="5" Height="21">
+            <TextBlock Text="Отчество" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox x:Name="patronymicTextBox" Width="225" Margin="5" Height="25">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox">
                         <Border 
@@ -107,8 +107,8 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBlock Text="Passport_details" FontSize="12" HorizontalAlignment="Center" Margin="0,0,110,0"/>
-            <TextBox x:Name="passportDetailsTextBox" Width="200" Margin="5" Height="21">
+            <TextBlock Text="Серия и номер паспорта" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+            <TextBox x:Name="passportDetailsTextBox" Width="225" Margin="5" Height="25">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox">
                         <Border 
@@ -121,19 +121,18 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <Button Content="Сохранить" Width="100" Margin="10" Background="#430113" Foreground="White" Click="AddUser1_Click" Height="28">
+            <Button Content="Сохранить" Width="160" Margin="10" Background="#430113" Foreground="White" Click="AddUser1_Click">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="8" Height="25">
+                            CornerRadius="8" Height="30">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Отправить"/>
                         </Border>
                     </ControlTemplate>
                 </Button.Template>
             </Button>
         </StackPanel>
-
     </Grid>
 </Window>

@@ -23,7 +23,6 @@ namespace EuroBuld.Page
     public partial class AdminPage : Window
     {
         EuroBuldEntities7 _context;
-        private byte[] _Image;
 
         public AdminPage()
         {
@@ -33,7 +32,6 @@ namespace EuroBuld.Page
             this.DataContext = this;
         }
 
-        // Универсальный метод для загрузки данных
         private void LoadData<T>(IQueryable<T> data)
         {
             usersDataGrid.Columns.Clear();
@@ -54,142 +52,125 @@ namespace EuroBuld.Page
             }
         }
 
-        private void LoadClients_Click(object sender, RoutedEventArgs e)
-        {
-            LoadData(_context.Users);
-        }
-
-        private void LoadRequests(object sender, RoutedEventArgs e)
-        {
-            LoadData(_context.Requests);
-        }
-
-        private void LoadRole(object sender, RoutedEventArgs e)
-        {
-            LoadData(_context.Role);
-        }
-
-        private void LoadServices_Click(object sender, RoutedEventArgs e)
-        {
-            LoadData(_context.Service);
-        }
-
-        private void LoadOrders_Click(object sender, RoutedEventArgs e)
-        {
-            LoadData(_context.Processed_customer_orders);
-        }
-
-        private void LoadStaff_Click(object sender, RoutedEventArgs e)
-        {
-            LoadData(_context.Staff);
-        }
-
-        private void AddUser_Click(object sender, RoutedEventArgs e)
-        {
-            //Добавление нового пользователя
-            //AddUser addUser = new AddUser();
-            //addUser.Show();
-            //this.Visibility = Visibility.Visible;
-        }
-
-        private void Add_Click(object sender, RoutedEventArgs e)
-        {
-            add Add = new add();
-            Add.Show();
-            this.Visibility = Visibility.Visible;
-        }
-
-        public class User
-        {
-            public int ID_Users { get; set; }
-            public string Email { get; set; }
-            public string Password { get; set; }
-            public string Number_Phone { get; set; }
-            public string Address { get; set; }
-            public string First_name { get; set; }
-            public string Last_name { get; set; }
-            public string Patronymic { get; set; }
-            public string Passport_details { get; set; }
-        }
-
-
-        private void LoadDataForCurrentTable()
-        {
-            if (usersDataGrid.Tag == "Users")
-            {
-                LoadUsers();
-            }
-            else if (usersDataGrid.Tag == "Services")
-            {
-                LoadServices();
-            }
-            else if (usersDataGrid.Tag == "Requests")
-            {
-                LoadRequests();
-            }
-            else if (usersDataGrid.Tag == "Staff")
-            {
-                LoadStaff();
-            }
-            else if (usersDataGrid.Tag == "Orders")
-            {
-                LoadOrders();
-            }
-            else if (usersDataGrid.Tag == "Role")
-            {
-                LoadRole();
-            }
-        }
-
 
         private void LoadUsers()
         {
-            var users = _context.Users.ToList();
-            usersDataGrid.ItemsSource = users;
-            usersDataGrid.Tag = "Users";  
+            LoadData(_context.Users);
+            usersDataGrid.Tag = "Users";
         }
+
 
         private void LoadServices()
         {
-            var services = _context.Service.ToList();
-            usersDataGrid.ItemsSource = services;
-            usersDataGrid.Tag = "Services";  
+            LoadData(_context.Service);
+            usersDataGrid.Tag = "Services";
         }
+
 
         private void LoadRequests()
         {
-            var requests = _context.Requests.ToList();
-            usersDataGrid.ItemsSource = requests;
-            usersDataGrid.Tag = "Requests"; 
+            LoadData(_context.Requests);
+            usersDataGrid.Tag = "Requests";
         }
+
 
         private void LoadStaff()
         {
-            var staff = _context.Staff.ToList();
-            usersDataGrid.ItemsSource = staff;
-            usersDataGrid.Tag = "Staff"; 
+            LoadData(_context.Staff);
+            usersDataGrid.Tag = "Staff";
         }
+
 
         private void LoadOrders()
         {
-            var orders = _context.Processed_customer_orders.ToList();
-            usersDataGrid.ItemsSource = orders;
-            usersDataGrid.Tag = "Orders";  
+            LoadData(_context.Processed_customer_orders);
+            usersDataGrid.Tag = "Orders";
         }
+
 
         private void LoadRole()
         {
-            var roles = _context.Role.ToList();
-            usersDataGrid.ItemsSource = roles;
-            usersDataGrid.Tag = "Role"; 
+            LoadData(_context.Role);
+            usersDataGrid.Tag = "Role";
         }
 
+       
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
-            UserAdd ADD = new UserAdd();
-            ADD.Show();
-            this.Visibility = Visibility.Collapsed;
+            string currentTable = usersDataGrid.Tag.ToString();
+
+            if (currentTable == "Users")
+            {
+                UserAdd userAddForm = new UserAdd();
+                userAddForm.Show();
+            }
+            else if (currentTable == "Services")
+            {
+                ServiceAdd serviceAddForm = new ServiceAdd();
+                serviceAddForm.Show();
+            }
+            //else if (currentTable == "Requests")
+            //{
+            //    RequestAdd requestAddForm = new RequestAdd();
+            //    requestAddForm.Show();
+            //}
+            //else if (currentTable == "Staff")
+            //{
+            //    StaffAdd staffAddForm = new StaffAdd();
+            //    staffAddForm.Show();
+            //}
+            //else if (currentTable == "Orders")
+            //{
+            //    OrderAdd orderAddForm = new OrderAdd();
+            //    orderAddForm.Show();
+            //}
+            else if (currentTable == "Role")
+            {
+                RollAdd roleAddForm = new RollAdd();
+                roleAddForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("Невозможно открыть форму для текущей таблицы.");
+            }
         }
+
+        
+        private void LoadClients_Click(object sender, RoutedEventArgs e)
+        {
+            LoadUsers();
+        }
+
+
+        private void LoadRequests(object sender, RoutedEventArgs e)
+        {
+            LoadRequests();
+        }
+
+
+        private void LoadRole(object sender, RoutedEventArgs e)
+        {
+            LoadRole();
+        }
+
+
+        private void LoadServices_Click(object sender, RoutedEventArgs e)
+        {
+            LoadServices();
+        }
+
+
+        private void LoadOrders_Click(object sender, RoutedEventArgs e)
+        {
+            LoadOrders();
+        }
+
+
+        private void LoadStaff_Click(object sender, RoutedEventArgs e)
+        {
+            LoadStaff();
+        }
+
 
         private void DeleteUser_Click(object sender, RoutedEventArgs e)
         {
@@ -200,17 +181,12 @@ namespace EuroBuld.Page
                 var entityType = selectedItem.GetType();
                 var entitySet = _context.Set(entityType);
 
-                
                 int currentStaffId = Authorization.StaffId;
 
-              
                 var passwordWindow = new PasswordWindow(currentStaffId);
                 if (passwordWindow.ShowDialog() == true)
                 {
-                    var result = MessageBox.Show($"Вы уверены, что хотите удалить запись?",
-                                                 "Подтверждение удаления",
-                                                 MessageBoxButton.YesNo,
-                                                 MessageBoxImage.Warning);
+                    var result = MessageBox.Show($"Вы уверены, что хотите удалить запись?", "Подтверждение удаления", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
                     if (result == MessageBoxResult.Yes)
                     {
@@ -218,35 +194,31 @@ namespace EuroBuld.Page
                         {
                             entitySet.Remove(selectedItem);
                             _context.SaveChanges();
-                            LoadDataForCurrentTable();
+                            LoadServices();
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show($"Произошла ошибка при удалении: {ex.Message}",
-                                             "Ошибка",
-                                             MessageBoxButton.OK,
-                                             MessageBoxImage.Error);
+                            MessageBox.Show($"Произошла ошибка при удалении: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Неверный пароль администратора.",
-                                    "Ошибка",
-                                    MessageBoxButton.OK,
-                                    MessageBoxImage.Error);
+                    MessageBox.Show("Неверный пароль администратора.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Пожалуйста, выберите запись для удаления.",
-                                "Ошибка",
-                                MessageBoxButton.OK,
-                                MessageBoxImage.Error);
+                MessageBox.Show("Пожалуйста, выберите запись для удаления.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
-
-
+        private void Reports_Click(object sender, RoutedEventArgs e)
+        {
+            Reports reports = new Reports();
+            reports.Show();
+            this.Visibility = Visibility.Collapsed;
+        }
     }
+
 }

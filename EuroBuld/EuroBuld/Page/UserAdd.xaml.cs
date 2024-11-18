@@ -29,7 +29,7 @@ namespace EuroBuld.Page
             string patronymic = patronymicTextBox.Text;
             string passportDetails = passportDetailsTextBox.Text;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(numberPhone))
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(numberPhone) || string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(patronymic) || string.IsNullOrEmpty(passportDetails))
             {
                 MessageBox.Show("Пожалуйста, заполните все обязательные поля.");
                 return;
@@ -47,13 +47,11 @@ namespace EuroBuld.Page
                 Passport_details = passportDetails
             };
             MessageBox.Show("Пользователь добавлен");
-            _context.Users.Add(newUser);
 
+            _context.Users.Add(newUser);
             _context.SaveChanges();
 
-
             this.Close();
-
             AdminPage adminPage = new AdminPage();
             adminPage.Show(); 
         }

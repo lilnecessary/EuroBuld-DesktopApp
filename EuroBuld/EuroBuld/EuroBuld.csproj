@@ -112,9 +112,6 @@
     <Compile Include="Page\AboutUs.xaml.cs">
       <DependentUpon>AboutUs.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Page\add.xaml.cs">
-      <DependentUpon>add.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Page\AdminPage.xaml.cs">
       <DependentUpon>AdminPage.xaml</DependentUpon>
     </Compile>
@@ -142,8 +139,17 @@
     <Compile Include="Page\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page\Reports.xaml.cs">
+      <DependentUpon>Reports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\RollAdd.xaml.cs">
+      <DependentUpon>RollAdd.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page\Service.xaml.cs">
       <DependentUpon>Service.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ServiceAdd.xaml.cs">
+      <DependentUpon>ServiceAdd.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page\ServiceCard.xaml.cs">
       <DependentUpon>ServiceCard.xaml</DependentUpon>
@@ -191,10 +197,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Page\add.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Page\AdminPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -231,7 +233,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Page\Reports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\RollAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page\Service.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\ServiceAdd.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -262,14 +276,23 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="DocumentFormat.OpenXml">
+      <Version>3.1.1</Version>
+    </PackageReference>
     <PackageReference Include="EntityFramework">
       <Version>6.5.1</Version>
     </PackageReference>
     <PackageReference Include="EntityFramework.ru">
       <Version>6.2.0</Version>
     </PackageReference>
+    <PackageReference Include="EPPlus">
+      <Version>7.5.0</Version>
+    </PackageReference>
     <PackageReference Include="Extended.Wpf.Toolkit">
       <Version>4.6.1</Version>
+    </PackageReference>
+    <PackageReference Include="LiveCharts.Wpf">
+      <Version>0.9.7</Version>
     </PackageReference>
     <PackageReference Include="MaterialDesignColors">
       <Version>3.1.0</Version>
@@ -298,6 +321,9 @@
     <PackageReference Include="System.ValueTuple">
       <Version>4.5.0</Version>
     </PackageReference>
+    <PackageReference Include="Xceed.Words.NET">
+      <Version>3.0.24152.1219</Version>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataBase\Model1.Context.tt">
@@ -310,6 +336,8 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <Resource Include="Image1.png" />
+    <Resource Include="Resources\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
