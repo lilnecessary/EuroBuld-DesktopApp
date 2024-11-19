@@ -303,3 +303,4 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\System.R
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\Xceed.Document.NET.dll
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\Xceed.Pdf.dll
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\Xceed.Words.NET.dll
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\Microsoft.Office.Interop.Word.dll

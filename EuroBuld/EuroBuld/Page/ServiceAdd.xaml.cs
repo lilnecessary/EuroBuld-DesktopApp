@@ -76,8 +76,20 @@ namespace EuroBuld.Page
             }
             catch (Exception ex)
             {
-                System.Windows.MessageBox.Show($"Ошибка при добавлении машины: {ex.Message}");
+                var validationErrors = _context.GetValidationErrors();
+                StringBuilder sb = new StringBuilder();
+                foreach (var validationError in validationErrors)
+                {
+                    sb.AppendLine($"Entity: {validationError.Entry.Entity.GetType().Name}");
+                    foreach (var error in validationError.ValidationErrors)
+                    {
+                        sb.AppendLine($"Property: {error.PropertyName}, Error: {error.ErrorMessage}");
+                    }
+                }
+
+                System.Windows.MessageBox.Show(sb.ToString());
             }
+
         }
 
 

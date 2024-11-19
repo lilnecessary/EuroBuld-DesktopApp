@@ -1,6 +1,7 @@
 ﻿using EuroBuld.DataBase;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Data.Entity;
 using System.Linq;
 using System.Runtime.Remoting.Contexts;
@@ -56,6 +57,7 @@ namespace EuroBuld.Page
 		}
 
 
+
         public async Task<List<ServiceViewModel>> GetAllCarsAsync()
 		{
 			using (var context = new EuroBuldEntities7())
@@ -64,6 +66,7 @@ namespace EuroBuld.Page
 				{
 					ServiceID = service.ID_Service,
 					Item_Name = service.Item_Name,
+                    Item_Description = service.Item_Description,
 					Price = service.Price,
 					Image = service.Image
 				}).ToListAsync();
@@ -84,6 +87,21 @@ namespace EuroBuld.Page
             Contact contact = new Contact();    
             contact.Show();
             this.Visibility= Visibility.Collapsed;
+        }
+
+
+        private void Button_Click_buy(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var selectedService = button?.DataContext as ServiceViewModel;  // Получаем данные о выбранной услуге из контекста
+
+            if (selectedService != null)
+            {
+                // Создаем и отображаем форму ServiceCard, передаем выбранный товар
+                ServiceCard serviceCard = new ServiceCard(selectedService);
+                serviceCard.Show();
+                this.Visibility = Visibility.Collapsed;  // Скрываем текущую форму
+            }
         }
     }
 }

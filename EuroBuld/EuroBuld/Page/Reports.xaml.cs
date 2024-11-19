@@ -7,9 +7,13 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
+using Word = Microsoft.Office.Interop.Word;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Runtime.InteropServices;
+
+using Microsoft.Win32;
+using DocumentFormat.OpenXml.ExtendedProperties;
 
 namespace EuroBuld.Page
 {
@@ -18,7 +22,7 @@ namespace EuroBuld.Page
         public Reports()
         {
             InitializeComponent();
-            LoadChartData("Profit"); // Загружаем данные для прибыли по умолчанию
+            LoadChartData("Profit");
         }
 
         private void LoadChartData(string chartType)
@@ -92,7 +96,7 @@ namespace EuroBuld.Page
                         {
                             Title = "Количество заказов",
                             Values = new ChartValues<double>(orderCounts),
-                            Fill = new SolidColorBrush(Color.FromRgb(67, 1, 19)) // Цвет #430113
+                            Fill = new SolidColorBrush(Color.FromRgb(67, 1, 19))
                         }
                     };
                 }
@@ -135,7 +139,7 @@ namespace EuroBuld.Page
                 {
                     // График количества заявок по статусам
                     var ordersByStatusData = context.Requests
-                        .GroupBy(order => order.Status) // Предполагается, что у вас есть поле Status в таблице Customer_orders
+                        .GroupBy(order => order.Status)
                         .Select(g => new
                         {
                             Status = g.Key,
@@ -266,6 +270,231 @@ namespace EuroBuld.Page
         }
 
 
-       
+        private void Button_Click_Excel(object sender, RoutedEventArgs e)
+        {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Excel Files (*.xlsx)|*.xlsx";
+            saveFileDialog.DefaultExt = ".xlsx";
+            saveFileDialog.FileName = "EuroBuld_Отчет.xlsx";
+
+            string filePath = string.Empty;
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                filePath = saveFileDialog.FileName;
+
+                using (ExcelPackage package = new ExcelPackage())
+                using (var context = new EuroBuldEntities7())
+                {
+                    void AddHeader(ExcelWorksheet sheet, int columnCount)
+                    {
+                        var range = sheet.Cells[1, 1, 1, columnCount];
+                        range.Merge = true;
+                        range.Value = "EuroBuld";
+                        range.Style.HorizontalAlignment = OfficeOpenXml.Style.ExcelHorizontalAlignment.Center;
+                        range.Style.Font.Size = 16;
+                        range.Style.Font.Bold = true;
+                        range.Style.Font.Color.SetColor(System.Drawing.ColorTranslator.FromHtml("#430113"));
+                        range.Style.VerticalAlignment = OfficeOpenXml.Style.ExcelVerticalAlignment.Center;
+                    }
+
+                    void AutoFitColumns(ExcelWorksheet sheet, int columnCount)
+                    {
+                        for (int col = 1; col <= columnCount; col++)
+                        {
+                            sheet.Column(col).AutoFit();
+                        }
+                    }
+
+                    void AddBorders(ExcelWorksheet sheet, int rowCount, int columnCount)
+                    {
+                        for (int r = 1; r <= rowCount; r++)
+                        {
+                            for (int c = 1; c <= columnCount; c++)
+                            {
+                                var cell = sheet.Cells[r, c];
+                                cell.Style.Border.BorderAround(OfficeOpenXml.Style.ExcelBorderStyle.Thin);
+                            }
+                        }
+                    }
+
+                    var usersSheet = package.Workbook.Worksheets.Add("Users");
+                    var users = context.Users.ToList();
+                    AddHeader(usersSheet, 9);
+                    usersSheet.Cells[2, 1].Value = "ID";
+                    usersSheet.Cells[2, 2].Value = "Email";
+                    usersSheet.Cells[2, 3].Value = "Password";
+                    usersSheet.Cells[2, 4].Value = "Number_Phone";
+                    usersSheet.Cells[2, 5].Value = "Address";
+                    usersSheet.Cells[2, 6].Value = "First_name";
+                    usersSheet.Cells[2, 7].Value = "Last_name";
+                    usersSheet.Cells[2, 8].Value = "Patronymic";
+                    usersSheet.Cells[2, 9].Value = "Passport_details";
+
+                    int userRow = 3;
+                    foreach (var user in users)
+                    {
+                        usersSheet.Cells[userRow, 1].Value = user.ID_Users;
+                        usersSheet.Cells[userRow, 2].Value = user.Email;
+                        usersSheet.Cells[userRow, 3].Value = user.Password;
+                        usersSheet.Cells[userRow, 4].Value = user.Number_Phone;
+                        //usersSheet.Cells[userRow, 5].Value = user.Address;
+                        usersSheet.Cells[userRow, 6].Value = user.First_name;
+                        usersSheet.Cells[userRow, 7].Value = user.Last_name;
+                        usersSheet.Cells[userRow, 8].Value = user.Patronymic;
+                        usersSheet.Cells[userRow, 9].Value = user.Passport_details;
+                        userRow++;
+                    }
+
+                    AutoFitColumns(usersSheet, 9);
+                    AddBorders(usersSheet, userRow - 1, 9);
+
+                    var roleSheet = package.Workbook.Worksheets.Add("Role");
+                    var roles = context.Role.ToList();
+                    AddHeader(roleSheet, 3);
+                    roleSheet.Cells[2, 1].Value = "ID_Role";
+                    roleSheet.Cells[2, 2].Value = "roll_name";
+                    roleSheet.Cells[2, 3].Value = "salary";
+
+                    int roleRow = 3;
+                    foreach (var role in roles)
+                    {
+                        roleSheet.Cells[roleRow, 1].Value = role.ID_Role;
+                        roleSheet.Cells[roleRow, 2].Value = role.roll_name;
+                        roleSheet.Cells[roleRow, 3].Value = role.salary;
+                        roleRow++;
+                    }
+
+                    AutoFitColumns(roleSheet, 3);
+                    AddBorders(roleSheet, roleRow - 1, 3);
+
+                    var staffSheet = package.Workbook.Worksheets.Add("Staff");
+                    var staff = context.Staff.ToList();
+                    AddHeader(staffSheet, 10);
+                    staffSheet.Cells[2, 1].Value = "ID_Staff";
+                    staffSheet.Cells[2, 2].Value = "ID_Role";
+                    staffSheet.Cells[2, 3].Value = "Email";
+                    staffSheet.Cells[2, 4].Value = "Password";
+                    staffSheet.Cells[2, 5].Value = "First_name";
+                    staffSheet.Cells[2, 6].Value = "Last_name";
+                    staffSheet.Cells[2, 7].Value = "Patronymic";
+                    staffSheet.Cells[2, 8].Value = "Passport_details";
+                    staffSheet.Cells[2, 9].Value = "Date_birth";
+                    staffSheet.Cells[2, 10].Value = "Date_employment";
+
+                    int staffRow = 3;
+                    foreach (var s in staff)
+                    {
+                        staffSheet.Cells[staffRow, 1].Value = s.ID_Staff;
+                        staffSheet.Cells[staffRow, 2].Value = s.ID_Role;
+                        staffSheet.Cells[staffRow, 3].Value = s.Email;
+                        staffSheet.Cells[staffRow, 4].Value = s.Password;
+                        staffSheet.Cells[staffRow, 5].Value = s.First_name;
+                        staffSheet.Cells[staffRow, 6].Value = s.Last_name;
+                        staffSheet.Cells[staffRow, 7].Value = s.Patronymic;
+                        staffSheet.Cells[staffRow, 8].Value = s.Passport_details;
+                        staffSheet.Cells[staffRow, 9].Value = s.Date_birth?.ToString("yyyy-MM-dd");
+                        staffSheet.Cells[staffRow, 10].Value = s.Date_employment?.ToString("yyyy-MM-dd");
+                        staffRow++;
+                    }
+
+                    AutoFitColumns(staffSheet, 10);
+                    AddBorders(staffSheet, staffRow - 1, 10);
+
+                    var serviceSheet = package.Workbook.Worksheets.Add("Service");
+                    var services = context.Service.ToList();
+                    AddHeader(serviceSheet, 4);
+                    serviceSheet.Cells[2, 1].Value = "ID_Service";
+                    serviceSheet.Cells[2, 2].Value = "Item_Name";
+                    serviceSheet.Cells[2, 3].Value = "Item_Description";
+                    serviceSheet.Cells[2, 4].Value = "Price";
+
+                    int serviceRow = 3;
+                    foreach (var service in services)
+                    {
+                        serviceSheet.Cells[serviceRow, 1].Value = service.ID_Service;
+                        serviceSheet.Cells[serviceRow, 2].Value = service.Item_Name;
+                        serviceSheet.Cells[serviceRow, 3].Value = service.Item_Description;
+                        serviceSheet.Cells[serviceRow, 4].Value = service.Price;
+                        serviceRow++;
+                    }
+
+                    AutoFitColumns(serviceSheet, 4);
+                    AddBorders(serviceSheet, serviceRow - 1, 4);
+                    var customerOrdersSheet = package.Workbook.Worksheets.Add("Customer_orders");
+                    var customerOrders = context.Customer_orders.ToList();
+                    AddHeader(customerOrdersSheet, 5);
+                    customerOrdersSheet.Cells[2, 1].Value = "ID_Customers_orders";
+                    customerOrdersSheet.Cells[2, 2].Value = "ID_Service";
+                    customerOrdersSheet.Cells[2, 3].Value = "ID_Users";
+                    customerOrdersSheet.Cells[2, 4].Value = "Order_Date";
+                    customerOrdersSheet.Cells[2, 5].Value = "Quantity";
+
+                    int customerOrdersRow = 3;
+                    foreach (var order in customerOrders)
+                    {
+                        customerOrdersSheet.Cells[customerOrdersRow, 1].Value = order.ID_Customers_orders;
+                        customerOrdersSheet.Cells[customerOrdersRow, 2].Value = order.ID_Service;
+                        customerOrdersSheet.Cells[customerOrdersRow, 3].Value = order.ID_Users;
+                        customerOrdersSheet.Cells[customerOrdersRow, 4].Value = order.Order_Date?.ToString("yyyy-MM-dd");
+                        customerOrdersSheet.Cells[customerOrdersRow, 5].Value = order.Quantity;
+                        customerOrdersRow++;
+                    }
+
+                    AutoFitColumns(customerOrdersSheet, 5);
+                    AddBorders(customerOrdersSheet, customerOrdersRow - 1, 5);
+
+                    var processedOrdersSheet = package.Workbook.Worksheets.Add("Processed_customer_orders");
+                    var processedOrders = context.Processed_customer_orders.ToList();
+                    AddHeader(processedOrdersSheet, 8);
+                    processedOrdersSheet.Cells[2, 1].Value = "ID_Processed_customer_orders";
+                    processedOrdersSheet.Cells[2, 2].Value = "ID_Customer_orders";
+                    processedOrdersSheet.Cells[2, 3].Value = "ID_Staff";
+                    processedOrdersSheet.Cells[2, 4].Value = "ID_Construction_Status";
+                    processedOrdersSheet.Cells[2, 5].Value = "Project_Name";
+                    processedOrdersSheet.Cells[2, 6].Value = "Date_Start";
+                    processedOrdersSheet.Cells[2, 7].Value = "Date_Ending";
+                    processedOrdersSheet.Cells[2, 8].Value = "Final_sum";
+
+                    int processedOrdersRow = 3;
+                    foreach (var processedOrder in processedOrders)
+                    {
+                        processedOrdersSheet.Cells[processedOrdersRow, 1].Value = processedOrder.ID_Processed_customer_orders;
+                        processedOrdersSheet.Cells[processedOrdersRow, 2].Value = processedOrder.ID_Customer_orders;
+                        processedOrdersSheet.Cells[processedOrdersRow, 3].Value = processedOrder.ID_Staff;
+                        processedOrdersSheet.Cells[processedOrdersRow, 4].Value = processedOrder.ID_Construction_Status;
+                        processedOrdersSheet.Cells[processedOrdersRow, 5].Value = processedOrder.Project_Name;
+                        processedOrdersSheet.Cells[processedOrdersRow, 6].Value = processedOrder.Date_Start?.ToString("yyyy-MM-dd");
+                        processedOrdersSheet.Cells[processedOrdersRow, 7].Value = processedOrder.Date_Ending?.ToString("yyyy-MM-dd");
+                        processedOrdersSheet.Cells[processedOrdersRow, 8].Value = processedOrder.Final_sum;
+                        processedOrdersRow++;
+                    }
+
+                    AutoFitColumns(processedOrdersSheet, 8);
+                    AddBorders(processedOrdersSheet, processedOrdersRow - 1, 8);
+
+                    package.SaveAs(new FileInfo(filePath));
+                }
+
+                MessageBoxResult result = MessageBox.Show("Отчет был сохранен. Хотите открыть файл?", "Открыть файл", MessageBoxButton.YesNo);
+                if (result == MessageBoxResult.Yes)
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                    {
+                        FileName = filePath,
+                        UseShellExecute = true
+                    });
+                }
+            }
+        }
+
+
+        private void Button_Click_Word(object sender, RoutedEventArgs e)
+        {
+            //в процессе
+        }
     }
 }
+

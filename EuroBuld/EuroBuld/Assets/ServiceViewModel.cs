@@ -14,6 +14,7 @@ namespace EuroBuld
 		public int ServiceID { get; set; }
 		public string Item_Name { get; set; }
 		public string Price { get; set; }
+		public string Item_Description {  get; set; }
 
 		// Property to get the image as an ImageSource
 		public ImageSource ServiceImage

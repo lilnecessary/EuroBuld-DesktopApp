@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "QvYJhYqUH80=",
+  "dgSpecHash": "qI8jOaldkpY=",
   "success": true,
   "projectFilePath": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
   "expectedPackageFiles": [
@@ -17,6 +17,7 @@
     "C:\\Users\\kazaxx\\.nuget\\packages\\materialdesigncolors\\3.1.0\\materialdesigncolors.3.1.0.nupkg.sha512",
     "C:\\Users\\kazaxx\\.nuget\\packages\\materialdesignthemes\\5.1.0\\materialdesignthemes.5.1.0.nupkg.sha512",
     "C:\\Users\\kazaxx\\.nuget\\packages\\microsoft.io.recyclablememorystream\\3.0.1\\microsoft.io.recyclablememorystream.3.0.1.nupkg.sha512",
+    "C:\\Users\\kazaxx\\.nuget\\packages\\microsoft.office.interop.word\\15.0.4797.1004\\microsoft.office.interop.word.15.0.4797.1004.nupkg.sha512",
     "C:\\Users\\kazaxx\\.nuget\\packages\\microsoft.web.webview2\\1.0.2849.39\\microsoft.web.webview2.1.0.2849.39.nupkg.sha512",
     "C:\\Users\\kazaxx\\.nuget\\packages\\microsoft.windows.sdk.contracts\\10.0.26100.1742\\microsoft.windows.sdk.contracts.10.0.26100.1742.nupkg.sha512",
     "C:\\Users\\kazaxx\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.135\\microsoft.xaml.behaviors.wpf.1.1.135.nupkg.sha512",

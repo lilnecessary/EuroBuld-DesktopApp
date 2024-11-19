@@ -75,6 +75,10 @@
               "target": "Package",
               "version": "[5.1.0, )"
             },
+            "Microsoft.Office.Interop.Word": {
+              "target": "Package",
+              "version": "[15.0.4797.1004, )"
+            },
             "Microsoft.Web.WebView2": {
               "target": "Package",
               "version": "[1.0.2849.39, )"
