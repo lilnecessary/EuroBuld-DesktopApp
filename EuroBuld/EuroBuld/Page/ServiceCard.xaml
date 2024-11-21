@@ -16,21 +16,21 @@
         </StackPanel>
         <StackPanel Margin="0,50,620,0">
             <Image x:Name="ServiceImage" Width="450" Height="350"/>
+            <Button Content="Добавить" Background="#430113" Foreground="White" Click="Button_Click_Buy" Height="35" Width="150">
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="15">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Купить сейчас"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
         <TextBlock x:Name="ServiceNameText" Margin="550,100,10,276" FontSize="28" FontWeight="Bold" Foreground="#430113"/>
         <TextBlock x:Name="ServicePriceText" Margin="550,150,10,211" FontSize="25" FontWeight="Bold" Foreground="#430113"/>
         <TextBlock x:Name="ServiceDescriptionText" Margin="550,200,10,359" FontSize="22" FontWeight="Bold" Text="{Binding Item_Description}" Foreground="#430113"/>
-        <Button Content="Добавить" Background="#430113" Foreground="White" Click="Button_Click_Buy" Height="35" Margin="550,325,500,324">
-            <Button.Template>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Background="{TemplateBinding Background}" 
-                        BorderBrush="{TemplateBinding BorderBrush}" 
-                        BorderThickness="{TemplateBinding BorderThickness}" 
-                        CornerRadius="15">
-                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Купить сейчас"/>
-                    </Border>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
     </Grid>
 </Window>

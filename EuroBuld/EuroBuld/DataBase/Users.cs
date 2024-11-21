@@ -23,8 +23,8 @@ namespace EuroBuld.DataBase
         public int ID_Users { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public byte[] Image { get; set; }
         public string Number_Phone { get; set; }
+        public string Address { get; set; }
         public string First_name { get; set; }
         public string Last_name { get; set; }
         public string Patronymic { get; set; }

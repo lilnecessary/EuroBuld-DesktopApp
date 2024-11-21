@@ -1,0 +1,50 @@
+﻿<Window x:Class="EuroBuld.Page.TakeAnOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EuroBuld.Page"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="UserAdd" Height="400" Width="400">
+    <ScrollViewer Background="#DBCCCF" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Grid Background="#DBCCCF">
+            <StackPanel Margin="10" HorizontalAlignment="Center">
+                <TextBlock Text="Начальник участка" FontSize="12" Margin="0,10,10,0" HorizontalAlignment="Center"/>
+                <ComboBox Margin="0,10,10,0" x:Name="ForemenComboBox"/>
+                <TextBlock Text="Статус заказа" FontSize="12" Margin="0,10,10,0" HorizontalAlignment="Center"/>
+                <TextBox x:Name="StatusTextBox" Margin="0,10,10,0" Width="200" Height="25"/>
+                <TextBlock Text="Дата начала строительства" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <DatePicker x:Name="BirthDatePicker" Margin="0,10,0,0"/>
+                <TextBlock Text="Дата окончания строительства" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
+                <DatePicker x:Name="EmploymentDatePicker" Margin="0,10,0,0"/>
+                <TextBlock Text="Итоговая сумма:" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
+                <TextBox Width="200" Margin="5" Height="25" Padding="3" x:Name="FinalSumTextBox">
+                    <TextBox.Template>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Border 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="8">
+                                <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
+                            </Border>
+                        </ControlTemplate>
+                    </TextBox.Template>
+                </TextBox>
+                <Button Click="Save_Click" Width="160" Margin="10" Background="#430113" Foreground="White"  Height="30">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="8" Height="30">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Отправить"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>

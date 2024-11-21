@@ -70,10 +70,10 @@
     <Compile Include="Assets\ServiceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataBase\Construction_Status.cs">
+    <Compile Include="DataBase\Customer_orders.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBase\Customer_orders.cs">
+    <Compile Include="DataBase\Foremen.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Model1.Context.cs">
@@ -130,6 +130,12 @@
     <Compile Include="Page\ManagerPage.xaml.cs">
       <DependentUpon>ManagerPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Page\ManagersOrders.xaml.cs">
+      <DependentUpon>ManagersOrders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Orders.xaml.cs">
+      <DependentUpon>Orders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Page\PasswordWindow.xaml.cs">
       <DependentUpon>PasswordWindow.xaml</DependentUpon>
     </Compile>
@@ -156,6 +162,9 @@
     </Compile>
     <Compile Include="Page\StaffAdd.xaml.cs">
       <DependentUpon>StaffAdd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\TakeAnOrder.xaml.cs">
+      <DependentUpon>TakeAnOrder.xaml</DependentUpon>
     </Compile>
     <Compile Include="Page\UserAdd.xaml.cs">
       <DependentUpon>UserAdd.xaml</DependentUpon>
@@ -224,6 +233,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Page\ManagersOrders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\Orders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Page\PasswordWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -257,6 +274,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page\StaffAdd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\TakeAnOrder.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -339,6 +360,10 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image1.png" />
+    <Resource Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="DataBase\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
@@ -349,8 +374,6 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
-    <Resource Include="Image1.png" />
-    <Resource Include="Resources\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

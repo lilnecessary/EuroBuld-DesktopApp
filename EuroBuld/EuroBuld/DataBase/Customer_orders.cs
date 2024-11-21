@@ -24,7 +24,7 @@ namespace EuroBuld.DataBase
         public Nullable<int> ID_Service { get; set; }
         public Nullable<int> ID_Users { get; set; }
         public Nullable<System.DateTime> Order_Date { get; set; }
-        public string Quantity { get; set; }
+        public string Status { get; set; }
     
         public virtual Service Service { get; set; }
         public virtual Users Users { get; set; }

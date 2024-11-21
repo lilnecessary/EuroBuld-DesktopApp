@@ -21,7 +21,7 @@ namespace EuroBuld.DataBase
         }
     
         public int ID_Staff { get; set; }
-        public Nullable<int> ID_Role { get; set; }
+        public int ID_Role { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public byte[] Image { get; set; }
@@ -29,8 +29,8 @@ namespace EuroBuld.DataBase
         public string Last_name { get; set; }
         public string Patronymic { get; set; }
         public string Passport_details { get; set; }
-        public Nullable<System.DateTime> Date_birth { get; set; }
-        public Nullable<System.DateTime> Date_employment { get; set; }
+        public System.DateTime Date_birth { get; set; }
+        public System.DateTime Date_employment { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Processed_customer_orders> Processed_customer_orders { get; set; }

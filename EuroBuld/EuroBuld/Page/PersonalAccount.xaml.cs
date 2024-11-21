@@ -66,7 +66,7 @@ namespace EuroBuld.Page
         {
             string currentUserEmail = Authorization.UserEmail;
 
-            using (var context = new EuroBuldEntities7())
+            using (var context = new EuroBuldEntities1())
             {
                 var user = context.Users.FirstOrDefault(u => u.Email == currentUserEmail);
                 if (user != null)
@@ -147,7 +147,7 @@ namespace EuroBuld.Page
                 return; 
             }
 
-            using (var context = new EuroBuldEntities7())
+            using (var context = new EuroBuldEntities1())
             {
                 string currentUserEmail = Authorization.UserEmail;
                 var user = context.Users.FirstOrDefault(u => u.Email == currentUserEmail);

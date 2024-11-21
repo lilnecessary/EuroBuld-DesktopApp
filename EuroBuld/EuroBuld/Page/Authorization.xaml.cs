@@ -10,6 +10,7 @@ namespace EuroBuld.Page
     {
         public static string UserEmail { get; private set; }
         public static int StaffId { get; private set; }  // Статическое свойство для хранения ID сотрудника
+        public static int? UserID { get; private set; } // Nullable, так как пользователь может быть неавторизованным
 
         public Authorization()
         {
@@ -30,8 +31,9 @@ namespace EuroBuld.Page
             string email = EmailTextBox.Text.Trim();
             string password = PasswordTextBox.Text.Trim();
 
-            using (var context = new EuroBuldEntities7())
+            using (var context = new EuroBuldEntities1())
             {
+                // Проверяем, является ли пользователь сотрудником
                 var staffUser = context.Staff
                     .FirstOrDefault(s => s.Email == email && s.Password == password);
 
@@ -41,7 +43,7 @@ namespace EuroBuld.Page
 
                     if (role != null)
                     {
-                        StaffId = staffUser.ID_Staff; // Сохраняем staff_id
+                        StaffId = staffUser.ID_Staff; // Сохраняем ID сотрудника
                         if (role.roll_name == "Admin")
                         {
                             AdminPage adminPage = new AdminPage();
@@ -56,32 +58,36 @@ namespace EuroBuld.Page
                         }
                         else
                         {
-                            MessageBox.Show("У вас нет прав доступа.");
+                            MessageBox.Show("У вас нет прав доступа.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Роль не найдена для сотрудника.");
+                        MessageBox.Show("Роль не найдена для сотрудника.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
                 else
                 {
+                    // Если пользователь не сотрудник, проверяем среди клиентов
                     var user = context.Users
                         .FirstOrDefault(u => u.Email == email && u.Password == password);
 
                     if (user != null)
                     {
-                        UserEmail = user.Email; // Присваиваем почту из переменной user
+                        UserEmail = user.Email; // Сохраняем Email авторизованного пользователя
+                        Authorization.UserID = user.ID_Users; // Сохраняем ID клиента
+
                         PersonalAccount personalAccount = new PersonalAccount();
                         personalAccount.Show();
                         this.Visibility = Visibility.Collapsed;
                     }
                     else
                     {
-                        MessageBox.Show("Неправильный логин или пароль.");
+                        MessageBox.Show("Неправильный логин или пароль.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
                     }
                 }
             }
         }
+
     }
 }

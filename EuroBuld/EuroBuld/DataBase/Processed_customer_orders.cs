@@ -17,14 +17,14 @@ namespace EuroBuld.DataBase
         public int ID_Processed_customer_orders { get; set; }
         public Nullable<int> ID_Customer_orders { get; set; }
         public Nullable<int> ID_Staff { get; set; }
-        public Nullable<int> ID_Construction_Status { get; set; }
-        public string Project_Name { get; set; }
+        public Nullable<int> ID_Foreman { get; set; }
+        public string Status { get; set; }
         public Nullable<System.DateTime> Date_Start { get; set; }
         public Nullable<System.DateTime> Date_Ending { get; set; }
         public string Final_sum { get; set; }
     
-        public virtual Construction_Status Construction_Status { get; set; }
         public virtual Customer_orders Customer_orders { get; set; }
+        public virtual Foremen Foremen { get; set; }
         public virtual Staff Staff { get; set; }
     }
 }

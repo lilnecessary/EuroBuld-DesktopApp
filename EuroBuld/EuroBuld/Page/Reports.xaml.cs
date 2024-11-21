@@ -33,7 +33,7 @@ namespace EuroBuld.Page
 
         private void LoadChartData(string chartType)
         {
-            using (var context = new EuroBuldEntities7())
+            using (var context = new EuroBuldEntities1())
             {
                 if (chartType == "Profit")
                 {
@@ -292,7 +292,7 @@ namespace EuroBuld.Page
                 filePath = saveFileDialog.FileName;
 
                 using (ExcelPackage package = new ExcelPackage())
-                using (var context = new EuroBuldEntities7())
+                using (var context = new EuroBuldEntities1())
                 {
                     void AddHeader(ExcelWorksheet sheet, int columnCount)
                     {
@@ -401,8 +401,8 @@ namespace EuroBuld.Page
                         staffSheet.Cells[staffRow, 6].Value = s.Last_name;
                         staffSheet.Cells[staffRow, 7].Value = s.Patronymic;
                         staffSheet.Cells[staffRow, 8].Value = s.Passport_details;
-                        staffSheet.Cells[staffRow, 9].Value = s.Date_birth?.ToString("yyyy-MM-dd");
-                        staffSheet.Cells[staffRow, 10].Value = s.Date_employment?.ToString("yyyy-MM-dd");
+                        staffSheet.Cells[staffRow, 9].Value = s.Date_birth.ToString("yyyy-MM-dd");
+                        staffSheet.Cells[staffRow, 10].Value = s.Date_employment.ToString("yyyy-MM-dd");
                         staffRow++;
                     }
 
@@ -445,7 +445,6 @@ namespace EuroBuld.Page
                         customerOrdersSheet.Cells[customerOrdersRow, 2].Value = order.ID_Service;
                         customerOrdersSheet.Cells[customerOrdersRow, 3].Value = order.ID_Users;
                         customerOrdersSheet.Cells[customerOrdersRow, 4].Value = order.Order_Date?.ToString("yyyy-MM-dd");
-                        customerOrdersSheet.Cells[customerOrdersRow, 5].Value = order.Quantity;
                         customerOrdersRow++;
                     }
 
@@ -470,8 +469,6 @@ namespace EuroBuld.Page
                         processedOrdersSheet.Cells[processedOrdersRow, 1].Value = processedOrder.ID_Processed_customer_orders;
                         processedOrdersSheet.Cells[processedOrdersRow, 2].Value = processedOrder.ID_Customer_orders;
                         processedOrdersSheet.Cells[processedOrdersRow, 3].Value = processedOrder.ID_Staff;
-                        processedOrdersSheet.Cells[processedOrdersRow, 4].Value = processedOrder.ID_Construction_Status;
-                        processedOrdersSheet.Cells[processedOrdersRow, 5].Value = processedOrder.Project_Name;
                         processedOrdersSheet.Cells[processedOrdersRow, 6].Value = processedOrder.Date_Start?.ToString("yyyy-MM-dd");
                         processedOrdersSheet.Cells[processedOrdersRow, 7].Value = processedOrder.Date_Ending?.ToString("yyyy-MM-dd");
                         processedOrdersSheet.Cells[processedOrdersRow, 8].Value = processedOrder.Final_sum;

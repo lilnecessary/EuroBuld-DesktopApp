@@ -10,13 +10,13 @@ namespace EuroBuld.Page
 {
     public partial class StaffAdd : Window
     {
-        private EuroBuldEntities7 _context;
+        private EuroBuldEntities1 _context;
         private byte[] _image;
 
         public StaffAdd()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities7();
+            _context = new EuroBuldEntities1();
             LoadRoles();
         }
 
@@ -90,6 +90,8 @@ namespace EuroBuld.Page
                 _context.Staff.Add(newStaff);
                 await _context.SaveChangesAsync();
                 MessageBox.Show("Сотрудник успешно добавлен!");
+                AdminPage adminPage = new AdminPage();
+                adminPage.Show();
                 this.Close();
             }
             catch (Exception ex)

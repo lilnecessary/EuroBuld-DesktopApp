@@ -58,7 +58,7 @@ namespace EuroBuld.Page
                 return;
             }
 
-            using (var context = new EuroBuldEntities7())
+            using (var context = new EuroBuldEntities1())
             {
                 // Проверка, существует ли уже такой email
                 var existingUser = context.Users.FirstOrDefault(u => u.Email == email);
@@ -79,7 +79,6 @@ namespace EuroBuld.Page
 
                 MessageBox.Show("Регистрация прошла успешно!");
 
-                this.Close();
                 Authorization authorizationPage = new Authorization();
                 authorizationPage.Show();
             }

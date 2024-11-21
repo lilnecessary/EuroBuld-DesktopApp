@@ -39,7 +39,7 @@ namespace EuroBuld.Page
 
         private void LoadStaff()
         {
-            using (var context = new EuroBuldEntities7())
+            using (var context = new EuroBuldEntities1())
             {
                 var staffList = context.Staff
                     .Select(s => new StaffInfo
@@ -58,7 +58,7 @@ namespace EuroBuld.Page
         }
 
 
-        private void DisplayStaff(List<StaffInfo> staffList, EuroBuldEntities7 context)
+        private void DisplayStaff(List<StaffInfo> staffList, EuroBuldEntities1 context)
         {
             foreach (var staffMember in staffList)
             {

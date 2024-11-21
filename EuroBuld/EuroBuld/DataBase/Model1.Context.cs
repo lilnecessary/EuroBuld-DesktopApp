@@ -13,10 +13,10 @@ namespace EuroBuld.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EuroBuldEntities7 : DbContext
+    public partial class EuroBuldEntities1 : DbContext
     {
-        public EuroBuldEntities7()
-            : base("name=EuroBuldEntities7")
+        public EuroBuldEntities1()
+            : base("name=EuroBuldEntities1")
         {
         }
     
@@ -25,8 +25,8 @@ namespace EuroBuld.DataBase
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Construction_Status> Construction_Status { get; set; }
         public virtual DbSet<Customer_orders> Customer_orders { get; set; }
+        public virtual DbSet<Foremen> Foremen { get; set; }
         public virtual DbSet<Processed_customer_orders> Processed_customer_orders { get; set; }
         public virtual DbSet<Requests> Requests { get; set; }
         public virtual DbSet<Role> Role { get; set; }

@@ -12,16 +12,20 @@ namespace EuroBuld.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Construction_Status
+    public partial class Foremen
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Construction_Status()
+        public Foremen()
         {
             this.Processed_customer_orders = new HashSet<Processed_customer_orders>();
         }
     
-        public int ID_Construction_Status { get; set; }
-        public string Status_Description { get; set; }
+        public int ID_Foreman { get; set; }
+        public string First_Name { get; set; }
+        public string Last_Name { get; set; }
+        public string Patronymic { get; set; }
+        public Nullable<int> Number_of_Workers { get; set; }
+        public string Number_phone { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Processed_customer_orders> Processed_customer_orders { get; set; }
