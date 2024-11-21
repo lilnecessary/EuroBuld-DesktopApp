@@ -31,6 +31,7 @@ namespace EuroBuld.Page
             Authorization authorization = new Authorization();
             authorization.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -39,6 +40,7 @@ namespace EuroBuld.Page
             Registration registration = new Registration();
             registration.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -47,6 +49,7 @@ namespace EuroBuld.Page
             MainWindow window = new MainWindow();
             window.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -79,6 +82,7 @@ namespace EuroBuld.Page
             AboutUs aboutUs = new AboutUs();
             aboutUs.Show();
             this.Visibility= Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -87,20 +91,20 @@ namespace EuroBuld.Page
             Contact contact = new Contact();    
             contact.Show();
             this.Visibility= Visibility.Collapsed;
+            this.Close();
         }
 
 
         private void Button_Click_buy(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
-            var selectedService = button?.DataContext as ServiceViewModel;  // Получаем данные о выбранной услуге из контекста
+            var selectedService = button?.DataContext as ServiceViewModel;  
 
             if (selectedService != null)
             {
-                // Создаем и отображаем форму ServiceCard, передаем выбранный товар
                 ServiceCard serviceCard = new ServiceCard(selectedService);
                 serviceCard.Show();
-                this.Visibility = Visibility.Collapsed;  // Скрываем текущую форму
+                this.Visibility = Visibility.Collapsed;
             }
         }
     }

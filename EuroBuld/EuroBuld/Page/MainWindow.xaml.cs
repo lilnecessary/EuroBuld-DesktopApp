@@ -30,6 +30,7 @@ namespace EuroBuld.Page
             Authorization authorization = new Authorization();
             authorization.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -38,12 +39,7 @@ namespace EuroBuld.Page
             Registration registration = new Registration();
             registration.Show();
             this.Visibility = Visibility.Collapsed;
-        }
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
+            this.Close();
         }
 
 
@@ -52,6 +48,7 @@ namespace EuroBuld.Page
             Service service = new Service();
             service.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -60,6 +57,7 @@ namespace EuroBuld.Page
             AboutUs aboutUs = new AboutUs();
             aboutUs.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -68,6 +66,7 @@ namespace EuroBuld.Page
             Contact contact = new Contact();
             contact.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 

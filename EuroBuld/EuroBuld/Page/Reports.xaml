@@ -11,38 +11,6 @@
         Title="Desktop_Main"
         Height="600"
         Width="1000">
-
-    <Window.Resources>
-        <!-- Стиль для DataGrid -->
-        <Style TargetType="DataGrid">
-            <Setter Property="AutoGenerateColumns" Value="False" />
-            <Setter Property="HeadersVisibility" Value="Column" />
-            <Setter Property="GridLinesVisibility" Value="None" />
-            <Setter Property="RowHeight" Value="50" />
-            <Setter Property="ColumnHeaderHeight" Value="50" />
-            <Setter Property="Background" Value="#F8F8F8"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="RowStyle">
-                <Setter.Value>
-                    <Style TargetType="DataGridRow">
-                        <Setter Property="Background" Value="White"/>
-                        <Setter Property="Margin" Value="0,5,0,5"/>
-                    </Style>
-                </Setter.Value>
-            </Setter>
-            <Setter Property="ColumnHeaderStyle">
-                <Setter.Value>
-                    <Style TargetType="DataGridColumnHeader">
-                        <Setter Property="Background" Value="#F8F8F8"/>
-                        <Setter Property="FontWeight" Value="Bold"/>
-                        <Setter Property="Foreground" Value="#430113"/>
-                        <Setter Property="FontSize" Value="14"/>
-                    </Style>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-
     <Grid Background="#FFFFFF">
         <StackPanel Background="#E0BFBF" Margin="0,0,795,0"></StackPanel>
         <StackPanel Background="#E0BFBF" Width="200" Margin="2,271,798,0" VerticalAlignment="Top" Height="313">
@@ -66,8 +34,6 @@
                 </Button.Style>
             </Button>
         </StackPanel>
-
-        <!-- ComboBox для выбора типа графика -->
         <ComboBox Name="ChartTypeComboBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="220,10,0,0" Width="605" SelectionChanged="ChartTypeComboBox_SelectionChanged">
             <ComboBoxItem Content="Прибыль по годам" />
             <ComboBoxItem Content="Количество заказов по годам" />
@@ -76,7 +42,7 @@
             <ComboBoxItem Content="Количество сотрудников по ролям" />
             <ComboBoxItem Content="Количество заявок по статусам" />
         </ComboBox>
-        
+
         <lvc:CartesianChart Name="ProfitChart" Margin="220,40,175,121">
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Title="Год" Labels="{Binding Years}"></lvc:Axis>
@@ -85,20 +51,7 @@
                 <lvc:Axis Title="Сумма" LabelFormatter="{Binding ValueFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
-
         <StackPanel Margin="0,455,360,10">
-            <Button Background="#2B579A" FontSize="15" Height="45" Foreground="White" Width="180" FontWeight="Bold" Click="Button_Click_Word">
-                <Button.Template>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="10" >
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Word"/>
-                        </Border>
-                    </ControlTemplate>
-                </Button.Template>
-            </Button>
             <Button Background="#217346" FontSize="15" Height="50" Foreground="White" Width="180" FontWeight="Bold" Click="Button_Click_Excel">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">

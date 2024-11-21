@@ -1,4 +1,5 @@
-﻿using EuroBuld.DataBase;
+﻿using DocumentFormat.OpenXml.Office2016.Excel;
+using EuroBuld.DataBase;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
@@ -103,22 +104,25 @@ namespace EuroBuld.Page
             {
                 UserAdd userAddForm = new UserAdd();
                 userAddForm.Show();
+                this.Close();
             }
             else if (currentTable == "Services")
             {
                 ServiceAdd serviceAddForm = new ServiceAdd();
                 serviceAddForm.Show();
+                this.Close();
             }
             //else if (currentTable == "Requests")
             //{
             //    RequestAdd requestAddForm = new RequestAdd();
             //    requestAddForm.Show();
             //}
-            //else if (currentTable == "Staff")
-            //{
-            //    StaffAdd staffAddForm = new StaffAdd();
-            //    staffAddForm.Show();
-            //}
+            else if (currentTable == "Staff")
+            {
+                StaffAdd staffAddForm = new StaffAdd();
+                staffAddForm.Show();
+                this.Close();
+            }
             //else if (currentTable == "Orders")
             //{
             //    OrderAdd orderAddForm = new OrderAdd();
@@ -128,6 +132,7 @@ namespace EuroBuld.Page
             {
                 RollAdd roleAddForm = new RollAdd();
                 roleAddForm.Show();
+                this.Close();
             }
             else
             {

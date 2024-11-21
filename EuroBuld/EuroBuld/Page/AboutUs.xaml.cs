@@ -148,6 +148,7 @@ namespace EuroBuld.Page
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Visibility = Visibility.Visible;
+            this.Close();
         }
 
 
@@ -156,6 +157,7 @@ namespace EuroBuld.Page
             Service service = new Service();
             service.Show();
             this.Visibility=Visibility.Visible;
+            this.Close();
         }
 
 
@@ -164,6 +166,7 @@ namespace EuroBuld.Page
             Contact contact = new Contact();
             contact.Show();
             this.Visibility = Visibility.Visible;
+            this.Close();
         }
 
 

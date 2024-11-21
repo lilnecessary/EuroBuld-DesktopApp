@@ -11,9 +11,15 @@ using Word = Microsoft.Office.Interop.Word;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Runtime.InteropServices;
-
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
 using Microsoft.Win32;
 using DocumentFormat.OpenXml.ExtendedProperties;
+using Windows.Data.Pdf;
+using DocumentFormat.OpenXml.Presentation;
+using iText.IO.Font.Constants;
+using iText.Kernel.Font;
 
 namespace EuroBuld.Page
 {
@@ -488,12 +494,6 @@ namespace EuroBuld.Page
                     });
                 }
             }
-        }
-
-
-        private void Button_Click_Word(object sender, RoutedEventArgs e)
-        {
-            //в процессе
         }
     }
 }

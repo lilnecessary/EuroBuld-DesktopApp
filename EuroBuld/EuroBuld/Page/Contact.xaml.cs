@@ -40,6 +40,7 @@ namespace EuroBuld.Page
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -48,6 +49,7 @@ namespace EuroBuld.Page
             Service seervice = new Service();
             seervice.Show();
             this.Visibility = Visibility.Visible;
+            this.Close();
         }
 
 
@@ -56,6 +58,7 @@ namespace EuroBuld.Page
             AboutUs aboutUs = new AboutUs();
             aboutUs.Show();
             this.Visibility = Visibility.Visible;
+            this.Close();
         }
 
 
@@ -64,6 +67,7 @@ namespace EuroBuld.Page
             Contact contact = new Contact();
             contact.Show();
             this.Visibility = Visibility.Visible;
+            this.Close();
         }
 
 
