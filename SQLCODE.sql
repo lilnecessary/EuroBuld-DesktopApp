@@ -92,6 +92,7 @@ CREATE TABLE Requests (
 INSERT INTO Role (roll_name, salary)
 VALUES
 ('Admin', '50000'),
+('SendCheck', '50000'),
 ('Manager', '30000');
 
 INSERT INTO Staff (ID_Role, Email, Password, Image, First_name, Last_name, Patronymic, Passport_details, Date_birth, Date_employment)

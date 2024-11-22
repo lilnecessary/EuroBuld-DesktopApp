@@ -34,8 +34,40 @@ namespace EuroBuld.Page
         }
 
 
+        private void Button_Click_Accept(object sender, MouseButtonEventArgs e)
+        {
+            string filePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Resources", "PersonalDataProcessingAgreement.doc");
+
+            if (System.IO.File.Exists(filePath))
+            {
+                try
+                {
+                    System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = filePath,
+                        UseShellExecute = true
+                    });
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Не удалось открыть документ: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Файл с политикой обработки персональных данных не найден.");
+            }
+        }
+
+
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
+            if (AcceptCheckBox.IsChecked != true)
+            {
+                MessageBox.Show("Вы должны согласиться на обработку персональных данных.");
+                return;
+            }
+
             string email = EmailTextBox.Text.Trim();
             string password = PasswordTextBox.Text.Trim();
             string repeatPassword = RepeatPasswordTextBox.Text.Trim();
@@ -52,6 +84,12 @@ namespace EuroBuld.Page
                 return;
             }
 
+            if (!IsValidEmail(email))
+            {
+                MessageBox.Show("Введите корректный email-адрес.");
+                return;
+            }
+
             if (string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Введите пароль.");
@@ -60,7 +98,6 @@ namespace EuroBuld.Page
 
             using (var context = new EuroBuldEntities1())
             {
-                // Проверка, существует ли уже такой email
                 var existingUser = context.Users.FirstOrDefault(u => u.Email == email);
                 if (existingUser != null)
                 {
@@ -84,6 +121,12 @@ namespace EuroBuld.Page
             }
         }
 
+
+        private bool IsValidEmail(string email)
+        {
+            var emailRegex = new System.Text.RegularExpressions.Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+            return emailRegex.IsMatch(email);
+        }
 
     }
 }

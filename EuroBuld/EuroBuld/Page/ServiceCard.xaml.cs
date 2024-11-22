@@ -2,9 +2,12 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Net.Mail;
+using System.Net;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Text;
 
 namespace EuroBuld.Page
 {
@@ -72,6 +75,14 @@ namespace EuroBuld.Page
 
             using (var context = new EuroBuldEntities1())
             {
+                var user = context.Users.FirstOrDefault(u => u.ID_Users == Authorization.UserID.Value);
+
+                if (user == null || string.IsNullOrEmpty(user.Email))
+                {
+                    MessageBox.Show("Не удалось найти пользователя или почта не указана.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
+
                 var newOrder = new Customer_orders
                 {
                     ID_Service = SelectedService.ServiceID,
@@ -82,7 +93,90 @@ namespace EuroBuld.Page
                 context.Customer_orders.Add(newOrder);
                 context.SaveChanges();
 
-                MessageBox.Show("Заказ успешно сохранён.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                try
+                {
+                    string receipt = GenerateReceipt(newOrder, user);
+
+                    var sendCheckRole = context.Role.FirstOrDefault(r => r.roll_name == "SendCheck");
+                    if (sendCheckRole == null)
+                    {
+                        MessageBox.Show("Роль SendCheck не найдена.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
+                    var sendCheckStaff = context.Staff
+                        .FirstOrDefault(s => s.ID_Role == sendCheckRole.ID_Role);
+
+                    if (sendCheckStaff == null || string.IsNullOrEmpty(sendCheckStaff.Email))
+                    {
+                        MessageBox.Show("Не удалось найти сотрудника с ролью SendCheck или почта не указана.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
+
+                    string sendCheckEmail = sendCheckStaff.Email;
+                    string sendCheckEmailPassword = sendCheckStaff.Password;
+
+                    SendEmail(user.Email, "Ваш заказ в EuroBuld", receipt, sendCheckEmail, sendCheckEmailPassword);
+
+                    MessageBox.Show("Заказ успешно сохранён. Чек отправлен на вашу почту.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при отправке чека: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+
+        private void SendEmail(string toEmail, string subject, string body, string sendCheckEmail, string sendCheckEmailPassword)
+        {
+            try
+            {
+                using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtpClient.Credentials = new NetworkCredential(sendCheckEmail, sendCheckEmailPassword);
+                    smtpClient.EnableSsl = true;
+
+                    var mailMessage = new MailMessage
+                    {
+                        From = new MailAddress(sendCheckEmail, "EuroBuld"),
+                        Subject = subject,
+                        Body = body,
+                        IsBodyHtml = false
+                    };
+
+                    mailMessage.To.Add(toEmail);
+
+                    smtpClient.Send(mailMessage);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка при отправке письма: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+
+        private string GenerateReceipt(Customer_orders order, Users user)
+        {
+            using (var context = new EuroBuldEntities1())
+            {
+                var service = context.Service.FirstOrDefault(s => s.ID_Service == order.ID_Service);
+                if (service == null)
+                {
+                    return "Услуга не найдена.";
+                }
+
+                var receipt = new StringBuilder();
+                receipt.AppendLine($"Чек для пользователя {user.First_name} {user.Last_name}");
+                receipt.AppendLine($"Услуга: {service.Item_Name}");
+                receipt.AppendLine($"Описание: {service.Item_Description}");
+                receipt.AppendLine($"Цена к оплате: {service.Price}");
+                receipt.AppendLine($"Дата заказа: {order.Order_Date?.ToShortDateString() ?? "Дата не указана"}");
+                receipt.AppendLine("Для оплаты заказа напишите нам");
+                receipt.AppendLine("Спасибо за заказ в EuroBuld!");
+
+                return receipt.ToString();
             }
         }
 

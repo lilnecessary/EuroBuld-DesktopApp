@@ -9,8 +9,8 @@ namespace EuroBuld.Page
     public partial class Authorization : Window
     {
         public static string UserEmail { get; private set; }
-        public static int StaffId { get; private set; }  // Статическое свойство для хранения ID сотрудника
-        public static int? UserID { get; private set; } // Nullable, так как пользователь может быть неавторизованным
+        public static int StaffId { get; private set; }
+        public static int? UserID { get; private set; }
 
         public Authorization()
         {
@@ -29,11 +29,11 @@ namespace EuroBuld.Page
         private void Button_Click_Authoriathion(object sender, RoutedEventArgs e)
         {
             string email = EmailTextBox.Text.Trim();
-            string password = PasswordTextBox.Text.Trim();
+            string password = PasswordBox.Password.Trim();
 
             using (var context = new EuroBuldEntities1())
             {
-                // Проверяем, является ли пользователь сотрудником
+
                 var staffUser = context.Staff
                     .FirstOrDefault(s => s.Email == email && s.Password == password);
 
@@ -43,7 +43,7 @@ namespace EuroBuld.Page
 
                     if (role != null)
                     {
-                        StaffId = staffUser.ID_Staff; // Сохраняем ID сотрудника
+                        StaffId = staffUser.ID_Staff; 
                         if (role.roll_name == "Admin")
                         {
                             AdminPage adminPage = new AdminPage();
@@ -68,14 +68,13 @@ namespace EuroBuld.Page
                 }
                 else
                 {
-                    // Если пользователь не сотрудник, проверяем среди клиентов
                     var user = context.Users
                         .FirstOrDefault(u => u.Email == email && u.Password == password);
 
                     if (user != null)
                     {
-                        UserEmail = user.Email; // Сохраняем Email авторизованного пользователя
-                        Authorization.UserID = user.ID_Users; // Сохраняем ID клиента
+                        UserEmail = user.Email;
+                        Authorization.UserID = user.ID_Users;
 
                         PersonalAccount personalAccount = new PersonalAccount();
                         personalAccount.Show();

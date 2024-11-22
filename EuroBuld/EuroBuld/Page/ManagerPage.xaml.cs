@@ -18,6 +18,7 @@ namespace EuroBuld.Page
             LoadCustomerOrders();
         }
 
+
         private void LoadCustomerOrders()
         {
             var orders = _context.Customer_orders
@@ -27,6 +28,7 @@ namespace EuroBuld.Page
             customerOrdersDataGrid.ItemsSource = orders;
         }
 
+
         private void LoadMyOrders()
         {
             var orders = _context.Processed_customer_orders
@@ -35,6 +37,7 @@ namespace EuroBuld.Page
             UpdateDataGridColumns(orders);
             customerOrdersDataGrid.ItemsSource = orders;
         }
+
 
         private void UpdateDataGridColumns(object data)
         {

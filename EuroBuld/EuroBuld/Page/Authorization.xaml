@@ -37,19 +37,21 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBox Margin="70,293,70,168" TextAlignment="Left" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" Name="PasswordTextBox" >
-                    <TextBox.Template>
-                        <ControlTemplate TargetType="TextBox">
+                <PasswordBox Margin="70,295,70,168" Padding="10,7,0,0" FontSize="15" FontWeight="Bold" Name="PasswordBox" 
+             Foreground="Black">
+                    <PasswordBox.Template>
+                        <ControlTemplate TargetType="PasswordBox">
                             <Border 
-                            Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="23">
-                                <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
+                Background="#FFFFFF" 
+                BorderBrush="#CCCCCC" 
+                BorderThickness="1" 
+                CornerRadius="23">
+                                <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Disabled"/>
                             </Border>
                         </ControlTemplate>
-                    </TextBox.Template>
-                </TextBox>
+                    </PasswordBox.Template>
+                </PasswordBox>
+
 
                 <Button Margin="168,350,0,82" HorizontalAlignment="Left" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold" Click="Button_Click_Authoriathion">
                     <Button.Template>

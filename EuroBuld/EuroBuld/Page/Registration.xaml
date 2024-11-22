@@ -20,7 +20,7 @@
                Opacity="0.6" 
                Stretch="Fill" Margin="478,0,-2,-87"/>
 
-        <Border Background="#DBCCCF" Width="580" Height="500" Margin="116,99,544,98" CornerRadius="45">
+        <Border Background="#DBCCCF" Width="580" Height="500" Margin="116,99,530,70" CornerRadius="45">
             <Grid>
                 <TextBlock Text="Регистрация в аккаунт" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,100,0,100"/>
                 <TextBlock Text="Введите адрес электронной почты" FontSize="15" HorizontalAlignment="Left" Margin="87,157,0,43"/>
@@ -51,13 +51,18 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <Button Margin="0,375,0,57" HorizontalAlignment="Center" Width="230" Height="68" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold" Click="RegisterButton_Click">
+                <CheckBox Margin="129,368,137,110" Name="AcceptCheckBox"/>
+                <TextBlock HorizontalAlignment="Center" Margin="0,366,0,-366">
+                    <Run Text="Я согласен на" Foreground="Gray"/>
+                    <Run Text="Обработку персональных данных" FontWeight="Bold" MouseDown="Button_Click_Accept"/>
+                </TextBlock>
+                <Button Margin="0,390,0,57" HorizontalAlignment="Center" Width="230" Height="55" Foreground="White" Background="#430113" FontSize="15" FontWeight="Bold" Click="RegisterButton_Click">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" 
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}" 
-                                CornerRadius="34">
+                                CornerRadius="30">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Зарегестрироваться"/>
                             </Border>
                         </ControlTemplate>

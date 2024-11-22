@@ -31,15 +31,16 @@ namespace EuroBuld.Page
             LoadManagerOrders();
         }
 
+
         private void LoadManagerOrders()
         {
-            // Загружаем заказы, относящиеся к текущему менеджеру
             var orders = _context.Processed_customer_orders
                 .Where(o => o.ID_Staff == _staffId)
                 .ToList();
             UpdateDataGridColumns(orders);
             managerOrdersDataGrid.ItemsSource = orders;
         }
+
 
         private void UpdateDataGridColumns(object data)
         {
@@ -97,6 +98,7 @@ namespace EuroBuld.Page
                 });
             }
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

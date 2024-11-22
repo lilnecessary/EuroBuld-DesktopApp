@@ -20,7 +20,9 @@ namespace EuroBuld.Page
             _staffId = staffId;
         }
 
+
         public bool IsPasswordCorrect { get; private set; }
+
 
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {

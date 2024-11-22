@@ -334,3 +334,4 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.csproj.Up2Date
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.exe
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\EuroBuld.pdb
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\Resources\PersonalDataProcessingAgreement.doc

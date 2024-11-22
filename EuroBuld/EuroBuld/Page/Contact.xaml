@@ -53,7 +53,7 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-        <StackPanel>
+        <StackPanel Margin="0,0,10,195">
             <TextBlock Text="Оставьте зявку" FontSize="22" FontWeight="Bold" Margin="50,90,550,447"/>
             <TextBlock Text="Имя:" FontSize="22" FontWeight="Bold" Margin="50,-395,550,447"/>
             <TextBlock Text="Фамилия:" FontSize="22" FontWeight="Bold" Margin="260,-475,550,447"/>
