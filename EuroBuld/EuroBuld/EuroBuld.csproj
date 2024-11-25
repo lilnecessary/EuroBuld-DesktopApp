@@ -70,6 +70,8 @@
     <Compile Include="Assets\ServiceViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\StatusColorConverter .cs" />
+    <Compile Include="Assets\User.cs" />
     <Compile Include="DataBase\Customer_orders.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -200,6 +202,16 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="DataBase\Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBase\Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\PersonalDataProcessingAgreement.doc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -328,6 +340,9 @@
     <PackageReference Include="LiveCharts.Wpf">
       <Version>0.9.7</Version>
     </PackageReference>
+    <PackageReference Include="MahApps.Metro">
+      <Version>2.4.10</Version>
+    </PackageReference>
     <PackageReference Include="MaterialDesignColors">
       <Version>3.1.0</Version>
     </PackageReference>
@@ -365,18 +380,6 @@
   <ItemGroup>
     <Resource Include="Image1.png" />
     <Resource Include="Resources\Logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="DataBase\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DataBase\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model1.edmx</DependentUpon>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

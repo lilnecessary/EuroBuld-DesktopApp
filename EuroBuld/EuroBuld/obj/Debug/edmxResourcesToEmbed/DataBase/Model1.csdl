@@ -193,7 +193,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="EuroBuldEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="EuroBuldEntities10" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customer_orders" EntityType="Self.Customer_orders" />
     <EntitySet Name="Foremen" EntityType="Self.Foremen" />
     <EntitySet Name="Processed_customer_orders" EntityType="Self.Processed_customer_orders" />

@@ -24,10 +24,10 @@ namespace EuroBuld.Page
         public PersonalAccount()
         {
             InitializeComponent();
-            EmailTextBlock.Text = Authorization.UserEmail; 
-            LoadUserData();
 
-        }
+			EmailTextBox.Text = Authorization.CurrentUser.Email;
+			PasswordTextBox.Text = Authorization.CurrentUser.Password;
+		}
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -65,31 +65,6 @@ namespace EuroBuld.Page
             this.Close();
         }
         
-
-        private void LoadUserData()
-        {
-            string currentUserEmail = Authorization.UserEmail;
-
-            using (var context = new EuroBuldEntities1())
-            {
-                var user = context.Users.FirstOrDefault(u => u.Email == currentUserEmail);
-                if (user != null)
-                {
-                    NameTextBox.Text = user.First_name;
-                    SurnameTextBox.Text = user.Last_name;
-                    PatronnymicTextBox.Text = user.Patronymic;
-                    PhoneTextBox.Text = user.Number_Phone;
-                    EmailTextBox.Text = user.Email;
-                    PassportTextBox.Text = user.Passport_details;
-                    PasswordTextBox.Text = user.Password;
-                    //AddressTextBox.Text = user.Address;
-                }
-                else
-                {
-                    MessageBox.Show("Пользователь не найден.");
-                }
-            }
-        }
 
 
         private void FormatPhoneNumber()
@@ -151,29 +126,6 @@ namespace EuroBuld.Page
                 return; 
             }
 
-            using (var context = new EuroBuldEntities1())
-            {
-                string currentUserEmail = Authorization.UserEmail;
-                var user = context.Users.FirstOrDefault(u => u.Email == currentUserEmail);
-
-                if (user != null)
-                {
-                    user.First_name = NameTextBox.Text;
-                    user.Last_name = SurnameTextBox.Text;
-                    user.Patronymic = PatronnymicTextBox.Text;
-                    user.Number_Phone = PhoneTextBox.Text;
-                    user.Passport_details = PassportTextBox.Text;
-                    user.Password = PasswordTextBox.Text;
-                    //user.a = AddressTextBox.Text;
-
-                    context.SaveChanges();
-                    MessageBox.Show("Данные обновлены.");
-                }
-                else
-                {
-                    MessageBox.Show("Ошибка обновления данных.");
-                }
-            }
         }
 
 
@@ -194,6 +146,7 @@ namespace EuroBuld.Page
             UserOrder userOrder = new UserOrder();
             userOrder.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -202,8 +155,9 @@ namespace EuroBuld.Page
             HistoryUserOrder historyuserOrder = new HistoryUserOrder();
             historyuserOrder.Show();
             this.Visibility = Visibility.Collapsed;
-        }
+			this.Close();
+		}
 
 
-    }
+	}
 }

@@ -18,7 +18,7 @@
                 <Rectangle Width="500"/>
             </StackPanel>
 
-            <Button Background="#430113"  Content="Войти" FontSize="15" Height="50" Foreground="White" Width="120" FontWeight="Bold" Margin="10,0,0,0" Click="Button_Click_Authorization">
+            <Button Background="#430113" x:Name="LoginButton" Content="Войти" FontSize="15" Height="50" Foreground="White" Width="120" FontWeight="Bold" Margin="10,0,0,0" Click="Button_Click_Authorization">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Border Background="{TemplateBinding Background}" 
@@ -30,7 +30,10 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Background="White" BorderBrush="White" Content="Регистрация" FontSize="15" Height="30" Foreground="#430113" FontWeight="Bold" Margin="10,0,0,0" Click="Button_Click_Registration"/>
+            <TextBlock x:Name="UserEmailTextBlock" FontSize="18" Foreground="#430113" FontWeight="Bold" Margin="5" Visibility="Collapsed" MouseDown="UserEmailTextBlock_MouseDown">
+                <Run Text="Email"/>
+            </TextBlock>
+            <Button Background="White" x:Name="RegistrationButton" BorderBrush="White" Content="Регистрация" FontSize="15" Height="30" Foreground="#430113" FontWeight="Bold" Margin="10,0,0,0" Click="Button_Click_Registration"/>
         </StackPanel>
 
         <Rectangle Width="336" HorizontalAlignment="Left" Margin="42,55,0,526">

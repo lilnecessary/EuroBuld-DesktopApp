@@ -10,13 +10,13 @@ namespace EuroBuld.Page
 {
     public partial class StaffAdd : Window
     {
-        private EuroBuldEntities1 _context;
+        private EuroBuldEntities10 _context;
         private byte[] _image;
 
         public StaffAdd()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities1();
+            _context = new EuroBuldEntities10();
             LoadRoles();
         }
 

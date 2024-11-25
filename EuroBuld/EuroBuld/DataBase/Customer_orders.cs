@@ -30,5 +30,6 @@ namespace EuroBuld.DataBase
         public virtual Users Users { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Processed_customer_orders> Processed_customer_orders { get; set; }
+
     }
 }

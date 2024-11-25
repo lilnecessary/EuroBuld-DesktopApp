@@ -62,7 +62,7 @@ namespace EuroBuld.Page
 
         public async Task<List<ServiceViewModel>> GetAllCarsAsync()
 		{
-			using (var context = new EuroBuldEntities1())
+			using (var context = new EuroBuldEntities10())
 			{
 				return await context.Service.Select(service => new ServiceViewModel
 				{

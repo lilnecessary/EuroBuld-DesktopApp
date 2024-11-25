@@ -13,10 +13,10 @@ namespace EuroBuld.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EuroBuldEntities1 : DbContext
+    public partial class EuroBuldEntities10 : DbContext
     {
-        public EuroBuldEntities1()
-            : base("name=EuroBuldEntities1")
+        public EuroBuldEntities10()
+            : base("name=EuroBuldEntities10")
         {
         }
     

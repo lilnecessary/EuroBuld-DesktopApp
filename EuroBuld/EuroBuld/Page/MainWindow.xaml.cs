@@ -22,19 +22,59 @@ namespace EuroBuld.Page
         public MainWindow()
         {
             InitializeComponent();
-        }
+
+			if (Authorization.CurrentUser != null)
+			{
+				LoginButton.Visibility = Visibility.Collapsed;
+				RegistrationButton.Visibility = Visibility.Collapsed;
+
+				UserEmailTextBlock.Text = Authorization.CurrentUser.Email;
+				UserEmailTextBlock.Visibility = Visibility.Visible;			
+			}
+			else
+			{
+				LoginButton.Visibility = Visibility.Visible;
+				RegistrationButton.Visibility = Visibility.Visible;			
+			}
+		}
 
 
-        private void Button_Click_Authorization(object sender, RoutedEventArgs e)
-        {
-            Authorization authorization = new Authorization();
-            authorization.Show();
-            this.Visibility = Visibility.Collapsed;
-            this.Close();
-        }
+		private void Button_Click_Authorization(object sender, RoutedEventArgs e)
+		{
+			Authorization authorization = new Authorization();
+			authorization.Show();
+			this.Close();
+
+			if (Authorization.CurrentUser != null)
+			{
+				LoginButton.Visibility = Visibility.Collapsed;
+				RegistrationButton.Visibility = Visibility.Collapsed;
+
+				UserEmailTextBlock.Text = Authorization.CurrentUser.Email;
+				UserEmailTextBlock.Visibility = Visibility.Visible;			
+			}
+		}
 
 
-        private void Button_Click_Registration(object sender, RoutedEventArgs e)
+		private void UserEmailTextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+		{
+			PersonalAccount personalAccount = new PersonalAccount();
+			personalAccount.Show();
+			this.Visibility = Visibility.Collapsed;
+			this.Close();
+		}
+
+
+		private void Button_Click_PersonalAccount(object sender, RoutedEventArgs e)
+		{
+			PersonalAccount personalAccount = new PersonalAccount();
+			personalAccount.Show();
+			this.Visibility = Visibility.Collapsed;
+
+		}
+
+
+		private void Button_Click_Registration(object sender, RoutedEventArgs e)
         {
             Registration registration = new Registration();
             registration.Show();
@@ -68,7 +108,5 @@ namespace EuroBuld.Page
             this.Visibility = Visibility.Collapsed;
             this.Close();
         }
-
-
     }
 }

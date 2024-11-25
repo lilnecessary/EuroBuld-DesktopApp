@@ -17,7 +17,8 @@
                             Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="8">
+                            CornerRadius="8"
+                            Padding="0,3,0,0">
                             <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
                         </Border>
                     </ControlTemplate>
@@ -30,7 +31,8 @@
                         <Border 
                             Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="0,3,0,0"
                             CornerRadius="8">
                             <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
                         </Border>
@@ -44,7 +46,8 @@
                         <Border 
                             Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="0,3,0,0"
                             CornerRadius="8">
                             <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
                         </Border>
@@ -59,6 +62,7 @@
                             Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
+                            Padding="0,3,0,0"
                             CornerRadius="8">
                             <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
                         </Border>
@@ -72,7 +76,8 @@
                         <Border 
                             Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Padding="0,3,0,0"
                             CornerRadius="8">
                             <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
                         </Border>
@@ -87,6 +92,7 @@
                             Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
+                            Padding="0,3,0,0"
                             CornerRadius="8">
                             <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
                         </Border>
@@ -101,6 +107,7 @@
                                 Background="{TemplateBinding Background}" 
                                 BorderBrush="{TemplateBinding BorderBrush}" 
                                 BorderThickness="{TemplateBinding BorderThickness}" 
+                                Padding="0,3,0,0"
                                 CornerRadius="8">
                             <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
                         </Border>
@@ -114,7 +121,8 @@
                         <Border 
                                 Background="{TemplateBinding Background}" 
                                 BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="0,3,0,0"
                                 CornerRadius="8">
                             <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Auto"/>
                         </Border>
@@ -127,7 +135,7 @@
                         <Border Background="{TemplateBinding Background}" 
                             BorderBrush="{TemplateBinding BorderBrush}" 
                             BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="8" Height="30">
+                            CornerRadius="8" Height="40">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Отправить"/>
                         </Border>
                     </ControlTemplate>

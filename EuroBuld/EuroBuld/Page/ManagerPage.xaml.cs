@@ -9,12 +9,12 @@ namespace EuroBuld.Page
 {
     public partial class ManagerPage : Window
     {
-        private EuroBuldEntities1 _context;
+        private EuroBuldEntities10 _context;
 
         public ManagerPage()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities1();
+            _context = new EuroBuldEntities10();
             LoadCustomerOrders();
         }
 

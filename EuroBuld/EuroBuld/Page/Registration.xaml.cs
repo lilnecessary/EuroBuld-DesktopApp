@@ -96,7 +96,7 @@ namespace EuroBuld.Page
                 return;
             }
 
-            using (var context = new EuroBuldEntities1())
+            using (var context = new EuroBuldEntities10())
             {
                 var existingUser = context.Users.FirstOrDefault(u => u.Email == email);
                 if (existingUser != null)
@@ -118,6 +118,7 @@ namespace EuroBuld.Page
 
                 Authorization authorizationPage = new Authorization();
                 authorizationPage.Show();
+                this.Close();
             }
         }
 

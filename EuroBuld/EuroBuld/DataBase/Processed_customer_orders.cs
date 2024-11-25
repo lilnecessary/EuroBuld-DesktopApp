@@ -26,5 +26,7 @@ namespace EuroBuld.DataBase
         public virtual Customer_orders Customer_orders { get; set; }
         public virtual Foremen Foremen { get; set; }
         public virtual Staff Staff { get; set; }
+
+
     }
 }

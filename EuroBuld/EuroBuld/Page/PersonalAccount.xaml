@@ -25,9 +25,9 @@
             </Rectangle>
         </StackPanel>
         <StackPanel Margin="0,55,0,0">
-            <Button Background="White" BorderBrush="White" Content="Профиль" FontSize="17" Height="30" Width="100" Margin="0,150,650,0" Foreground="#430113" Click="Button_Click_MainWindow"/>
-            <Button Background="White" BorderBrush="White" Content="Заказы" FontSize="17" Height="30" Width="100" Margin="0,25,650,0" Foreground="#23262F" Click="Button_Click_UserOrder"/>
-            <Button Background="White" BorderBrush="White" Content="История" FontSize="17" Height="30" Width="100" Margin="0,25,650,0" Foreground="#23262F" Click="Button_Click_HistoryUserOrder"/>
+            <Button Background="White" BorderBrush="White" Content="Профиль" FontSize="17" Height="30" Width="100" Margin="0,150,650,0" Foreground="#430113" Click="Button_Click_MainWindow" FontWeight="Bold"/>
+            <Button Background="White" BorderBrush="White" Content="Заказы" FontSize="17" Height="30" Width="100" Margin="0,25,650,0" Foreground="#23262F" Click="Button_Click_UserOrder" FontWeight="Bold"/>
+            <Button Background="White" BorderBrush="White" Content="История" FontSize="17" Height="30" Width="100" Margin="0,25,650,0" Foreground="#23262F" Click="Button_Click_HistoryUserOrder" FontWeight="Bold"/>
         </StackPanel>
         <TextBlock FontSize="28" FontFamily="DM Sans 24pt 24pt Black" FontWeight="Bold" HorizontalAlignment="Left" Margin="535,111,0,377" Width="316"><Run Text="Ваш профиль"/></TextBlock>
         <StackPanel>

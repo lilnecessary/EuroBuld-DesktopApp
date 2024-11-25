@@ -3,6 +3,7 @@ using EuroBuld.DataBase;
 using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.Core.Metadata.Edm;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -23,15 +24,16 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class AdminPage : Window
     {
-        EuroBuldEntities1 _context;
+        EuroBuldEntities10 _context;
 
         public AdminPage()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities1();
+            _context = new EuroBuldEntities10();
             LoadUsers();
             this.DataContext = this;
         }
+
 
         private void LoadData<T>(IQueryable<T> data)
         {
@@ -218,11 +220,26 @@ namespace EuroBuld.Page
             }
         }
 
+
         private void Reports_Click(object sender, RoutedEventArgs e)
         {
             Reports reports = new Reports();
             reports.Show();
             this.Visibility = Visibility.Collapsed;
+        }
+
+
+        private void leave_Click(object sender, RoutedEventArgs e)
+        {
+            var leave = MessageBox.Show($"Вы уверены, что хотите выйти?\nВаша работа может не сохраниться", "Подтверждение выхода", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (leave == MessageBoxResult.Yes)
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Visibility = Visibility.Collapsed;
+                this.Close();
+            }
         }
     }
 
