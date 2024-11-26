@@ -8,12 +8,12 @@ namespace EuroBuld.Page
 {
 	public partial class OrderDetailsWindow : Window
 	{
-		private EuroBuldEntities12 _context;
+		private EuroBuldEntities13 _context;
 
 		public OrderDetailsWindow(int orderId)
 		{
 			InitializeComponent();
-			_context = new EuroBuldEntities12();
+			_context = new EuroBuldEntities13();
 			LoadOrderDetails(orderId);
 		}
 
@@ -53,7 +53,7 @@ namespace EuroBuld.Page
             // Выводим данные пользователя и заказа
             StringBuilder details = new StringBuilder();
             details.AppendLine($"Данные заказа:");
-            details.AppendLine($"Статус: {order.Status}");
+            details.AppendLine($"Статус: {order.Status_Orders.Name_Status ?? "Неизвестно"}");  // Использование Status_Orders для получения статуса
             details.AppendLine($"Дата начала: {order.Date_Start}");
             details.AppendLine($"Дата окончания: {order.Date_Ending}");
             details.AppendLine($"Окончательная сумма: {order.Final_sum}");
@@ -66,6 +66,7 @@ namespace EuroBuld.Page
 
             OrderDetailsTextBlock.Text = details.ToString();
         }
+
 
     }
 }

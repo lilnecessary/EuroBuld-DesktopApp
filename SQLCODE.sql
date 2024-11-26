@@ -2,7 +2,6 @@ CREATE DATABASE EuroBuld;
 
 USE EuroBuld;
 
-
 CREATE TABLE Users (
     ID_Users INT PRIMARY KEY IDENTITY(1,1),
 	Email VARCHAR(40) NOT NULL,
@@ -63,18 +62,24 @@ CREATE TABLE Foremen (
 	Number_phone VARCHAR(20),
 );
 
+CREATE TABLE Status_Orders (
+	ID_Status_Orders INT PRIMARY KEY IDENTITY(1,1),
+	Name_Status VARCHAR(50),
+);
+
 CREATE TABLE Processed_customer_orders (
     ID_Processed_customer_orders INT PRIMARY KEY IDENTITY(1,1),
     ID_Customer_orders INT,
     ID_Staff INT,
     ID_Foreman INT, 
-    Status VARCHAR(20),
+    ID_Status_Orders INT,
     Date_Start DATE,
     Date_Ending DATE,
     Final_sum NVARCHAR(20),
     FOREIGN KEY (ID_Customer_orders) REFERENCES Customer_orders(ID_Customers_orders),
     FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff),
-    FOREIGN KEY (ID_Foreman) REFERENCES Foremen(ID_Foreman)
+    FOREIGN KEY (ID_Foreman) REFERENCES Foremen(ID_Foreman),
+	FOREIGN KEY (ID_Status_Orders) REFERENCES Status_Orders(ID_Status_Orders)
 );
 
 CREATE TABLE Requests (
@@ -92,8 +97,15 @@ CREATE TABLE Requests (
 INSERT INTO Role (roll_name, salary)
 VALUES
 ('Admin', '50000'),
-('SendCheck', '50000'),
-('Manager', '30000');
+('Manager', '50000'),
+('SendCheck', '30000');
+
+INSERT INTO Status_Orders (Name_Status)
+VALUES
+('В процессе'),
+('Выполнен'),
+('Отменен'),
+('Принят');
 
 INSERT INTO Staff (ID_Role, Email, Password, Image, First_name, Last_name, Patronymic, Passport_details, Date_birth, Date_employment)
 VALUES

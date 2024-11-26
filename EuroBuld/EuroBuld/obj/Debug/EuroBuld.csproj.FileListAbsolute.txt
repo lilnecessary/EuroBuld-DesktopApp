@@ -75,7 +75,6 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\His
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\MainWindow.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\ManagerPage.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\ManagersOrders.g.cs
-C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\Orders.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\PasswordWindow.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\PersonalAccount.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\Registration.g.cs
@@ -308,7 +307,6 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\His
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\MainWindow.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\ManagerPage.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\ManagersOrders.baml
-C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\Orders.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\PasswordWindow.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\PersonalAccount.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\Registration.baml
@@ -565,3 +563,7 @@ C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\OrderDetailsWindow.g.c
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\OrderDetailsWindow.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\OrderDetailsWindow.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\OrderDetailsWindow.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\ForemenAdd.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\ForemenAdd.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\StatusOrdersAdd.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\StatusOrdersAdd.baml

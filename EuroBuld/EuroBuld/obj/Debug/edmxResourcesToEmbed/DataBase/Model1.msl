@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities12">
+  <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities13">
     <EntitySetMapping Name="Customer_orders">
       <EntityTypeMapping TypeName="EuroBuldModel.Customer_orders">
         <MappingFragment StoreEntitySet="Customer_orders">
@@ -31,7 +31,7 @@
           <ScalarProperty Name="ID_Customer_orders" ColumnName="ID_Customer_orders" />
           <ScalarProperty Name="ID_Staff" ColumnName="ID_Staff" />
           <ScalarProperty Name="ID_Foreman" ColumnName="ID_Foreman" />
-          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="ID_Status_Orders" ColumnName="ID_Status_Orders" />
           <ScalarProperty Name="Date_Start" ColumnName="Date_Start" />
           <ScalarProperty Name="Date_Ending" ColumnName="Date_Ending" />
           <ScalarProperty Name="Final_sum" ColumnName="Final_sum" />
@@ -89,6 +89,25 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Status_Orders">
+      <EntityTypeMapping TypeName="EuroBuldModel.Status_Orders">
+        <MappingFragment StoreEntitySet="Status_Orders">
+          <ScalarProperty Name="ID_Status_Orders" ColumnName="ID_Status_Orders" />
+          <ScalarProperty Name="Name_Status" ColumnName="Name_Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="EuroBuldModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Users">
       <EntityTypeMapping TypeName="EuroBuldModel.Users">
         <MappingFragment StoreEntitySet="Users">
@@ -104,5 +123,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище EuroBuldModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище EuroBuldModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище EuroBuldModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище EuroBuldModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroBuldModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище EuroBuldModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="EuroBuldModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище EuroBuldModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище EuroBuldModel.sp_upgraddiagrams" />
   </EntityContainerMapping>
 </Mapping>

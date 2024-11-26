@@ -23,41 +23,39 @@ namespace EuroBuld.Page
         }
 
 
-		private void LoadOrders()
-		{
-			using (var context = new EuroBuldEntities12())
-			{
-				int currentUserId = Authorization.CurrentUser.ID_Users;
+        private void LoadOrders()
+        {
+            using (var context = new EuroBuldEntities13())
+            {
+                int currentUserId = Authorization.CurrentUser.ID_Users;
 
-				var allowedStatuses = new[] { "принят", "в процессе" };
+                var allowedStatuses = new[] { "приянт", "в процессе" };
 
-				var orders = context.Processed_customer_orders
-					.Where(order =>
-						order.Customer_orders.ID_Users == currentUserId &&
-						allowedStatuses.Contains(order.Status))
-					.Select(order => new ProcessedOrder
-					{
-						OrderID = order.ID_Processed_customer_orders,
-						OrderDate = order.Date_Start,
-						Status = order.Status ?? "Unknown",
-						DateEnding = order.Date_Ending,
-						FinalSum = order.Final_sum,
-						Items = context.Service
-							.Where(s => s.ID_Service == order.Customer_orders.ID_Service)
-							.Select(s => s.Item_Name).ToList()
-					})
-					.ToList();
+                var orders = context.Processed_customer_orders
+                    .Where(order =>
+                        order.Customer_orders.ID_Users == currentUserId &&
+                        allowedStatuses.Contains(order.Status_Orders.Name_Status))
+                    .Select(order => new ProcessedOrder
+                    {
+                        OrderID = order.ID_Processed_customer_orders,
+                        OrderDate = order.Date_Start,
+                        Status = order.Status_Orders.Name_Status ?? "Unknown", 
+                        DateEnding = order.Date_Ending,
+                        FinalSum = order.Final_sum,
+                        Items = context.Service
+                            .Where(s => s.ID_Service == order.Customer_orders.ID_Service)
+                            .Select(s => s.Item_Name).ToList()
+                    })
+                    .ToList();
 
-				Orders = new ObservableCollection<ProcessedOrder>(orders);
-			}
+                Orders = new ObservableCollection<ProcessedOrder>(orders);
+            }
 
-			OrdersList.ItemsSource = Orders;
-		}
-
-
+            OrdersList.ItemsSource = Orders;
+        }
 
 
-		public class ProcessedOrder
+        public class ProcessedOrder
         {
             public int OrderID { get; set; }
             public DateTime? OrderDate { get; set; }

@@ -20,13 +20,13 @@ namespace EuroBuld.Page
 	/// </summary>
 	public partial class ManagersOrders : Window
     {
-        private EuroBuldEntities12 _context;
+        private EuroBuldEntities13 _context;
         private int _staffId;
 
         public ManagersOrders(int staffId)
         {
             InitializeComponent();
-            _context = new EuroBuldEntities12();
+            _context = new EuroBuldEntities13();
             _staffId = staffId;
             LoadManagerOrders();
         }

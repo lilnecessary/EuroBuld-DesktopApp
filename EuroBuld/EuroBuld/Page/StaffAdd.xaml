@@ -27,7 +27,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBlock Text="Пароль" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Пароль" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <TextBox x:Name="PasswordTextBox" Width="200" Margin="5" Height="25" Padding="3">
                     <TextBox.Template>
                         <ControlTemplate TargetType="{x:Type TextBox}">
@@ -41,7 +41,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBlock Text="Имя" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Имя" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <TextBox x:Name="FirstNameTextBox" Width="200" Margin="5" Height="25" Padding="3">
                     <TextBox.Template>
                         <ControlTemplate TargetType="{x:Type TextBox}">
@@ -55,7 +55,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBlock Text="Фамилия" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Фамилия" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <TextBox x:Name="LastNameTextBox" Width="200" Margin="5" Height="25" Padding="3">
                     <TextBox.Template>
                         <ControlTemplate TargetType="{x:Type TextBox}">
@@ -69,7 +69,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBlock Text="Отчество" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Отчество" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <TextBox x:Name="PatronymicTextBox" Width="200" Margin="5" Height="25" Padding="3">
                     <TextBox.Template>
                         <ControlTemplate TargetType="{x:Type TextBox}">
@@ -83,7 +83,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBlock Text="Паспортные данные" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Паспортные данные" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <TextBox x:Name="PassportTextBox" Width="200" Margin="5" Height="25" Padding="3">
                     <TextBox.Template>
                         <ControlTemplate TargetType="{x:Type TextBox}">
@@ -97,9 +97,9 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBlock Text="Дата рождения" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Дата рождения" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <DatePicker x:Name="BirthDatePicker"/>
-                <TextBlock Text="Дата устройства" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <TextBlock Text="Дата устройства" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <DatePicker x:Name="EmploymentDatePicker"/>
                 <Button Content="Сохранить" Click="AddImage_Click" Width="160" Margin="10" Background="#430113" Foreground="White" Height="40">
                     <Button.Template>

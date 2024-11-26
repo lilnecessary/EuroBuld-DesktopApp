@@ -14,8 +14,8 @@
                 <TextBlock Text="Начальник участка" FontSize="12" Margin="0,10,10,0" HorizontalAlignment="Center"/>
                 <ComboBox Margin="0,10,10,0" x:Name="ForemenComboBox"/>
                 <TextBlock Text="Статус заказа" FontSize="12" Margin="0,10,10,0" HorizontalAlignment="Center"/>
-                <TextBox x:Name="StatusTextBox" Margin="0,10,10,0" Width="200" Height="25"/>
-                <TextBlock Text="Дата начала строительства" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+                <ComboBox Margin="0,10,10,0" x:Name="StatusComboBox"/>
+                <TextBlock Text="Дата начала строительства" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <DatePicker x:Name="BirthDatePicker" Margin="0,10,0,0"/>
                 <TextBlock Text="Дата окончания строительства" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
                 <DatePicker x:Name="EmploymentDatePicker" Margin="0,10,0,0"/>

@@ -8,7 +8,7 @@ namespace EuroBuld.Page
 {
     public partial class TakeAnOrder : Window
     {
-        private EuroBuldEntities12 _context;
+        private EuroBuldEntities13 _context;
         private int _customerOrderId;
         private int _staffId;
 
@@ -17,10 +17,11 @@ namespace EuroBuld.Page
             InitializeComponent();
             _staffId = staffId;
             _customerOrderId = customerOrderId;
-            _context = new EuroBuldEntities12();
+            _context = new EuroBuldEntities13();
             LoadForemenData();
-            
+            LoadStatusData();  // Добавляем вызов загрузки данных статусов
         }
+
 
 
         private void LoadForemenData()
@@ -47,16 +48,35 @@ namespace EuroBuld.Page
         }
 
 
+        private void LoadStatusData()
+        {
+            var statusOrders = _context.Status_Orders
+                                       .Select(s => new
+                                       {
+                                           s.ID_Status_Orders,
+                                           s.Name_Status
+                                       })
+                                       .ToList();
+
+            StatusComboBox.ItemsSource = statusOrders;
+            StatusComboBox.DisplayMemberPath = "Name_Status";
+            StatusComboBox.SelectedValuePath = "ID_Status_Orders";
+        }
+
+
+
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             var selectedForemanId = (int)ForemenComboBox.SelectedValue;
-            var statusText = StatusTextBox.Text;
+            var selectedStatusId = (int)StatusComboBox.SelectedValue;  // Получаем выбранный статус заказа
 
-            if (string.IsNullOrEmpty(statusText))
+            if (selectedStatusId == 0)
             {
-                MessageBox.Show("Пожалуйста, введите статус заказа.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Пожалуйста, выберите статус заказа.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
+            var statusText = StatusComboBox.SelectedItem.ToString(); // Применяем выбранный статус как текст, если нужно
 
             var dateStart = BirthDatePicker.SelectedDate;
             var dateEnd = EmploymentDatePicker.SelectedDate;
@@ -77,7 +97,6 @@ namespace EuroBuld.Page
                 return;
             }
 
-            // Добавляем проверку на дату окончания
             if (dateEnd <= dateStart)
             {
                 MessageBox.Show("Дата окончания не может быть раньше или совпадать с датой начала.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -86,14 +105,14 @@ namespace EuroBuld.Page
 
             try
             {
-                using (var context = new EuroBuldEntities12())
+                using (var context = new EuroBuldEntities13())
                 {
                     Processed_customer_orders processedOrder = new Processed_customer_orders
                     {
                         ID_Customer_orders = _customerOrderId,
                         ID_Staff = _staffId,
                         ID_Foreman = selectedForemanId,
-                        Status = statusText,
+                        ID_Status_Orders = selectedStatusId,  
                         Date_Start = dateStart.Value,
                         Date_Ending = dateEnd.Value,
                         Final_sum = finalSum
@@ -130,5 +149,6 @@ namespace EuroBuld.Page
                 MessageBox.Show($"Произошла ошибка: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
     }
 }

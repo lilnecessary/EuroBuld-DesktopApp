@@ -41,6 +41,7 @@ namespace EuroBuld.Page
 			}
 		}
 
+
 		private ImageSource ByteArrayToImage(byte[] byteArray)
 		{
 			if (byteArray == null)
@@ -57,75 +58,87 @@ namespace EuroBuld.Page
 			}
 		}
 
-		private void Button_Click_Buy(object sender, RoutedEventArgs e)
-		{
-			if (SelectedService == null)
-			{
-				MessageBox.Show("Услуга не выбрана. Повторите попытку.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-				return;
-			}
 
-			if (Authorization.CurrentUser == null)
-			{
-				MessageBox.Show("Пожалуйста, авторизуйтесь перед созданием заказа.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
-				return;
-			}
+        private void Button_Click_Buy(object sender, RoutedEventArgs e)
+        {
+            if (SelectedService == null)
+            {
+                MessageBox.Show("Услуга не выбрана. Повторите попытку.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-			using (var context = new EuroBuldEntities12())
-			{
-				var user = context.Users.FirstOrDefault(u => u.ID_Users == Authorization.CurrentUser.ID_Users);
+            if (Authorization.CurrentUser == null)
+            {
+                MessageBox.Show("Пожалуйста, авторизуйтесь перед созданием заказа.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
+                return;
+            }
 
-				if (user == null || string.IsNullOrEmpty(user.Email))
-				{
-					MessageBox.Show("Не удалось найти пользователя или почта не указана.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-					return;
-				}
+            using (var context = new EuroBuldEntities13())
+            {
+                var user = context.Users.FirstOrDefault(u => u.ID_Users == Authorization.CurrentUser.ID_Users);
 
-				var newOrder = new Customer_orders
-				{
-					ID_Service = SelectedService.ServiceID,
-					ID_Users = Authorization.CurrentUser.ID_Users,
-					Order_Date = DateTime.Now
-				};
+                if (user == null)
+                {
+                    MessageBox.Show("Пользователь не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
 
-				context.Customer_orders.Add(newOrder);
-				context.SaveChanges();
+                if (string.IsNullOrEmpty(user.Email) || string.IsNullOrEmpty(user.Password) ||
+                    string.IsNullOrEmpty(user.First_name) || string.IsNullOrEmpty(user.Last_name) ||
+                    string.IsNullOrEmpty(user.Number_Phone) || string.IsNullOrEmpty(user.Address) ||
+                    string.IsNullOrEmpty(user.Patronymic) || string.IsNullOrEmpty(user.Passport_details))
+                {
+                    MessageBox.Show("Пожалуйста, заполните все обязательные данные в личном кабинете, для оформления заказа.",
+                        "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
+                }
 
-				try
-				{
-					string receipt = GenerateReceipt(newOrder, user);
+                var newOrder = new Customer_orders
+                {
+                    ID_Service = SelectedService.ServiceID,
+                    ID_Users = Authorization.CurrentUser.ID_Users,
+                    Order_Date = DateTime.Now
+                };
 
-					var sendCheckRole = context.Role.FirstOrDefault(r => r.roll_name == "SendCheck");
-					if (sendCheckRole == null)
-					{
-						MessageBox.Show("Роль SendCheck не найдена.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-						return;
-					}
+                context.Customer_orders.Add(newOrder);
+                context.SaveChanges();
 
-					var sendCheckStaff = context.Staff
-						.FirstOrDefault(s => s.ID_Role == sendCheckRole.ID_Role);
+                try
+                {
+                    string receipt = GenerateReceipt(newOrder, user);
 
-					if (sendCheckStaff == null || string.IsNullOrEmpty(sendCheckStaff.Email))
-					{
-						MessageBox.Show("Не удалось найти сотрудника с ролью SendCheck или почта не указана.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-						return;
-					}
+                    var sendCheckRole = context.Role.FirstOrDefault(r => r.roll_name == "SendCheck");
+                    if (sendCheckRole == null)
+                    {
+                        MessageBox.Show("Роль SendCheck не найдена.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
 
-					string sendCheckEmail = sendCheckStaff.Email;
-					string sendCheckEmailPassword = sendCheckStaff.Password;
+                    var sendCheckStaff = context.Staff
+                        .FirstOrDefault(s => s.ID_Role == sendCheckRole.ID_Role);
 
-					SendEmail(user.Email, "Ваш заказ в EuroBuld", receipt, sendCheckEmail, sendCheckEmailPassword);
+                    if (sendCheckStaff == null || string.IsNullOrEmpty(sendCheckStaff.Email))
+                    {
+                        MessageBox.Show("Не удалось найти сотрудника с ролью SendCheck или почта не указана.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                        return;
+                    }
 
-					MessageBox.Show("Заказ успешно сохранён. Чек отправлен на вашу почту.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
-				}
-				catch (Exception ex)
-				{
-					MessageBox.Show($"Ошибка при отправке чека: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-				}
-			}
-		}
+                    string sendCheckEmail = sendCheckStaff.Email;
+                    string sendCheckEmailPassword = sendCheckStaff.Password;
 
-		private void SendEmail(string toEmail, string subject, string body, string sendCheckEmail, string sendCheckEmailPassword)
+                    SendEmail(user.Email, "Ваш заказ в EuroBuld", receipt, sendCheckEmail, sendCheckEmailPassword);
+
+                    MessageBox.Show("Заказ успешно сохранён. Чек отправлен на вашу почту.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при отправке чека: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
+
+
+        private void SendEmail(string toEmail, string subject, string body, string sendCheckEmail, string sendCheckEmailPassword)
 		{
 			try
 			{
@@ -153,9 +166,10 @@ namespace EuroBuld.Page
 			}
 		}
 
+
 		private string GenerateReceipt(Customer_orders order, Users user)
 		{
-			using (var context = new EuroBuldEntities12())
+			using (var context = new EuroBuldEntities13())
 			{
 				var service = context.Service.FirstOrDefault(s => s.ID_Service == order.ID_Service);
 				if (service == null)
@@ -185,6 +199,7 @@ namespace EuroBuld.Page
 			this.Close();
 		}
 
+
 		private void Button_Click_AboutUs(object sender, RoutedEventArgs e)
 		{
 			AboutUs aboutUs = new AboutUs();
@@ -193,6 +208,7 @@ namespace EuroBuld.Page
 			this.Close();
 		}
 
+
 		private void Button_Click_Contact(object sender, RoutedEventArgs e)
 		{
 			Contact contact = new Contact();
@@ -200,6 +216,7 @@ namespace EuroBuld.Page
 			this.Visibility = Visibility.Collapsed;
 			this.Close();
 		}
+
 
 		private void Button_Click(object sender, RoutedEventArgs e)
 		{

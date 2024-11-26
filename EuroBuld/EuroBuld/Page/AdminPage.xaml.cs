@@ -24,12 +24,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class AdminPage : Window
     {
-        EuroBuldEntities12 _context;
+        EuroBuldEntities13 _context;
 
         public AdminPage()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities12();
+            _context = new EuroBuldEntities13();
             LoadUsers();
             this.DataContext = this;
         }
@@ -97,7 +97,22 @@ namespace EuroBuld.Page
             usersDataGrid.Tag = "Role";
         }
 
-       
+
+        private void LoadForemen()
+        {
+            LoadData(_context.Foremen);
+            usersDataGrid.Tag = "Foremen";
+        }
+
+
+
+        private void LoadStatus()
+        {
+            LoadData(_context.Status_Orders);
+            usersDataGrid.Tag = "Status_Orders";
+        }
+
+
         private void Button_Click_Add(object sender, RoutedEventArgs e)
         {
             string currentTable = usersDataGrid.Tag.ToString();
@@ -114,22 +129,24 @@ namespace EuroBuld.Page
                 serviceAddForm.Show();
                 this.Close();
             }
-            //else if (currentTable == "Requests")
-            //{
-            //    RequestAdd requestAddForm = new RequestAdd();
-            //    requestAddForm.Show();
-            //}
+            else if (currentTable == "Foremen")
+            {
+                ForemenAdd foremenAdd = new ForemenAdd();
+                foremenAdd.Show();
+                this.Close();
+            }
             else if (currentTable == "Staff")
             {
                 StaffAdd staffAddForm = new StaffAdd();
                 staffAddForm.Show();
                 this.Close();
             }
-            //else if (currentTable == "Orders")
-            //{
-            //    OrderAdd orderAddForm = new OrderAdd();
-            //    orderAddForm.Show();
-            //}
+            else if (currentTable == "Status_Orders")
+            {
+                Status_Orders status_Orders = new Status_Orders();
+                status_Orders.Show();
+                this.Close();
+            }
             else if (currentTable == "Role")
             {
                 RollAdd roleAddForm = new RollAdd();
@@ -179,6 +196,12 @@ namespace EuroBuld.Page
         }
 
 
+        private void LoadForemen(object sender, RoutedEventArgs e)
+        {
+            LoadForemen();
+        }
+
+
         private void DeleteUser_Click(object sender, RoutedEventArgs e)
         {
             var selectedItem = usersDataGrid.SelectedItem;
@@ -221,14 +244,6 @@ namespace EuroBuld.Page
         }
 
 
-        private void Reports_Click(object sender, RoutedEventArgs e)
-        {
-            Reports reports = new Reports();
-            reports.Show();
-            this.Visibility = Visibility.Collapsed;
-        }
-
-
         private void leave_Click(object sender, RoutedEventArgs e)
         {
             var leave = MessageBox.Show($"Вы уверены, что хотите выйти?\nВаша работа может не сохраниться", "Подтверждение выхода", MessageBoxButton.YesNo, MessageBoxImage.Warning);
@@ -256,6 +271,20 @@ namespace EuroBuld.Page
 				MessageBox.Show($"Ошибка при сохранении изменений: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
 			}
         }
-    }
 
+
+        private void LoadStatus(object sender, RoutedEventArgs e)
+        {
+            LoadStatus();
+        }
+
+
+        private void Load_Reports_Click(object sender, RoutedEventArgs e)
+        {
+            Reports reports = new Reports();
+            reports.Show();
+            this.Visibility = Visibility.Collapsed;
+            this.Close();
+        }
+    }
 }

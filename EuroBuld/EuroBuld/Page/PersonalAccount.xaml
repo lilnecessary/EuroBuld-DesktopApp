@@ -87,7 +87,7 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBox Margin="335,-280,355,259" TextChanged="PhoneTextBox_TextChanged" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PhoneTextBox" Height="28">
+            <TextBox Margin="335,-280,355,259" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PhoneTextBox" Height="28">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}" >
                         <Border Background="{TemplateBinding Background}" 

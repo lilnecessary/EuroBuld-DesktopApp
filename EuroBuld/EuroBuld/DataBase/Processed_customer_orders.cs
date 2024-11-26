@@ -18,7 +18,7 @@ namespace EuroBuld.DataBase
         public Nullable<int> ID_Customer_orders { get; set; }
         public Nullable<int> ID_Staff { get; set; }
         public Nullable<int> ID_Foreman { get; set; }
-        public string Status { get; set; }
+        public Nullable<int> ID_Status_Orders { get; set; }
         public Nullable<System.DateTime> Date_Start { get; set; }
         public Nullable<System.DateTime> Date_Ending { get; set; }
         public string Final_sum { get; set; }
@@ -26,5 +26,6 @@ namespace EuroBuld.DataBase
         public virtual Customer_orders Customer_orders { get; set; }
         public virtual Foremen Foremen { get; set; }
         public virtual Staff Staff { get; set; }
+        public virtual Status_Orders Status_Orders { get; set; }
     }
 }

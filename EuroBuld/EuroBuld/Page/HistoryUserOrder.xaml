@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Заказы пользователя" Height="600" Width="1000">
+        Title="История заказов пользователя" Height="600" Width="1000">
     <Window.Resources>
         <local:StatusColorConverter x:Key="StatusColorConverter"/>
     </Window.Resources>
@@ -38,7 +38,7 @@
                FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"
                Cursor="Hand"/>
         </StackPanel>
-        <TextBlock FontSize="28" FontFamily="DM Sans" FontWeight="Bold" HorizontalAlignment="Center" Margin="50,70,0,0" Text="Ваши заказы"></TextBlock>
+        <TextBlock FontSize="28" FontFamily="DM Sans" FontWeight="Bold" HorizontalAlignment="Center" Margin="50,70,0,0" Text="Ваша история заказов"></TextBlock>
 
         <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="320,120,50,50">
             <ItemsControl x:Name="OrdersList" ItemsSource="{Binding Orders}">
