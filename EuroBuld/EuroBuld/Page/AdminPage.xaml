@@ -6,10 +6,8 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Desktop_Main"
-        Height="600"
-        Width="1000">
-
+        Title="Панель администратора"
+        Height="600" Width="1000">
     <Window.Resources>
         <Style TargetType="DataGrid">
             <Setter Property="AutoGenerateColumns" Value="False" />
@@ -237,6 +235,18 @@
                                     BorderThickness="{TemplateBinding BorderThickness}" 
                                     CornerRadius="10">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Добавить"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Width="100" Margin="20" Background="#430113" Foreground="White" Click="Button_Click_Save" Height="40">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Сохранить"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>

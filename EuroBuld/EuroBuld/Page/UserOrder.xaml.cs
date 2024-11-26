@@ -6,6 +6,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace EuroBuld.Page
@@ -22,35 +23,41 @@ namespace EuroBuld.Page
         }
 
 
-        private void LoadOrders()
-        {
-            using (var context = new EuroBuldEntities10())
-            {
-                int currentUserId = Authorization.CurrentUser.ID_Users;
+		private void LoadOrders()
+		{
+			using (var context = new EuroBuldEntities12())
+			{
+				int currentUserId = Authorization.CurrentUser.ID_Users;
 
-                var orders = context.Processed_customer_orders
-                    .Where(order => order.Customer_orders.ID_Users == currentUserId)
-                    .Select(order => new ProcessedOrder
-                    {
-                        OrderID = order.ID_Processed_customer_orders,
-                        OrderDate = order.Date_Start,
-                        Status = order.Status ?? "Unknown",
-                        DateEnding = order.Date_Ending,
-                        FinalSum = order.Final_sum,
-                        Items = context.Service
-                            .Where(s => s.ID_Service == order.Customer_orders.ID_Service)
-                            .Select(s => s.Item_Name).ToList()
-                    })
-                    .ToList();
+				var allowedStatuses = new[] { "принят", "в процессе" };
 
-                Orders = new ObservableCollection<ProcessedOrder>(orders);
-            }
+				var orders = context.Processed_customer_orders
+					.Where(order =>
+						order.Customer_orders.ID_Users == currentUserId &&
+						allowedStatuses.Contains(order.Status))
+					.Select(order => new ProcessedOrder
+					{
+						OrderID = order.ID_Processed_customer_orders,
+						OrderDate = order.Date_Start,
+						Status = order.Status ?? "Unknown",
+						DateEnding = order.Date_Ending,
+						FinalSum = order.Final_sum,
+						Items = context.Service
+							.Where(s => s.ID_Service == order.Customer_orders.ID_Service)
+							.Select(s => s.Item_Name).ToList()
+					})
+					.ToList();
 
-            OrdersList.ItemsSource = Orders;
-        }
+				Orders = new ObservableCollection<ProcessedOrder>(orders);
+			}
+
+			OrdersList.ItemsSource = Orders;
+		}
 
 
-        public class ProcessedOrder
+
+
+		public class ProcessedOrder
         {
             public int OrderID { get; set; }
             public DateTime? OrderDate { get; set; }
@@ -105,6 +112,18 @@ namespace EuroBuld.Page
         {
             HistoryUserOrder historyUserOrder = new HistoryUserOrder();
             historyUserOrder.Show();
+            this.Close();
         }
-    }
+
+
+		private void TextBlock_MouseDown_MainWindow(object sender, MouseButtonEventArgs e)
+		{
+			Button_Click_PersonalAcount(sender, e);
+		}
+
+		private void TextBlock_MouseDown_HistoryUserOrder(object sender, MouseButtonEventArgs e)
+		{
+			Button_Click_HistoryUserOrder(sender, e);
+		}
+	}
 }

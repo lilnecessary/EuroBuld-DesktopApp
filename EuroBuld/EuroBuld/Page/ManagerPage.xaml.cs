@@ -9,12 +9,12 @@ namespace EuroBuld.Page
 {
     public partial class ManagerPage : Window
     {
-        private EuroBuldEntities10 _context;
+        private EuroBuldEntities12 _context;
 
         public ManagerPage()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities10();
+            _context = new EuroBuldEntities12();
             LoadCustomerOrders();
         }
 
@@ -127,5 +127,18 @@ namespace EuroBuld.Page
                 MessageBox.Show("Пожалуйста, выберите заказ.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
+
+		private void leave_Click(object sender, RoutedEventArgs e)
+		{
+			var leave = MessageBox.Show($"Вы уверены, что хотите выйти?\nВаша работа может не сохраниться", "Подтверждение выхода", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+			if (leave == MessageBoxResult.Yes)
+			{
+				MainWindow mainWindow = new MainWindow();
+				mainWindow.Show();
+				this.Visibility = Visibility.Collapsed;
+				this.Close();
+			}
+		}
     }
 }

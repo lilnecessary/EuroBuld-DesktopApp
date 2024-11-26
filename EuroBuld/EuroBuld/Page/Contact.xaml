@@ -6,8 +6,8 @@
         xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
-         WindowStartupLocation="CenterScreen"
-        Title="Desktop_Main" Height="600" Width="1000">
+        WindowStartupLocation="CenterScreen"
+        Title="Контакты" Height="600" Width="1000">
     
     <Grid>
         <ComboBox x:Name="ServiceComboBox"

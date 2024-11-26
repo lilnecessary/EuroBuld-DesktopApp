@@ -8,9 +8,8 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Desktop_Main"
-        Height="600"
-        Width="1000">
+        Title="Панель отчетов"
+        Height="600" Width="1000">
     <Grid Background="#FFFFFF">
         <StackPanel Background="#E0BFBF" Margin="0,0,795,0"></StackPanel>
         <StackPanel Background="#E0BFBF" Width="200" Margin="2,271,798,0" VerticalAlignment="Top" Height="313">

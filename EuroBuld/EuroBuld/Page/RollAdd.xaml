@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="UserAdd" Height="220" Width="400">
+        Title="Панель добавления должности" Height="220" Width="400">
     <Grid Background="#DBCCCF">
         <StackPanel Margin="0,20,0,-16" HorizontalAlignment="Center">
             <TextBlock Text="Название должности" FontSize="12" Margin="0,0,10,0" HorizontalAlignment="Center"/>

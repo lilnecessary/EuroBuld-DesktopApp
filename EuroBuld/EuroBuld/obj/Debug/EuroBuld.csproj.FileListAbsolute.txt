@@ -555,3 +555,13 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\MahApps.
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\MahApps.Metro.pdb
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\bin\Debug\de\MahApps.Metro.resources.dll
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\bin\Debug\ControlzEx.dll
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\bin\Debug\ControlzEx.pdb
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\bin\Debug\MahApps.Metro.dll
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\bin\Debug\MahApps.Metro.pdb
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\bin\Debug\de\MahApps.Metro.resources.dll
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\OrderDetailsWindow.g.cs
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\OrderDetailsWindow.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\OrderDetailsWindow.g.cs
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\OrderDetailsWindow.baml

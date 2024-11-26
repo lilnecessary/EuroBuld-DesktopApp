@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="UserAdd" Height="400" Width="400">
+        Title="Панель взятия заказа" 
+        Height="400" Width="400">
     <ScrollViewer Background="#DBCCCF" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
         <Grid Background="#DBCCCF">
             <StackPanel Margin="10" HorizontalAlignment="Center">

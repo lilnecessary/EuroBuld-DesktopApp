@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Window1" Height="713px" Width="1240" Top="-22" >
+        Title="Регистрация" Height="713px" Width="1240" Top="-22" >
     <Grid>
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">

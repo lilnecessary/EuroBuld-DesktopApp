@@ -25,7 +25,7 @@ namespace EuroBuld.Assets
                     case "отменен":
                         return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#fa8f8f"));
                     default:
-                        return new SolidColorBrush(Colors.Gray); // Фон по умолчанию
+                        return new SolidColorBrush(Colors.Gray);
                 }
             }
             return new SolidColorBrush(Colors.Transparent);

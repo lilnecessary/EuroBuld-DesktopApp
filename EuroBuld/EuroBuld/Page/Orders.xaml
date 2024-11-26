@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
-                WindowStartupLocation="CenterScreen"
-        Title="Window1" Height="600" Width="1000" Top="-22" >
+        WindowStartupLocation="CenterScreen"
+        Title="Заказы пользователя" Height="600" Width="1000" Top="-22" >
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="50,15,50,0">
             <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold"/>

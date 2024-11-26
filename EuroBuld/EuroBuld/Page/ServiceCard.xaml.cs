@@ -65,14 +65,13 @@ namespace EuroBuld.Page
 				return;
 			}
 
-			// Используем CurrentUser вместо UserID
 			if (Authorization.CurrentUser == null)
 			{
 				MessageBox.Show("Пожалуйста, авторизуйтесь перед созданием заказа.", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
 				return;
 			}
 
-			using (var context = new EuroBuldEntities10())
+			using (var context = new EuroBuldEntities12())
 			{
 				var user = context.Users.FirstOrDefault(u => u.ID_Users == Authorization.CurrentUser.ID_Users);
 
@@ -156,7 +155,7 @@ namespace EuroBuld.Page
 
 		private string GenerateReceipt(Customer_orders order, Users user)
 		{
-			using (var context = new EuroBuldEntities10())
+			using (var context = new EuroBuldEntities12())
 			{
 				var service = context.Service.FirstOrDefault(s => s.ID_Service == order.ID_Service);
 				if (service == null)
@@ -177,7 +176,7 @@ namespace EuroBuld.Page
 			}
 		}
 
-		// Переключение на другие страницы
+
 		private void Button_Click_Service(object sender, RoutedEventArgs e)
 		{
 			Service service = new Service();

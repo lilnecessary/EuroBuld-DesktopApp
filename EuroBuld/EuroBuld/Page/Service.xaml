@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Desktop_Main" Height="700px" Width="1200px" Top="-22">
-
+        Title="Услуги" 
+        Height="700px" Width="1200px" Top="-22">
     <Grid>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="50,15,50,0">
             <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_MainWindow"/>

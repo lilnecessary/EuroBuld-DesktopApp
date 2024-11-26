@@ -3,10 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Desktop_Main"
+        Title="Заказы менеджера"
         Height="600"
         Width="1000">
 
@@ -47,7 +46,6 @@
             <Button Content="Заказы" Margin="0" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" Click="Button_Click"/>
             <Button Content="Мои заказы" Margin="10"  Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5"/>
         </StackPanel>
-
         <Grid Margin="200,0,10,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -56,26 +54,27 @@
             </Grid.RowDefinitions>
 
             <DataGrid x:Name="managerOrdersDataGrid" 
-                      ItemsSource="{Binding}" 
-                      VirtualizingStackPanel.IsVirtualizing="True" 
-                      VirtualizingStackPanel.VirtualizationMode="Recycling" 
-                      Margin="-12,78,-9,90"
-                      HorizontalScrollBarVisibility="Auto"
-                      Grid.Row="1" Grid.RowSpan="2" 
-                      CanUserAddRows="True"
-                      CanUserDeleteRows="True"
-                      IsReadOnly="False"
-                      AutoGenerateColumns="False">
+          ItemsSource="{Binding}" 
+          VirtualizingStackPanel.IsVirtualizing="True" 
+          VirtualizingStackPanel.VirtualizationMode="Recycling" 
+          Margin="-10,85,0,90"
+          HorizontalScrollBarVisibility="Auto"
+          Grid.Row="1" Grid.RowSpan="2" 
+          CanUserAddRows="True"
+          CanUserDeleteRows="True"
+          IsReadOnly="False"
+          AutoGenerateColumns="False"
+          SelectionChanged="ManagerOrdersDataGrid_SelectionChanged">
+                <!-- Столбцы DataGrid -->
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="ID_Заказа" Binding="{Binding ID_Customers_orders}" IsReadOnly="True" Width="100" />
-                    <DataGridTextColumn Header="ID Услуги" Binding="{Binding ID_Service}" Width="100"/>
-                    <DataGridTextColumn Header="ID Пользователя" Binding="{Binding ID_Users}" Width="120"/>
-                    <DataGridTextColumn Header="Дата заказа" Binding="{Binding Order_Date}" Width="120"/>
+                    <DataGridTextColumn Header="Статус" Binding="{Binding Status}" Width="80"/>
+                    <DataGridTextColumn Header="Дата начала" Binding="{Binding Date_Start}" Width="Auto" />
+                    <DataGridTextColumn Header="Дата окончания" Binding="{Binding Date_Ending}" Width="Auto" />
+                    <DataGridTextColumn Header="Окончательная сумма" Binding="{Binding Final_sum}" Width="Auto" />
                 </DataGrid.Columns>
             </DataGrid>
-
             <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10">
-                <Button Width="120" Margin="20" Background="#430113" Foreground="White" Height="40">
+                <Button Width="120" Margin="20" Click="SaveOrder_Click" Background="#430113" Foreground="White" Height="40">
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}" 

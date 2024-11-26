@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="UserAdd" Height="550" Width="400">
+        Title="Панель добавления пользователя" 
+        Height="550" Width="400">
     <Grid Background="#DBCCCF">
         <StackPanel Margin="0,20,0,19" HorizontalAlignment="Center">
             <TextBlock Text="Электронная-почта" FontSize="12" HorizontalAlignment="Center" Margin="0,0,0,0"/>

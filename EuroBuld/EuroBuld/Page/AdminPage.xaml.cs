@@ -24,12 +24,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class AdminPage : Window
     {
-        EuroBuldEntities10 _context;
+        EuroBuldEntities12 _context;
 
         public AdminPage()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities10();
+            _context = new EuroBuldEntities12();
             LoadUsers();
             this.DataContext = this;
         }
@@ -240,6 +240,21 @@ namespace EuroBuld.Page
                 this.Visibility = Visibility.Collapsed;
                 this.Close();
             }
+        }
+
+
+        private void Button_Click_Save(object sender, RoutedEventArgs e)
+        {
+            try
+			{
+				_context.SaveChanges();
+
+				MessageBox.Show("Изменения успешно сохранены!", "Сохранение", MessageBoxButton.OK, MessageBoxImage.Information);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Ошибка при сохранении изменений: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
         }
     }
 

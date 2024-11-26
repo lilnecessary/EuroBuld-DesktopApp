@@ -64,58 +64,6 @@ namespace EuroBuld.Page
             this.Visibility=Visibility.Visible;
             this.Close();
         }
-        
-
-
-        private void FormatPhoneNumber()
-        {
-            string phoneNumber = PhoneTextBox.Text.Trim();
-
-            phoneNumber = phoneNumber.Replace(" ", "").Replace("-", "");
-
-            if (!phoneNumber.StartsWith("+"))
-            {
-               
-                var countryCodes = new Dictionary<string, string>
-                {
-                    { "7", "+7" },   // Россия, Казахстан
-                    { "33", "+373" }, // Молдова
-                    { "44", "+374" }, // Армения
-                    { "50", "+375" }, // Беларусь
-                    { "51", "+992" }, // Таджикистан
-                    { "52", "+996" }, // Кыргызстан
-                    { "53", "+998" }, // Узбекистан
-                    { "54", "+996" }, // Кыргызстан (вариант для короткого префикса)
-                    { "55", "+380" }, // Украина
-                    { "56", "+999" }  // Туркмения (опционально)
-                };
-
-                bool validCountryCode = false;
-
-                foreach (var code in countryCodes.Keys)
-                {
-                    if (phoneNumber.StartsWith(code))
-                    {
-                        validCountryCode = true;
-                        phoneNumber = countryCodes[code] + " " + phoneNumber.Substring(code.Length);
-                        break;
-                    }
-                }
-
-                if (!validCountryCode)
-                {
-                    MessageBox.Show("Неизвестный формат номера.");
-                    return;
-                }
-            }
-
-            PhoneTextBox.Text = Regex.Replace(phoneNumber, @"(\+\d{1,3})(\d{1,3})(\d{1,3})(\d{1,4})(\d+)", "$1 $2 $3 $4 $5");
-        }
-
-        private void PhoneTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            FormatPhoneNumber();
-        }
 
 
         private void Button_Click_DataRefresh(object sender, RoutedEventArgs e)
@@ -159,5 +107,19 @@ namespace EuroBuld.Page
 		}
 
 
+		private void TextBlock_MouseDown_MainWindow(object sender, MouseButtonEventArgs e)
+		{
+			Button_Click_MainWindow(sender, e);
+		}
+
+		private void TextBlock_MouseDown_UserOrder(object sender, MouseButtonEventArgs e)
+		{
+			Button_Click_UserOrder(sender, e); 
+		}
+
+		private void TextBlock_MouseDown_HistoryUserOrder(object sender, MouseButtonEventArgs e)
+		{
+			Button_Click_HistoryUserOrder(sender, e); 
+		}
 	}
 }

@@ -420,7 +420,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="EuroBuldEntities10" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="EuroBuldEntities12" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Customer_orders" EntityType="Self.Customer_orders" />
           <EntitySet Name="Foremen" EntityType="Self.Foremen" />
           <EntitySet Name="Processed_customer_orders" EntityType="Self.Processed_customer_orders" />
@@ -463,7 +463,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities10">
+        <EntityContainerMapping StorageEntityContainer="Хранилище EuroBuldModelContainer" CdmEntityContainer="EuroBuldEntities12">
           <EntitySetMapping Name="Customer_orders">
             <EntityTypeMapping TypeName="EuroBuldModel.Customer_orders">
               <MappingFragment StoreEntitySet="Customer_orders">

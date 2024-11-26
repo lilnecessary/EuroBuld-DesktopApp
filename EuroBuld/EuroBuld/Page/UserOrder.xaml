@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:EuroBuld.Assets"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="UserOrder" Height="600" Width="1000">
+        Title="История заказов пользователя"
+        Height="600" Width="1000">
     <Window.Resources>
-        <!-- Конвертер для изменения цвета статуса -->
         <local:StatusColorConverter x:Key="StatusColorConverter"/>
     </Window.Resources>
     <Grid>
@@ -28,9 +28,18 @@
             </Rectangle>
         </StackPanel>
         <StackPanel Margin="0,55,0,0">
-            <Button Background="White" BorderBrush="White" Content="Профиль" FontSize="17" Height="30" Width="100" Margin="0,150,650,0" Foreground="#23262F" Click="Button_Click_PersonalAcount" FontWeight="Bold"/>
-            <Button Background="White" BorderBrush="White" Content="Заказы" FontSize="17" Height="30" Width="100" Margin="0,25,650,0" Foreground="#430113" FontWeight="Bold"/>
-            <Button Background="White" BorderBrush="White" Content="История" FontSize="17" Height="30" Width="100" Margin="0,25,650,0" Foreground="#23262F" Click="Button_Click_HistoryUserOrder" FontWeight="Bold"/>
+            <TextBlock Foreground="#23262F" Text="Профиль" 
+               FontSize="17" Height="30" Width="100" Margin="0,150,650,0" 
+               FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"
+               MouseDown="TextBlock_MouseDown_MainWindow" Cursor="Hand"/>
+            <TextBlock Foreground="#430113" Text="Заказы" 
+               FontSize="17" Height="30" Width="100" Margin="0,25,650,0" 
+               FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"
+               Cursor="Hand"/>
+            <TextBlock Foreground="#23262F" Text="История" 
+               FontSize="17" Height="30" Width="100" Margin="0,25,650,0" 
+               FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"
+               MouseDown="TextBlock_MouseDown_HistoryUserOrder" Cursor="Hand"/>
         </StackPanel>
         <TextBlock FontSize="28" FontFamily="DM Sans" FontWeight="Bold" HorizontalAlignment="Center" Margin="50,70,0,0" Text="Ваши заказы"></TextBlock>
 

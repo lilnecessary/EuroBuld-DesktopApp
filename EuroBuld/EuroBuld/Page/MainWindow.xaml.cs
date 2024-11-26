@@ -64,16 +64,6 @@ namespace EuroBuld.Page
 			this.Close();
 		}
 
-
-		private void Button_Click_PersonalAccount(object sender, RoutedEventArgs e)
-		{
-			PersonalAccount personalAccount = new PersonalAccount();
-			personalAccount.Show();
-			this.Visibility = Visibility.Collapsed;
-
-		}
-
-
 		private void Button_Click_Registration(object sender, RoutedEventArgs e)
         {
             Registration registration = new Registration();
