@@ -26,24 +26,6 @@ namespace EuroBuld.Page
         }
 
 
-        private void Button_Click_Authorization(object sender, RoutedEventArgs e)
-        {
-            Authorization authorization = new Authorization();
-            authorization.Show();
-            this.Visibility = Visibility.Collapsed;
-            this.Close();
-        }
-
-
-        private void Button_Click_Registration(object sender, RoutedEventArgs e)
-        {
-            Registration registration = new Registration();
-            registration.Show();
-            this.Visibility = Visibility.Collapsed;
-            this.Close();
-        }
-
-
         private void Button_Click_MainWindow(object sender, RoutedEventArgs e)
         {
             MainWindow window = new MainWindow();

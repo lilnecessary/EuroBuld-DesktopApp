@@ -15,6 +15,7 @@
             <Button Background="White" BorderBrush="White" Content="О нас" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Width="55" Click="Button_Click_AboutUs"/>
             <Button Background="White" BorderBrush="White" Content="Контакты" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click"/>
         </StackPanel>
+
         <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,193,0,0">
             <ItemsControl Name="CarsItemsControl" Background="Transparent" Foreground="Black"  Margin="10,0,10,0">
                 <ItemsControl.ItemsPanel>
@@ -26,7 +27,7 @@
                     <DataTemplate>
                         <Border Background="White" BorderBrush="#430113" BorderThickness="1" CornerRadius="15" Margin="20" Width="280" Height="250">
                             <StackPanel>
-                                
+
                                 <Border Height="160" Background="Transparent" CornerRadius="15,15,0,0">
                                     <Image Source="{Binding Image}" Stretch="Uniform" Height="150" Width="350" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                 </Border>

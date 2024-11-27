@@ -7,7 +7,11 @@ using System.Net;
 using System.Text;
 using System.Windows;
 using System.Windows.Media;
+using System.Windows.Controls;
 using System.Windows.Media.Imaging;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Threading.Tasks;
 
 namespace EuroBuld.Page
 {
@@ -18,8 +22,9 @@ namespace EuroBuld.Page
 		public ServiceCard(ServiceViewModel selectedService)
 		{
 			InitializeComponent();
+            LoadCarsAsync();
 
-			if (selectedService == null)
+            if (selectedService == null)
 				throw new ArgumentNullException(nameof(selectedService));
 
 			SelectedService = selectedService;
@@ -42,7 +47,32 @@ namespace EuroBuld.Page
 		}
 
 
-		private ImageSource ByteArrayToImage(byte[] byteArray)
+        public async Task<List<ServiceViewModel>> GetAllCarsAsync()
+        {
+            using (var context = new EuroBuldEntities13())
+            {
+                var allServices = await context.Service
+                    .Select(service => new ServiceViewModel
+                    {
+                        ServiceID = service.ID_Service,
+                        Item_Name = service.Item_Name,
+                        Item_Description = service.Item_Description,
+                        Price = service.Price,
+                        Image = service.Image
+                    })
+                    .ToListAsync();
+
+                var randomServices = allServices
+                    .OrderBy(s => Guid.NewGuid())
+                    .Take(5)
+                    .ToList();
+
+                return randomServices;
+            }
+        }
+
+
+        private ImageSource ByteArrayToImage(byte[] byteArray)
 		{
 			if (byteArray == null)
 				return null;
@@ -134,6 +164,27 @@ namespace EuroBuld.Page
                 {
                     MessageBox.Show($"Ошибка при отправке чека: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+            }
+        }
+
+
+        private async void LoadCarsAsync()
+        {
+            var services = await GetAllCarsAsync();
+            CarsItemsControl.ItemsSource = services.Take(5); 
+        }
+
+
+        private void Button_Click_buy(object sender, RoutedEventArgs e)
+        {
+            var button = sender as Button;
+            var selectedService = button?.DataContext as ServiceViewModel;
+
+            if (selectedService != null)
+            {
+                ServiceCard serviceCard = new ServiceCard(selectedService);
+                serviceCard.Show();
+                this.Visibility = Visibility.Collapsed;
             }
         }
 

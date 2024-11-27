@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Панель добавления товара" 
-        Height="330" Width="400">
+        Height="380" Width="400">
     <Grid Background="#DBCCCF">
         <StackPanel Margin="0,20,0,-16" HorizontalAlignment="Center">
             <TextBlock Text="Название товара" FontSize="12" Margin="0,0,10,0" HorizontalAlignment="Center"/>
@@ -25,7 +25,7 @@
                 </TextBox.Template>
             </TextBox>
             <TextBlock Text="Описание товара" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <TextBox x:Name="DescriptionTextBox" Width="200" Margin="5" Height="25" Padding="3">
+            <TextBox x:Name="DescriptionTextBox" Width="200" Margin="5" Height="60" Padding="3" TextChanged="DescriptionTextBox_TextChanged">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}">
                         <Border 
@@ -38,7 +38,9 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBlock Text="Цена товара" FontSize="12" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+            <TextBlock x:Name="CharacterCountTextBlock" Text="0/200" FontSize="10" HorizontalAlignment="Center" Margin="0,0,0,0"/>
+
+            <TextBlock Text="Цена товара" FontSize="12" HorizontalAlignment="Center" Margin="0,10,10,0"/>
             <TextBox x:Name="PriceTextBox" Width="200" Margin="5" Height="25" Padding="3">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}">

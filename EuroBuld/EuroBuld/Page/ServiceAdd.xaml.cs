@@ -46,6 +46,22 @@ namespace EuroBuld.Page
         }
 
 
+        private void DescriptionTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            const int maxLength = 200;
+            string currentText = DescriptionTextBox.Text;
+
+            if (currentText.Length > maxLength)
+            {
+                DescriptionTextBox.Text = currentText.Substring(0, maxLength);
+                DescriptionTextBox.CaretIndex = maxLength;
+            }
+
+            CharacterCountTextBlock.Text = $"{DescriptionTextBox.Text.Length}/{maxLength}";
+        }
+
+
+
         private async void Send_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrWhiteSpace(NameTextBox.Text) || string.IsNullOrWhiteSpace(DescriptionTextBox.Text) || string.IsNullOrWhiteSpace(PriceTextBox.Text) || _Image == null)

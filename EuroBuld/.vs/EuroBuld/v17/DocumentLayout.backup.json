@@ -3,32 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\statusordersadd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\statusordersadd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\useradd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\useradd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\authorization.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\authorization.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\adminpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\adminpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\eurobuld\\page\\servicecard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\servicecard.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\adminpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\adminpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\servicecard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\servicecard.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\staffadd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\staffadd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\eurobuld\\page\\service.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\service.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\serviceadd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\serviceadd.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|c:\\users\\kazaxx\\documents\\github\\coursework\\eurobuld\\eurobuld\\page\\takeanorder.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\takeanorder.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\eurobuld\\page\\service.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\service.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\eurobuld\\page\\statusordersadd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F2DB3042-2B5B-40AB-A12F-76E4EA62FD45}|EuroBuld\\EuroBuld.csproj|solutionrelative:eurobuld\\page\\statusordersadd.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -43,62 +47,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "StatusOrdersAdd.xaml",
-              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\StatusOrdersAdd.xaml",
-              "RelativeDocumentMoniker": "EuroBuld\\Page\\StatusOrdersAdd.xaml",
-              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\StatusOrdersAdd.xaml",
-              "RelativeToolTip": "EuroBuld\\Page\\StatusOrdersAdd.xaml",
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\MainWindow.xaml",
+              "RelativeToolTip": "EuroBuld\\Page\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-26T16:10:37.846Z",
+              "WhenOpened": "2024-11-27T22:54:28.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "UserAdd.xaml",
-              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\UserAdd.xaml",
-              "RelativeDocumentMoniker": "EuroBuld\\Page\\UserAdd.xaml",
-              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\UserAdd.xaml",
-              "RelativeToolTip": "EuroBuld\\Page\\UserAdd.xaml",
+              "Title": "Authorization.xaml",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Authorization.xaml",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\Authorization.xaml",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Authorization.xaml",
+              "RelativeToolTip": "EuroBuld\\Page\\Authorization.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-26T16:10:34.068Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AdminPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\AdminPage.xaml.cs",
-              "RelativeDocumentMoniker": "EuroBuld\\Page\\AdminPage.xaml.cs",
-              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\AdminPage.xaml.cs",
-              "RelativeToolTip": "EuroBuld\\Page\\AdminPage.xaml.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAIwDkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-26T16:04:46.187Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AdminPage.xaml",
-              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\AdminPage.xaml",
-              "RelativeDocumentMoniker": "EuroBuld\\Page\\AdminPage.xaml",
-              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\AdminPage.xaml",
-              "RelativeToolTip": "EuroBuld\\Page\\AdminPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-26T16:04:31.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "StaffAdd.xaml",
-              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\StaffAdd.xaml",
-              "RelativeDocumentMoniker": "EuroBuld\\Page\\StaffAdd.xaml",
-              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\StaffAdd.xaml",
-              "RelativeToolTip": "EuroBuld\\Page\\StaffAdd.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-26T16:03:48.541Z",
+              "WhenOpened": "2024-11-27T22:54:19.314Z",
               "EditorCaption": ""
             },
             {
@@ -110,20 +77,69 @@
               "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\ServiceAdd.xaml",
               "RelativeToolTip": "EuroBuld\\Page\\ServiceAdd.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-26T16:03:45.32Z",
+              "WhenOpened": "2024-11-27T22:38:05.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ServiceCard.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\ServiceCard.xaml.cs",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\ServiceCard.xaml.cs",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\ServiceCard.xaml.cs",
+              "RelativeToolTip": "EuroBuld\\Page\\ServiceCard.xaml.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAcwEIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T22:22:50.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Service.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Service.xaml.cs",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\Service.xaml.cs",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Service.xaml.cs",
+              "RelativeToolTip": "EuroBuld\\Page\\Service.xaml.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAqwBgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T22:22:35.744Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "StatusOrdersAdd.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\StatusOrdersAdd.xaml.cs",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\StatusOrdersAdd.xaml.cs",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\StatusOrdersAdd.xaml.cs",
+              "RelativeToolTip": "EuroBuld\\Page\\StatusOrdersAdd.xaml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAjwDAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-27T22:21:05.018Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ServiceCard.xaml",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\ServiceCard.xaml",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\ServiceCard.xaml",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\ServiceCard.xaml",
+              "RelativeToolTip": "EuroBuld\\Page\\ServiceCard.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-27T22:01:58.728Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "TakeAnOrder.xaml",
-              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\TakeAnOrder.xaml",
-              "RelativeDocumentMoniker": "EuroBuld\\Page\\TakeAnOrder.xaml",
-              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\TakeAnOrder.xaml",
-              "RelativeToolTip": "EuroBuld\\Page\\TakeAnOrder.xaml",
+              "Title": "Service.xaml",
+              "DocumentMoniker": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Service.xaml",
+              "RelativeDocumentMoniker": "EuroBuld\\Page\\Service.xaml",
+              "ToolTip": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\Page\\Service.xaml",
+              "RelativeToolTip": "EuroBuld\\Page\\Service.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-26T16:03:16.515Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-27T22:01:49.826Z"
             }
           ]
         }

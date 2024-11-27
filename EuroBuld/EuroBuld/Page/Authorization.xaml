@@ -29,9 +29,9 @@
                     <TextBox.Template>
                         <ControlTemplate TargetType="TextBox" >
                             <Border Background="{TemplateBinding Background}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            CornerRadius="23">
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="23">
                                 <ScrollViewer x:Name="PART_ContentHost"/>
                             </Border>
                         </ControlTemplate>
@@ -42,10 +42,10 @@
                     <PasswordBox.Template>
                         <ControlTemplate TargetType="PasswordBox">
                             <Border 
-                Background="#FFFFFF" 
-                BorderBrush="#CCCCCC" 
-                BorderThickness="1" 
-                CornerRadius="23">
+                                Background="#FFFFFF" 
+                                BorderBrush="#CCCCCC" 
+                                BorderThickness="1" 
+                                CornerRadius="23">
                                 <ScrollViewer x:Name="PART_ContentHost" HorizontalScrollBarVisibility="Disabled"/>
                             </Border>
                         </ControlTemplate>
