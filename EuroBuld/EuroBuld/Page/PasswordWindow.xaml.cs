@@ -10,13 +10,13 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class PasswordWindow : Window
     {
-        private EuroBuldEntities13 _context;
+        private EuroBuldEntities14 _context;
         private int _staffId;
 
         public PasswordWindow(int staffId)
         {
             InitializeComponent();
-            _context = new EuroBuldEntities13();
+            _context = new EuroBuldEntities14();
             _staffId = staffId;
         }
 

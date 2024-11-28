@@ -29,9 +29,9 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-        <TextBlock x:Name="ServiceNameText" Margin="550,110,10,276" FontSize="28" FontWeight="Bold" Foreground="#430113"/>
-        <TextBlock x:Name="ServicePriceText" Margin="550,160,10,359" FontSize="25" FontWeight="Bold" Foreground="#430113"/>
-        <TextBlock x:Name="ServiceDescriptionText" Margin="550,200,10,359" FontSize="20" Text="{Binding Item_Description}" Foreground="#430113"/>
+        <TextBlock x:Name="ServiceNameText" Margin="550,110,10,450" FontSize="28" FontWeight="Bold" Foreground="#430113"/>
+        <TextBlock x:Name="ServicePriceText" Margin="550,160,10,450" FontSize="25" FontWeight="Bold" Foreground="#430113"/>
+        <TextBlock x:Name="ServiceDescriptionText" Margin="550,200,10,450" FontSize="20" Text="{Binding Item_Description}" Foreground="#430113" TextWrapping="Wrap"/>
         <TextBlock Text="Похожие товары" FontSize="15" FontWeight="Bold" Foreground="#430113" HorizontalAlignment="Left" Margin="75,465,10,10"/>
         <ItemsControl Name="CarsItemsControl" Background="Transparent" Foreground="Black" Margin="10,480,10,0" HorizontalAlignment="Center">
             <ItemsControl.ItemsPanel>

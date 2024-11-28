@@ -96,7 +96,7 @@ namespace EuroBuld.Page
                 return;
             }
 
-            using (var context = new EuroBuldEntities13())
+            using (var context = new EuroBuldEntities14())
             {
                 var existingUser = context.Users.FirstOrDefault(u => u.Email == email);
                 if (existingUser != null)

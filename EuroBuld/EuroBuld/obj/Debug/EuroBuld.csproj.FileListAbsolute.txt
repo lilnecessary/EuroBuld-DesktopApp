@@ -330,7 +330,6 @@ C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\EuroBuld.csproj.SuggestedBi
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\EuroBuld.exe.config
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\HistoryUserOrder.g.cs
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\ManagersOrders.g.cs
-C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\Orders.g.cs
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\PasswordWindow.g.cs
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\Reports.g.cs
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\RollAdd.g.cs
@@ -538,7 +537,6 @@ C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\bin\Debug\Xceed.Pdf.dll
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\bin\Debug\Xceed.Words.NET.dll
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\HistoryUserOrder.baml
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\ManagersOrders.baml
-C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\Orders.baml
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\PasswordWindow.baml
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\Reports.baml
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\RollAdd.baml
@@ -567,3 +565,7 @@ C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\For
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\ForemenAdd.baml
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\StatusOrdersAdd.g.cs
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\StatusOrdersAdd.baml
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\ForemenAdd.g.cs
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\StatusOrdersAdd.g.cs
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\ForemenAdd.baml
+C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\StatusOrdersAdd.baml

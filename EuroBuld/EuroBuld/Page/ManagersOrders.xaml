@@ -6,11 +6,9 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Заказы менеджера"
-        Height="600"
-        Width="1000">
+        Height="600" Width="1000">
 
     <Window.Resources>
-        <!-- Стиль для DataGrid -->
         <Style TargetType="DataGrid">
             <Setter Property="AutoGenerateColumns" Value="False" />
             <Setter Property="HeadersVisibility" Value="Column" />
@@ -63,8 +61,7 @@
                   CanUserAddRows="True"
                   CanUserDeleteRows="True"
                   IsReadOnly="False"
-                  AutoGenerateColumns="False"
-                  SelectionChanged="ManagerOrdersDataGrid_SelectionChanged">
+                  AutoGenerateColumns="False">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Статус" Binding="{Binding Status_Orders.Name_Status}" Width="Auto"/>
                     <DataGridTextColumn Header="Дата начала" Binding="{Binding Date_Start}" Width="Auto" />
@@ -81,6 +78,18 @@
                                     BorderThickness="{TemplateBinding BorderThickness}" 
                                     CornerRadius="10">
                                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Сохранить заказ"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Width="120" Margin="20" Click="Orderdetails_Click" Background="#430113" Foreground="White" Height="40">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                CornerRadius="10">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Content="Подробнее"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>

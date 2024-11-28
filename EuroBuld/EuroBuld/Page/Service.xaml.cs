@@ -44,7 +44,7 @@ namespace EuroBuld.Page
 
         public async Task<List<ServiceViewModel>> GetAllCarsAsync()
 		{
-			using (var context = new EuroBuldEntities13())
+			using (var context = new EuroBuldEntities14())
 			{
 				return await context.Service.Select(service => new ServiceViewModel
 				{
@@ -76,7 +76,37 @@ namespace EuroBuld.Page
         }
 
 
-        private void Button_Click_buy(object sender, RoutedEventArgs e)
+		private async void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
+		{
+			string searchText = SearchTextBox.Text.ToLower();  // Получаем текст для поиска и приводим его к нижнему регистру
+			var services = await GetFilteredAndSortedServicesAsync(searchText);  // Фильтруем и сортируем данные
+			CarsItemsControl.ItemsSource = services;  // Обновляем источник данных
+		}
+
+		public async Task<List<ServiceViewModel>> GetFilteredAndSortedServicesAsync(string searchText)
+		{
+			using (var context = new EuroBuldEntities14())
+			{
+				// Получаем все услуги и фильтруем по названию, если оно содержит введенный текст
+				var services = context.Service
+									  .Where(service => service.Item_Name.ToLower().Contains(searchText)) // Фильтрация
+									  .OrderBy(service => service.Item_Name) // Сортировка по названию
+									  .Select(service => new ServiceViewModel
+									  {
+										  ServiceID = service.ID_Service,
+										  Item_Name = service.Item_Name,
+										  Item_Description = service.Item_Description,
+										  Price = service.Price,
+										  Image = service.Image
+									  })
+									  .ToListAsync();
+
+				return await services;
+			}
+		}
+
+		
+		private void Button_Click_buy(object sender, RoutedEventArgs e)
         {
             var button = sender as Button;
             var selectedService = button?.DataContext as ServiceViewModel;  

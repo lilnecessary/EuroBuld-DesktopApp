@@ -20,13 +20,14 @@ namespace EuroBuld.Page
 	/// </summary>
 	public partial class ManagersOrders : Window
     {
-        private EuroBuldEntities13 _context;
+        private EuroBuldEntities14 _context;
         private int _staffId;
 
-        public ManagersOrders(int staffId)
+
+		public ManagersOrders(int staffId)
         {
             InitializeComponent();
-            _context = new EuroBuldEntities13();
+            _context = new EuroBuldEntities14();
             _staffId = staffId;
             LoadManagerOrders();
         }
@@ -49,20 +50,11 @@ namespace EuroBuld.Page
         }
 
 
-		private void ManagerOrdersDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-		{
-			if (managerOrdersDataGrid.SelectedItem != null)
-			{
-				var selectedOrder = (Processed_customer_orders)managerOrdersDataGrid.SelectedItem;
-				ShowOrderDetails(selectedOrder);
-			}
-		}
-
-		private void ShowOrderDetails(Processed_customer_orders order)
-		{
-			var orderDetailsWindow = new OrderDetailsWindow(order.ID_Processed_customer_orders);
-			orderDetailsWindow.Show();
-		}
+		//private void ShowOrderDetails(Processed_customer_orders order)
+		//{
+		//	var orderDetailsWindow = new OrderDetailsWindow(order.ID_Processed_customer_orders);
+		//	orderDetailsWindow.Show();
+		//}
 
 
 
@@ -77,6 +69,27 @@ namespace EuroBuld.Page
 			catch (Exception ex)
 			{
 				MessageBox.Show($"Ошибка при сохранении изменений: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+
+		private void Orderdetails_Click(object sender, RoutedEventArgs e)
+		{
+			// Проверяем, был ли выбран заказ в DataGrid
+			if (managerOrdersDataGrid.SelectedItem != null)
+			{
+				// Получаем выбранный заказ
+				var selectedOrder = (Processed_customer_orders)managerOrdersDataGrid.SelectedItem;
+
+				// Создаем окно OrderDetailsWindow и передаем в него ID выбранного заказа
+				var orderDetailsWindow = new OrderDetailsWindow(selectedOrder.ID_Processed_customer_orders);
+
+				// Открываем окно
+				orderDetailsWindow.Show();
+			}
+			else
+			{
+				// Если заказ не выбран, выводим сообщение
+				MessageBox.Show("Пожалуйста, выберите заказ для просмотра деталей.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
 			}
 		}
 

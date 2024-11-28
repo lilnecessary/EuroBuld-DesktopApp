@@ -1,6 +1,7 @@
 ﻿using EuroBuld.DataBase;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -24,12 +25,35 @@ namespace EuroBuld.Page
         public PersonalAccount()
         {
             InitializeComponent();
+			LoadUserData();
 
 			EmailTextBox.Text = Authorization.CurrentUser.Email;
 			PasswordTextBox.Text = Authorization.CurrentUser.Password;
 		}
 
 
+		private void LoadUserData()
+		{
+			try
+			{
+				var currentUser = Authorization.CurrentUser;
+
+				NameTextBox.Text = currentUser.First_name;
+				SurnameTextBox.Text = currentUser.Last_name;
+				PatronnymicTextBox.Text = currentUser.Patronymic;
+				PhoneTextBox.Text = currentUser.Phone;
+				PassportTextBox.Text = currentUser.Passport_details;
+				EmailTextBox.Text = currentUser.Email;
+				AddressTextBox.Text = currentUser.Addres;
+				PasswordTextBox.Text = currentUser.Password;
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Ошибка загрузки данных: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
+		
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Contact contact = new Contact();
@@ -66,18 +90,60 @@ namespace EuroBuld.Page
         }
 
 
-        private void Button_Click_DataRefresh(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(PasswordTextBox.Text))
-            {
-                MessageBox.Show("Пароль не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return; 
-            }
+		private void Button_Click_DataRefresh(object sender, RoutedEventArgs e)
+		{
+			try
+			{
+				if (string.IsNullOrWhiteSpace(PasswordTextBox.Text))
+				{
+					MessageBox.Show("Пароль не может быть пустым.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
+					return;
+				}
 
-        }
+				var currentUser = Authorization.CurrentUser;
+				currentUser.First_name = NameTextBox.Text.Trim();
+				currentUser.Last_name = SurnameTextBox.Text.Trim();
+				currentUser.Patronymic = PatronnymicTextBox.Text.Trim();
+				currentUser.Phone = PhoneTextBox.Text.Trim();
+				currentUser.Passport_details = PassportTextBox.Text.Trim();
+				currentUser.Email = EmailTextBox.Text.Trim();
+				currentUser.Addres = AddressTextBox.Text.Trim();
+				currentUser.Password = PasswordTextBox.Text.Trim();
+
+				using (var db = new EuroBuldEntities14())
+				{
+					var userInDb = db.Users.Find(currentUser.ID_Users);
+					if (userInDb != null)
+					{
+						userInDb.First_name = currentUser.First_name;
+						userInDb.Last_name = currentUser.Last_name;
+						userInDb.Email = currentUser.Email;
+						userInDb.Password = currentUser.Password;
+
+						db.SaveChanges();
+						MessageBox.Show("Данные успешно обновлены.", "Успех", MessageBoxButton.OK, MessageBoxImage.Information);
+					}
+					else
+					{
+						MessageBox.Show("Пользователь не найден.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+					}
+				}
+
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show($"Ошибка обновления данных: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+			}
+		}
 
 
-        private void Button_Click_СleatTextBox(object sender, RoutedEventArgs e)
+		private bool IsValidEmail(string email)
+		{
+			return Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
+		}
+
+
+		private void Button_Click_СleatTextBox(object sender, RoutedEventArgs e)
         {
             NameTextBox.Clear();
             SurnameTextBox.Clear();
@@ -111,11 +177,13 @@ namespace EuroBuld.Page
 		{
 			Button_Click_MainWindow(sender, e);
 		}
+        
 
 		private void TextBlock_MouseDown_UserOrder(object sender, MouseButtonEventArgs e)
 		{
 			Button_Click_UserOrder(sender, e); 
 		}
+
 
 		private void TextBlock_MouseDown_HistoryUserOrder(object sender, MouseButtonEventArgs e)
 		{

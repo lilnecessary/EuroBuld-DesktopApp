@@ -24,12 +24,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class AdminPage : Window
     {
-        EuroBuldEntities13 _context;
+        EuroBuldEntities14 _context;
 
         public AdminPage()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities13();
+            _context = new EuroBuldEntities14();
             LoadUsers();
             this.DataContext = this;
         }

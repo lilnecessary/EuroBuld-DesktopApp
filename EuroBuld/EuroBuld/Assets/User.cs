@@ -16,5 +16,6 @@ namespace EuroBuld.Assets
 		public string Phone { get; set; }
 		public string Passport_details { get; set; }
 		public string Password { get; set; }
+		public string Addres { get; internal set; }
 	}
 }
