@@ -13,10 +13,10 @@ namespace EuroBuld.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class EuroBuldEntities14 : DbContext
+    public partial class EuroBuldEntities15 : DbContext
     {
-        public EuroBuldEntities14()
-            : base("name=EuroBuldEntities14")
+        public EuroBuldEntities15()
+            : base("name=EuroBuldEntities15")
         {
         }
     
@@ -33,6 +33,7 @@ namespace EuroBuld.DataBase
         public virtual DbSet<Service> Service { get; set; }
         public virtual DbSet<Staff> Staff { get; set; }
         public virtual DbSet<Status_Orders> Status_Orders { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<Users> Users { get; set; }
     }
 }

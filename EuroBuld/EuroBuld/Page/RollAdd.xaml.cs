@@ -21,11 +21,11 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class RollAdd : Window
     {
-        private EuroBuldEntities14 _context;
+        private EuroBuldEntities15 _context;
         public RollAdd()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities14();
+            _context = new EuroBuldEntities15();
         }
 
         private void SendRoll_Click(object sender, RoutedEventArgs e)

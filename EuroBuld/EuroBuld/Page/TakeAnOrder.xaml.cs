@@ -8,7 +8,7 @@ namespace EuroBuld.Page
 {
     public partial class TakeAnOrder : Window
     {
-        private EuroBuldEntities14 _context;
+        private EuroBuldEntities15 _context;
         private int _customerOrderId;
         private int _staffId;
 
@@ -17,11 +17,10 @@ namespace EuroBuld.Page
             InitializeComponent();
             _staffId = staffId;
             _customerOrderId = customerOrderId;
-            _context = new EuroBuldEntities14();
+            _context = new EuroBuldEntities15();
             LoadForemenData();
-            LoadStatusData();  // Добавляем вызов загрузки данных статусов
+            LoadStatusData();  
         }
-
 
 
         private void LoadForemenData()
@@ -64,11 +63,10 @@ namespace EuroBuld.Page
         }
 
 
-
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             var selectedForemanId = (int)ForemenComboBox.SelectedValue;
-            var selectedStatusId = (int)StatusComboBox.SelectedValue;  // Получаем выбранный статус заказа
+            var selectedStatusId = (int)StatusComboBox.SelectedValue; 
 
             if (selectedStatusId == 0)
             {
@@ -76,7 +74,7 @@ namespace EuroBuld.Page
                 return;
             }
 
-            var statusText = StatusComboBox.SelectedItem.ToString(); // Применяем выбранный статус как текст, если нужно
+            var statusText = StatusComboBox.SelectedItem.ToString();
 
             var dateStart = BirthDatePicker.SelectedDate;
             var dateEnd = EmploymentDatePicker.SelectedDate;
@@ -105,7 +103,7 @@ namespace EuroBuld.Page
 
             try
             {
-                using (var context = new EuroBuldEntities14())
+                using (var context = new EuroBuldEntities15())
                 {
                     Processed_customer_orders processedOrder = new Processed_customer_orders
                     {

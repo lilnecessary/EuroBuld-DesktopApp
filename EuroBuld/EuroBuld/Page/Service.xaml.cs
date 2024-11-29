@@ -44,7 +44,7 @@ namespace EuroBuld.Page
 
         public async Task<List<ServiceViewModel>> GetAllCarsAsync()
 		{
-			using (var context = new EuroBuldEntities14())
+			using (var context = new EuroBuldEntities15())
 			{
 				return await context.Service.Select(service => new ServiceViewModel
 				{
@@ -78,19 +78,19 @@ namespace EuroBuld.Page
 
 		private async void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
 		{
-			string searchText = SearchTextBox.Text.ToLower();  // Получаем текст для поиска и приводим его к нижнему регистру
-			var services = await GetFilteredAndSortedServicesAsync(searchText);  // Фильтруем и сортируем данные
-			CarsItemsControl.ItemsSource = services;  // Обновляем источник данных
+			string searchText = SearchTextBox.Text.ToLower();
+			var services = await GetFilteredAndSortedServicesAsync(searchText);  
+			CarsItemsControl.ItemsSource = services; 
 		}
+
 
 		public async Task<List<ServiceViewModel>> GetFilteredAndSortedServicesAsync(string searchText)
 		{
-			using (var context = new EuroBuldEntities14())
+			using (var context = new EuroBuldEntities15())
 			{
-				// Получаем все услуги и фильтруем по названию, если оно содержит введенный текст
 				var services = context.Service
-									  .Where(service => service.Item_Name.ToLower().Contains(searchText)) // Фильтрация
-									  .OrderBy(service => service.Item_Name) // Сортировка по названию
+									  .Where(service => service.Item_Name.ToLower().Contains(searchText)) 
+									  .OrderBy(service => service.Item_Name) 
 									  .Select(service => new ServiceViewModel
 									  {
 										  ServiceID = service.ID_Service,

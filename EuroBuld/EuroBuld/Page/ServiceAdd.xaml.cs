@@ -23,12 +23,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class ServiceAdd : Window
     {
-        EuroBuldEntities14 _context;
+        EuroBuldEntities15 _context;
         private byte[] _Image;
         public ServiceAdd()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities14();
+            _context = new EuroBuldEntities15();
         }
 
         private void AddImage(object sender, RoutedEventArgs e)

@@ -71,7 +71,7 @@
     </Key>
     <Property Name="ID_Service" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Item_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Item_Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Item_Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Price" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" Nullable="false" />
     <NavigationProperty Name="Customer_orders" Relationship="Self.FK__Customer___ID_Se__52593CB8" FromRole="Service" ToRole="Customer_orders" />
@@ -102,6 +102,16 @@
     <Property Name="ID_Status_Orders" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Processed_customer_orders" Relationship="Self.FK__Processed__ID_St__5CD6CB2B" FromRole="Status_Orders" ToRole="Processed_customer_orders" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="Users">
     <Key>
@@ -214,7 +224,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="EuroBuldEntities14" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="EuroBuldEntities15" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Customer_orders" EntityType="Self.Customer_orders" />
     <EntitySet Name="Foremen" EntityType="Self.Foremen" />
     <EntitySet Name="Processed_customer_orders" EntityType="Self.Processed_customer_orders" />
@@ -223,6 +233,7 @@
     <EntitySet Name="Service" EntityType="Self.Service" />
     <EntitySet Name="Staff" EntityType="Self.Staff" />
     <EntitySet Name="Status_Orders" EntityType="Self.Status_Orders" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="Users" EntityType="Self.Users" />
     <AssociationSet Name="FK__Customer___ID_Se__52593CB8" Association="Self.FK__Customer___ID_Se__52593CB8">
       <End Role="Service" EntitySet="Service" />

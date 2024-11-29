@@ -569,3 +569,5 @@ C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\ForemenAdd.g.cs
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\StatusOrdersAdd.g.cs
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\ForemenAdd.baml
 C:\Users\090TYPE\Desktop\EuroBuld\EuroBuld\obj\Debug\Page\StatusOrdersAdd.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\VerifyCodeWindow.baml
+C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\obj\Debug\Page\VerifyCodeWindow.g.cs

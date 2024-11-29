@@ -8,12 +8,12 @@ namespace EuroBuld.Page
 {
 	public partial class OrderDetailsWindow : Window
 	{
-		private EuroBuldEntities14 _context;
+		private EuroBuldEntities15 _context;
 
 		public OrderDetailsWindow(int orderId)
 		{
 			InitializeComponent();
-			_context = new EuroBuldEntities14();
+			_context = new EuroBuldEntities15();
 			LoadOrderDetails(orderId);
 		}
 

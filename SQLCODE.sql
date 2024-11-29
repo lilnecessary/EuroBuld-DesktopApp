@@ -5,7 +5,7 @@ USE EuroBuld;
 CREATE TABLE Users (
     ID_Users INT PRIMARY KEY IDENTITY(1,1),
 	Email VARCHAR(40) NOT NULL,
-    Password VARCHAR(20) NOT NULL,
+    Password VARCHAR(50) NOT NULL,
 	Number_Phone VARCHAR(20),
 	Address VARCHAR(20),
     First_name VARCHAR(20),

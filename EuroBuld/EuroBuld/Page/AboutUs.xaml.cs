@@ -39,15 +39,20 @@ namespace EuroBuld.Page
 
         private void LoadStaff()
         {
-            using (var context = new EuroBuldEntities14())
+            using (var context = new EuroBuldEntities15())
             {
                 var staffList = context.Staff
-                    .Select(s => new StaffInfo
+                    .Join(context.Role,
+                          staff => staff.ID_Role,
+                          role => role.ID_Role,
+                          (staff, role) => new { staff, role })
+                    .Where(sr => sr.role.roll_name != "SendCheck")
+                    .Select(sr => new StaffInfo
                     {
-                        First_name = s.First_name,
-                        Last_name = s.Last_name,
-                        Image = s.Image,
-                        ID_Role = s.ID_Role
+                        First_name = sr.staff.First_name,
+                        Last_name = sr.staff.Last_name,
+                        Image = sr.staff.Image,
+                        ID_Role = sr.staff.ID_Role
                     })
                     .OrderBy(r => Guid.NewGuid())
                     .Take(4)
@@ -58,7 +63,7 @@ namespace EuroBuld.Page
         }
 
 
-        private void DisplayStaff(List<StaffInfo> staffList, EuroBuldEntities14 context)
+        private void DisplayStaff(List<StaffInfo> staffList, EuroBuldEntities15 context)
         {
             foreach (var staffMember in staffList)
             {

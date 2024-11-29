@@ -66,6 +66,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Assets\BoolToVisibilityConverter.cs" />
     <Compile Include="Assets\ByteArrayToImageSourceConverter .cs" />
     <Compile Include="Assets\ServiceViewModel.cs" />
   </ItemGroup>
@@ -109,6 +110,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Status_Orders.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBase\sysdiagrams.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBase\Users.cs">
@@ -182,6 +186,9 @@
     </Compile>
     <Compile Include="Page\UserOrder.xaml.cs">
       <DependentUpon>UserOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Page\VerifyCodeWindow.xaml.cs">
+      <DependentUpon>VerifyCodeWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -318,6 +325,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Page\UserOrder.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Page\VerifyCodeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

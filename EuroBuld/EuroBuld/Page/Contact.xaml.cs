@@ -19,7 +19,7 @@ namespace EuroBuld.Page
 
         private void LoadServices()
         {
-            using (var context = new EuroBuldEntities14())
+            using (var context = new EuroBuldEntities15())
             {
                 var services = context.Service.ToList();
                 ServiceComboBox.ItemsSource = services;
@@ -73,7 +73,7 @@ namespace EuroBuld.Page
 
         private void SubmitRequestButton_Click(object sender, RoutedEventArgs e)
         {
-            using (var context = new EuroBuldEntities14())
+            using (var context = new EuroBuldEntities15())
             {
                 var request = new Requests
                 {
