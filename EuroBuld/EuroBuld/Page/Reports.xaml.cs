@@ -346,7 +346,7 @@ namespace EuroBuld.Page
                         usersSheet.Cells[userRow, 2].Value = user.Email;
                         usersSheet.Cells[userRow, 3].Value = user.Password;
                         usersSheet.Cells[userRow, 4].Value = user.Number_Phone;
-                        //usersSheet.Cells[userRow, 5].Value = user.Address;
+                        usersSheet.Cells[userRow, 5].Value = user.Address;
                         usersSheet.Cells[userRow, 6].Value = user.First_name;
                         usersSheet.Cells[userRow, 7].Value = user.Last_name;
                         usersSheet.Cells[userRow, 8].Value = user.Patronymic;
