@@ -44,7 +44,7 @@ namespace EuroBuld.Page
 
         public async Task<List<ServiceViewModel>> GetAllCarsAsync()
 		{
-			using (var context = new EuroBuldEntities15())
+			using (var context = new EuroBuldEntities16())
 			{
 				return await context.Service.Select(service => new ServiceViewModel
 				{
@@ -86,7 +86,7 @@ namespace EuroBuld.Page
 
 		public async Task<List<ServiceViewModel>> GetFilteredAndSortedServicesAsync(string searchText)
 		{
-			using (var context = new EuroBuldEntities15())
+			using (var context = new EuroBuldEntities16())
 			{
 				var services = context.Service
 									  .Where(service => service.Item_Name.ToLower().Contains(searchText)) 

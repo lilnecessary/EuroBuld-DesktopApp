@@ -110,14 +110,18 @@ namespace EuroBuld.Page
 				currentUser.Addres = AddressTextBox.Text.Trim();
 				currentUser.Password = PasswordTextBox.Text.Trim();
 
-				using (var db = new EuroBuldEntities15())
+				using (var db = new EuroBuldEntities16())
 				{
 					var userInDb = db.Users.Find(currentUser.ID_Users);
 					if (userInDb != null)
 					{
 						userInDb.First_name = currentUser.First_name;
 						userInDb.Last_name = currentUser.Last_name;
-						userInDb.Email = currentUser.Email;
+                        userInDb.Patronymic = currentUser.Patronymic;
+                        userInDb.Number_Phone = currentUser.Phone;
+                        userInDb.Passport_details = currentUser.Passport_details;
+						userInDb.Address = currentUser.Addres;
+                        userInDb.Email = currentUser.Email;
 						userInDb.Password = currentUser.Password;
 
 						db.SaveChanges();

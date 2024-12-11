@@ -49,7 +49,7 @@ namespace EuroBuld.Page
 
         public async Task<List<ServiceViewModel>> GetAllCarsAsync()
         {
-            using (var context = new EuroBuldEntities15())
+            using (var context = new EuroBuldEntities16())
             {
                 var allServices = await context.Service
                     .Select(service => new ServiceViewModel
@@ -103,7 +103,7 @@ namespace EuroBuld.Page
                 return;
             }
 
-            using (var context = new EuroBuldEntities15())
+            using (var context = new EuroBuldEntities16())
             {
                 var user = context.Users.FirstOrDefault(u => u.ID_Users == Authorization.CurrentUser.ID_Users);
 
@@ -140,7 +140,6 @@ namespace EuroBuld.Page
                     var sendCheckRole = context.Role.FirstOrDefault(r => r.roll_name == "SendCheck");
                     if (sendCheckRole == null)
                     {
-                        MessageBox.Show("Роль SendCheck не найдена.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
 
@@ -149,7 +148,6 @@ namespace EuroBuld.Page
 
                     if (sendCheckStaff == null || string.IsNullOrEmpty(sendCheckStaff.Email))
                     {
-                        MessageBox.Show("Не удалось найти сотрудника с ролью SendCheck или почта не указана.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
                         return;
                     }
 
@@ -220,7 +218,7 @@ namespace EuroBuld.Page
 
 		private string GenerateReceipt(Customer_orders order, Users user)
 		{
-			using (var context = new EuroBuldEntities15())
+			using (var context = new EuroBuldEntities16())
 			{
 				var service = context.Service.FirstOrDefault(s => s.ID_Service == order.ID_Service);
 				if (service == null)

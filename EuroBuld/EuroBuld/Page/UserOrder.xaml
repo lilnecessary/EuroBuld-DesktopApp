@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:EuroBuld.Assets"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="История заказов пользователя"
+        Title="Активные заказы пользователя"
         Height="600" Width="1000">
     <Window.Resources>
         <local:StatusColorConverter x:Key="StatusColorConverter"/>

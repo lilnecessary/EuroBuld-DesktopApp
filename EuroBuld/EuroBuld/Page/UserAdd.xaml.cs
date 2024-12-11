@@ -10,12 +10,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class UserAdd : Window
     {
-        private EuroBuldEntities15 _context;
+        private EuroBuldEntities16 _context;
 
         public UserAdd()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities15();
+            _context = new EuroBuldEntities16();
         }
 
         private void AddUser1_Click(object sender, RoutedEventArgs e)
@@ -29,7 +29,13 @@ namespace EuroBuld.Page
             string patronymic = patronymicTextBox.Text;
             string passportDetails = passportDetailsTextBox.Text;
 
-            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(numberPhone) || string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(patronymic) || string.IsNullOrEmpty(passportDetails))
+            if (string.IsNullOrEmpty(email) || 
+                string.IsNullOrEmpty(password) || 
+                string.IsNullOrEmpty(numberPhone) || 
+                string.IsNullOrEmpty(firstName) || 
+                string.IsNullOrEmpty(lastName) || 
+                string.IsNullOrEmpty(patronymic) || 
+                string.IsNullOrEmpty(passportDetails))
             {
                 MessageBox.Show("Пожалуйста, заполните все обязательные поля.");
                 return;

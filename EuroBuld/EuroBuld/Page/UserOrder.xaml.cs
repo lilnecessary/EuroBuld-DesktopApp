@@ -25,11 +25,11 @@ namespace EuroBuld.Page
 
         private void LoadOrders()
         {
-            using (var context = new EuroBuldEntities15())
+            using (var context = new EuroBuldEntities16())
             {
                 int currentUserId = Authorization.CurrentUser.ID_Users;
 
-                var allowedStatuses = new[] { "приянт", "в процессе" };
+                var allowedStatuses = new[] { "Принят", "В процессе" };
 
                 var orders = context.Processed_customer_orders
                     .Where(order =>
@@ -39,7 +39,7 @@ namespace EuroBuld.Page
                     {
                         OrderID = order.ID_Processed_customer_orders,
                         OrderDate = order.Date_Start,
-                        Status = order.Status_Orders.Name_Status ?? "Unknown", 
+                        Status = order.Status_Orders.Name_Status ?? "Unknown",
                         DateEnding = order.Date_Ending,
                         FinalSum = order.Final_sum,
                         Items = context.Service

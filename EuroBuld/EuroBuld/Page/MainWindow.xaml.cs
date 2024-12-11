@@ -39,7 +39,16 @@ namespace EuroBuld.Page
 		}
 
 
-		private void Button_Click_Authorization(object sender, RoutedEventArgs e)
+        private void UserEmailTextBlock_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            PersonalAccount personalAccount = new PersonalAccount();
+            personalAccount.Show();
+            this.Visibility = Visibility.Collapsed;
+            this.Close();
+        }
+
+
+        private void Button_Click_Authorization(object sender, RoutedEventArgs e)
 		{
 			Authorization authorization = new Authorization();
 			authorization.Show();
@@ -55,14 +64,6 @@ namespace EuroBuld.Page
 			}
 		}
 
-
-		private void UserEmailTextBlock_MouseDown(object sender, MouseButtonEventArgs e)
-		{
-			PersonalAccount personalAccount = new PersonalAccount();
-			personalAccount.Show();
-			this.Visibility = Visibility.Collapsed;
-			this.Close();
-		}
 
 		private void Button_Click_Registration(object sender, RoutedEventArgs e)
         {

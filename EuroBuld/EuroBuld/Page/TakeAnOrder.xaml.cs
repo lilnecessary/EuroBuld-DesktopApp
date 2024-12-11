@@ -8,7 +8,7 @@ namespace EuroBuld.Page
 {
     public partial class TakeAnOrder : Window
     {
-        private EuroBuldEntities15 _context;
+        private EuroBuldEntities16 _context;
         private int _customerOrderId;
         private int _staffId;
 
@@ -17,7 +17,7 @@ namespace EuroBuld.Page
             InitializeComponent();
             _staffId = staffId;
             _customerOrderId = customerOrderId;
-            _context = new EuroBuldEntities15();
+            _context = new EuroBuldEntities16();
             LoadForemenData();
             LoadStatusData();  
         }
@@ -103,7 +103,7 @@ namespace EuroBuld.Page
 
             try
             {
-                using (var context = new EuroBuldEntities15())
+                using (var context = new EuroBuldEntities16())
                 {
                     Processed_customer_orders processedOrder = new Processed_customer_orders
                     {

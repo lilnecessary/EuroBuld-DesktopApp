@@ -26,7 +26,7 @@ namespace EuroBuld.Page
 
         private void LoadOrders()
         {
-            using (var context = new EuroBuldEntities15())
+            using (var context = new EuroBuldEntities16())
             {
                 int currentUserId = Authorization.CurrentUser.ID_Users;
 

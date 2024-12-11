@@ -24,6 +24,7 @@ namespace EuroBuld.Page
             Registration registration = new Registration();
             registration.Show();
             this.Visibility = Visibility.Collapsed;
+			this.Close();
         }
 
 
@@ -32,7 +33,7 @@ namespace EuroBuld.Page
 			string email = EmailTextBox.Text.Trim();
 			string password = PasswordBox.Password.Trim();
 
-			using (var context = new EuroBuldEntities15())
+			using (var context = new EuroBuldEntities16())
 			{
 				var staffUser = context.Staff
 					.FirstOrDefault(s => s.Email == email && s.Password == password);

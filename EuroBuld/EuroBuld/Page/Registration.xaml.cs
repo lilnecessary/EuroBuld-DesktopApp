@@ -33,6 +33,7 @@ namespace EuroBuld.Page
             Authorization authorization = new Authorization();
             authorization.Show();
             this.Visibility = Visibility.Collapsed;
+            this.Close();
         }
 
 
@@ -98,7 +99,7 @@ namespace EuroBuld.Page
                 return;
             }
 
-            using (var context = new EuroBuldEntities15())
+            using (var context = new EuroBuldEntities16())
             {
                 var existingUser = context.Users.FirstOrDefault(u => u.Email == email);
                 if (existingUser != null)
@@ -141,7 +142,7 @@ namespace EuroBuld.Page
 
             try
             {
-                using (var context = new EuroBuldEntities15())
+                using (var context = new EuroBuldEntities16())
                 {
                     var senderInfo = context.Staff
                                     .Join(context.Role,

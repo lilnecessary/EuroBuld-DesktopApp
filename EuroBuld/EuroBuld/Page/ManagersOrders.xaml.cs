@@ -20,14 +20,14 @@ namespace EuroBuld.Page
 	/// </summary>
 	public partial class ManagersOrders : Window
     {
-        private EuroBuldEntities15 _context;
+        private EuroBuldEntities16 _context;
         private int _staffId;
 
 
 		public ManagersOrders(int staffId)
         {
             InitializeComponent();
-            _context = new EuroBuldEntities15();
+            _context = new EuroBuldEntities16();
             _staffId = staffId;
             LoadManagerOrders();
         }
@@ -50,14 +50,6 @@ namespace EuroBuld.Page
         }
 
 
-		//private void ShowOrderDetails(Processed_customer_orders order)
-		//{
-		//	var orderDetailsWindow = new OrderDetailsWindow(order.ID_Processed_customer_orders);
-		//	orderDetailsWindow.Show();
-		//}
-
-
-
 		private void SaveOrder_Click(object sender, RoutedEventArgs e)
 		{
 			try
@@ -74,21 +66,16 @@ namespace EuroBuld.Page
 
 		private void Orderdetails_Click(object sender, RoutedEventArgs e)
 		{
-			// Проверяем, был ли выбран заказ в DataGrid
 			if (managerOrdersDataGrid.SelectedItem != null)
 			{
-				// Получаем выбранный заказ
 				var selectedOrder = (Processed_customer_orders)managerOrdersDataGrid.SelectedItem;
 
-				// Создаем окно OrderDetailsWindow и передаем в него ID выбранного заказа
 				var orderDetailsWindow = new OrderDetailsWindow(selectedOrder.ID_Processed_customer_orders);
 
-				// Открываем окно
 				orderDetailsWindow.Show();
 			}
 			else
 			{
-				// Если заказ не выбран, выводим сообщение
 				MessageBox.Show("Пожалуйста, выберите заказ для просмотра деталей.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
 			}
 		}

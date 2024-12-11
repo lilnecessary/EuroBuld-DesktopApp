@@ -11,7 +11,6 @@ namespace EuroBuld.Assets
         {
             if (value is string status)
             {
-                // Убедимся, что статус корректен
                 Console.WriteLine($"Статус: {status}");
 
                 switch (status.Trim().ToLower())
