@@ -50,35 +50,45 @@ namespace EuroBuld.Page
         }
 
 
-		private void SaveOrder_Click(object sender, RoutedEventArgs e)
-		{
-			try
-			{
-				_context.SaveChanges();
+        private void EditOrderWindow_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedOrder = managerOrdersDataGrid.SelectedItem;
+            if (selectedOrder == null)
+            {
+                MessageBox.Show("Пожалуйста, выберите заказ для редактирования.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-				MessageBox.Show("Изменения успешно сохранены!", "Сохранение", MessageBoxButton.OK, MessageBoxImage.Information);
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show($"Ошибка при сохранении изменений: {ex.Message}", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
-			}
-		}
+            var selectedOrderId = (int)((dynamic)selectedOrder).ID_Processed_customer_orders;
+            var order = _context.Processed_customer_orders.FirstOrDefault(o => o.ID_Processed_customer_orders == selectedOrderId);
 
-		private void Orderdetails_Click(object sender, RoutedEventArgs e)
-		{
-			if (managerOrdersDataGrid.SelectedItem != null)
-			{
-				var selectedOrder = (Processed_customer_orders)managerOrdersDataGrid.SelectedItem;
+            if (order == null)
+            {
+                MessageBox.Show("Не удалось найти выбранный заказ.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
-				var orderDetailsWindow = new OrderDetailsWindow(selectedOrder.ID_Processed_customer_orders);
+            var editWindow = new EditOrderWindow(order, _context);
+            editWindow.ShowDialog();
 
-				orderDetailsWindow.Show();
-			}
-			else
-			{
-				MessageBox.Show("Пожалуйста, выберите заказ для просмотра деталей.", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Warning);
-			}
-		}
+            LoadManagerOrders();
+        }
 
-	}
+
+        public class Processed_customer_orders
+        {
+            public int ID_Processed_customer_orders { get; set; }
+            public int? ID_User { get; set; }
+
+            public virtual User User { get; set; }
+        }
+
+
+        public class User
+        {
+            public int ID_User { get; set; }
+            public string Name { get; set; }
+            public virtual ICollection<Processed_customer_orders> Orders { get; set; }
+        }
+    }
 }

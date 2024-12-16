@@ -72,7 +72,6 @@
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-
             <DataGrid x:Name="customerOrdersDataGrid" 
                       ItemsSource="{Binding}" 
                       VirtualizingStackPanel.IsVirtualizing="True" 

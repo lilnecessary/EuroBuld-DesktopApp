@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\kazaxx\Documents\GitHub\CourseWork\EuroBuld\EuroBuld\App.xaml
-24-73951750
+24795810312
 61213517447
-47-1401348189
+462129834667
 275-422490891
-Page\AboutUs.xaml;Page\AdminPage.xaml;Page\Authorization.xaml;Page\Contact.xaml;Page\ForemenAdd.xaml;Page\HistoryUserOrder.xaml;Page\MainWindow.xaml;Page\ManagerPage.xaml;Page\ManagersOrders.xaml;Page\OrderDetailsWindow.xaml;Page\PasswordWindow.xaml;Page\PersonalAccount.xaml;Page\Registration.xaml;Page\Reports.xaml;Page\RollAdd.xaml;Page\Service.xaml;Page\ServiceAdd.xaml;Page\ServiceCard.xaml;Page\StaffAdd.xaml;Page\StatusOrdersAdd.xaml;Page\TakeAnOrder.xaml;Page\UserAdd.xaml;Page\UserOrder.xaml;Page\VerifyCodeWindow.xaml;
+Page\AboutUs.xaml;Page\AdminPage.xaml;Page\Authorization.xaml;Page\Contact.xaml;Page\EditOrderWindow.xaml;Page\ForemenAdd.xaml;Page\HistoryUserOrder.xaml;Page\MainWindow.xaml;Page\ManagerPage.xaml;Page\ManagersOrders.xaml;Page\PasswordWindow.xaml;Page\PersonalAccount.xaml;Page\Registration.xaml;Page\Reports.xaml;Page\RollAdd.xaml;Page\Service.xaml;Page\ServiceAdd.xaml;Page\ServiceCard.xaml;Page\StaffAdd.xaml;Page\StatusOrdersAdd.xaml;Page\TakeAnOrder.xaml;Page\UserAdd.xaml;Page\UserOrder.xaml;Page\VerifyCodeWindow.xaml;
 
-True
+False
 

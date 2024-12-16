@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="Панель добавления начальников участки" 
         Height="370" Width="400">
     <Grid Background="#DBCCCF" Height="358">

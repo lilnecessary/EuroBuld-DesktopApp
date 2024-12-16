@@ -22,11 +22,53 @@ namespace EuroBuld.Page
         private void LoadCustomerOrders()
         {
             var orders = _context.Customer_orders
-                                 .Where(o => o.Status != "Hide") 
+                                 .Where(o => o.Status != "Hide")
+                                 .Select(o => new
+                                 {
+                                     o.ID_Customers_orders,
+                                     ServiceName = o.Service.Item_Name,
+                                     UserName = o.Users.First_name + " " + o.Users.Last_name,
+                                     UserEmail = o.Users.Email,
+                                     o.Order_Date
+                                 })
                                  .ToList();
-            UpdateDataGridColumns(orders);
+
+            customerOrdersDataGrid.Columns.Clear();
+            customerOrdersDataGrid.ItemsSource = orders;
+            customerOrdersDataGrid.Columns.Add(new DataGridTextColumn
+            {
+                Header = "ID Заказа",
+                Binding = new System.Windows.Data.Binding("ID_Customers_orders"),
+                Width = 100
+            });
+            customerOrdersDataGrid.Columns.Add(new DataGridTextColumn
+            {
+                Header = "Название услуги",
+                Binding = new System.Windows.Data.Binding("ServiceName"),
+                Width = 150
+            });
+            customerOrdersDataGrid.Columns.Add(new DataGridTextColumn
+            {
+                Header = "Имя пользователя",
+                Binding = new System.Windows.Data.Binding("UserName"),
+                Width = 150
+            });
+            customerOrdersDataGrid.Columns.Add(new DataGridTextColumn
+            {
+                Header = "Электронная почта",
+                Binding = new System.Windows.Data.Binding("UserEmail"),
+                Width = 200
+            });
+            customerOrdersDataGrid.Columns.Add(new DataGridTextColumn
+            {
+                Header = "Дата заказа",
+                Binding = new System.Windows.Data.Binding("Order_Date"),
+                Width = 120
+            });
+
             customerOrdersDataGrid.ItemsSource = orders;
         }
+
 
 
         private void LoadMyOrders()
@@ -116,11 +158,17 @@ namespace EuroBuld.Page
 
         private void TakeOrder_Click(object sender, RoutedEventArgs e)
         {
-            var selectedOrder = customerOrdersDataGrid.SelectedItem as Customer_orders;
+            dynamic selectedOrder = customerOrdersDataGrid.SelectedItem;
             if (selectedOrder != null)
             {
-                TakeAnOrder takeOrderWindow = new TakeAnOrder(selectedOrder.ID_Customers_orders, Authorization.StaffId);
-                takeOrderWindow.Show();
+                int orderId = selectedOrder.ID_Customers_orders;
+                var order = _context.Customer_orders.FirstOrDefault(o => o.ID_Customers_orders == orderId);
+
+                if (order != null)
+                {
+                    TakeAnOrder takeOrderWindow = new TakeAnOrder(order.ID_Customers_orders, Authorization.StaffId);
+                    takeOrderWindow.Show();
+                }
             }
             else
             {
@@ -128,7 +176,8 @@ namespace EuroBuld.Page
             }
         }
 
-		private void leave_Click(object sender, RoutedEventArgs e)
+
+        private void leave_Click(object sender, RoutedEventArgs e)
 		{
 			var leave = MessageBox.Show($"Вы уверены, что хотите выйти?\nВаша работа может не сохраниться", "Подтверждение выхода", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
