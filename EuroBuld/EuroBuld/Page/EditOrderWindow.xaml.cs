@@ -8,9 +8,9 @@ namespace EuroBuld.Page
     public partial class EditOrderWindow : Window
     {
         private Processed_customer_orders _order;
-        private EuroBuldEntities16 _context;
+        private EuroBuldEntities17 _context;
 
-        public EditOrderWindow(Processed_customer_orders order, EuroBuldEntities16 context)
+        public EditOrderWindow(Processed_customer_orders order, EuroBuldEntities17 context)
         {
             InitializeComponent();
             _order = order;

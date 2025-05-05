@@ -33,7 +33,7 @@ namespace EuroBuld.Page
 
         private void LoadChartData(string chartType)
         {
-            using (var context = new EuroBuldEntities16())
+            using (var context = new EuroBuldEntities17())
             {
                 if (chartType == "Profit")
                 {
@@ -292,7 +292,7 @@ namespace EuroBuld.Page
                 filePath = saveFileDialog.FileName;
 
                 using (ExcelPackage package = new ExcelPackage())
-                using (var context = new EuroBuldEntities16())
+                using (var context = new EuroBuldEntities17())
                 {
                     void AddHeader(ExcelWorksheet sheet, int columnCount)
                     {

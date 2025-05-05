@@ -4,7 +4,8 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="25481d0cab984ef6ad73600aad96c554" Name="Diagram1">
+      <Diagram DiagramId="78f78c8bc9c64b8c9f942741a6ba4ca6" Name="Diagram1">
+        <EntityTypeShape EntityType="EuroBuldModel.AuditLog" Width="1.5" PointX="5.75" PointY="8.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Customer_orders" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Foremen" Width="1.5" PointX="3" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Processed_customer_orders" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
@@ -13,16 +14,16 @@
         <EntityTypeShape EntityType="EuroBuldModel.Service" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Staff" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Status_Orders" Width="1.5" PointX="3" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="EuroBuldModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="EuroBuldModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.375" IsExpanded="true" />
         <EntityTypeShape EntityType="EuroBuldModel.Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Se__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Us__534D60F1" ManuallyRouted="false" />
-        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Cu__59FA5E80" ManuallyRouted="false" />
-        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Fo__5BE2A6F2" ManuallyRouted="false" />
-        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_St__5AEE82B9" ManuallyRouted="false" />
-        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_St__5CD6CB2B" ManuallyRouted="false" />
-        <AssociationConnector Association="EuroBuldModel.FK__Requests__ID_Ser__619B8048" ManuallyRouted="false" />
-        <AssociationConnector Association="EuroBuldModel.FK__Staff__ID_Role__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Se__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Customer___ID_Us__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Cu__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_Fo__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_St__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Processed__ID_St__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Requests__ID_Ser__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="EuroBuldModel.FK__Staff__ID_Role__3B75D760" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

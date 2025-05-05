@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Панель администратора"
-        Height="600" Width="1000">
+        Height="700" Width="1200">
     <Window.Resources>
         <Style TargetType="DataGrid">
             <Setter Property="AutoGenerateColumns" Value="False" />
@@ -38,7 +38,7 @@
         </Style>
     </Window.Resources>
     <Grid Background="#FFFFFF">
-        <StackPanel Background="#E0BFBF" Margin="0,0,795,0">
+        <StackPanel Background="#E0BFBF" Margin="0,0,959,0">
             <Button Content="Выйти из аккаунта" Margin="0,524,0,0" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" Click="leave_Click">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -59,7 +59,7 @@
                 </Button.Style>
             </Button>
         </StackPanel>
-        <StackPanel Background="#E0BFBF" Width="200" Margin="2,74,798,0" VerticalAlignment="Top" Height="432">
+        <StackPanel Background="#E0BFBF" Width="200" Margin="26,89,974,0" VerticalAlignment="Top" Height="432">
             <Button Content="Клиенты" Margin="0" Background="Transparent" Click="LoadClients_Click" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -244,7 +244,7 @@
           ItemsSource="{Binding Users}" 
           VirtualizingStackPanel.IsVirtualizing="True" 
           VirtualizingStackPanel.VirtualizationMode="Recycling" 
-          Margin="-12,78,-9,90" 
+          Margin="46,78,-9,90" 
           Grid.Row="1" Grid.RowSpan="2" 
           CanUserAddRows="True"
                 CanUserDeleteRows="True"

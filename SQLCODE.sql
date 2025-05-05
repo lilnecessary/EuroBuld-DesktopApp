@@ -4,14 +4,14 @@ USE EuroBuld;
 
 CREATE TABLE Users (
     ID_Users INT PRIMARY KEY IDENTITY(1,1),
-	Email VARCHAR(40) NOT NULL,
+    Email VARCHAR(40) NOT NULL,
     Password VARCHAR(50) NOT NULL,
-	Number_Phone VARCHAR(20),
-	Address VARCHAR(20),
+    Number_Phone VARCHAR(20),
+    Address VARCHAR(100),
     First_name VARCHAR(20),
     Last_name VARCHAR(20),
     Patronymic VARCHAR(20),
-    Passport_details VARCHAR(20),
+    Passport_details VARCHAR(50),
 );
 
 CREATE TABLE Role (
@@ -22,10 +22,10 @@ CREATE TABLE Role (
 
 CREATE TABLE Staff (
     ID_Staff INT PRIMARY KEY IDENTITY(1,1),
-	ID_Role INT NOT NULL,
-	Email VARCHAR(40) NOT NULL,
+    ID_Role INT NOT NULL,
+    Email VARCHAR(40) NOT NULL,
     Password VARCHAR(20) NOT NULL,
-	Image VARBINARY(MAX),
+    Image VARBINARY(MAX),
     First_name VARCHAR(20) NOT NULL,
     Last_name VARCHAR(20) NOT NULL,
     Patronymic VARCHAR(20) NOT NULL,
@@ -48,7 +48,7 @@ CREATE TABLE Customer_orders (
     ID_Service INT,
     ID_Users INT,
     Order_Date DATE,
-	Status VARCHAR(20),
+    Status VARCHAR(20),
     FOREIGN KEY (ID_Service) REFERENCES Service(ID_Service),
     FOREIGN KEY (ID_Users) REFERENCES Users(ID_Users)
 );
@@ -59,12 +59,12 @@ CREATE TABLE Foremen (
     Last_Name VARCHAR(50),
     Patronymic VARCHAR(50),
     Number_of_Workers INT,
-	Number_phone VARCHAR(20),
+    Number_phone VARCHAR(20),
 );
 
 CREATE TABLE Status_Orders (
-	ID_Status_Orders INT PRIMARY KEY IDENTITY(1,1),
-	Name_Status VARCHAR(50),
+    ID_Status_Orders INT PRIMARY KEY IDENTITY(1,1),
+    Name_Status VARCHAR(50),
 );
 
 CREATE TABLE Processed_customer_orders (
@@ -79,7 +79,7 @@ CREATE TABLE Processed_customer_orders (
     FOREIGN KEY (ID_Customer_orders) REFERENCES Customer_orders(ID_Customers_orders),
     FOREIGN KEY (ID_Staff) REFERENCES Staff(ID_Staff),
     FOREIGN KEY (ID_Foreman) REFERENCES Foremen(ID_Foreman),
-	FOREIGN KEY (ID_Status_Orders) REFERENCES Status_Orders(ID_Status_Orders)
+    FOREIGN KEY (ID_Status_Orders) REFERENCES Status_Orders(ID_Status_Orders)
 );
 
 CREATE TABLE Requests (

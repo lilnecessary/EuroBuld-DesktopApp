@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj": {}
+    "C:\\Users\\necessary\\Documents\\GitHub\\EuroBuld-DesktopApp\\EuroBuld\\EuroBuld\\EuroBuld.csproj": {}
   },
   "projects": {
-    "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj": {
+    "C:\\Users\\necessary\\Documents\\GitHub\\EuroBuld-DesktopApp\\EuroBuld\\EuroBuld\\EuroBuld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
+        "projectUniqueName": "C:\\Users\\necessary\\Documents\\GitHub\\EuroBuld-DesktopApp\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
         "projectName": "EuroBuld",
-        "projectPath": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
-        "packagesPath": "C:\\Users\\kazaxx\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\obj\\",
+        "projectPath": "C:\\Users\\necessary\\Documents\\GitHub\\EuroBuld-DesktopApp\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
+        "packagesPath": "C:\\Users\\necessary\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\necessary\\Documents\\GitHub\\EuroBuld-DesktopApp\\EuroBuld\\EuroBuld\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "UsingMicrosoftNETSdk": false,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\kazaxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\necessary\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],

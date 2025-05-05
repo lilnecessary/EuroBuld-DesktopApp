@@ -21,12 +21,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class ForemenAdd : Window
     {
-        EuroBuldEntities16 _context;
+        EuroBuldEntities17 _context;
 
         public ForemenAdd()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities16();
+            _context = new EuroBuldEntities17();
         }
 
 

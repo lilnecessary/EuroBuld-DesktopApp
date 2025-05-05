@@ -49,7 +49,7 @@ namespace EuroBuld.Page
 
         public async Task<List<ServiceViewModel>> GetAllCarsAsync()
         {
-            using (var context = new EuroBuldEntities16())
+            using (var context = new EuroBuldEntities17())
             {
                 var allServices = await context.Service
                     .Select(service => new ServiceViewModel
@@ -103,7 +103,7 @@ namespace EuroBuld.Page
                 return;
             }
 
-            using (var context = new EuroBuldEntities16())
+            using (var context = new EuroBuldEntities17())
             {
                 var user = context.Users.FirstOrDefault(u => u.ID_Users == Authorization.CurrentUser.ID_Users);
 
@@ -218,7 +218,7 @@ namespace EuroBuld.Page
 
 		private string GenerateReceipt(Customer_orders order, Users user)
 		{
-			using (var context = new EuroBuldEntities16())
+			using (var context = new EuroBuldEntities17())
 			{
 				var service = context.Service.FirstOrDefault(s => s.ID_Service == order.ID_Service);
 				if (service == null)

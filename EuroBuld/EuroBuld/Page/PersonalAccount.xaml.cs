@@ -110,7 +110,7 @@ namespace EuroBuld.Page
 				currentUser.Addres = AddressTextBox.Text.Trim();
 				currentUser.Password = PasswordTextBox.Text.Trim();
 
-				using (var db = new EuroBuldEntities16())
+				using (var db = new EuroBuldEntities17())
 				{
 					var userInDb = db.Users.Find(currentUser.ID_Users);
 					if (userInDb != null)

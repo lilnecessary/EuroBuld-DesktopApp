@@ -9,11 +9,11 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Панель отчетов"
-        Height="600" Width="1000">
+        Height="700" Width="1200">
     <Grid Background="#FFFFFF">
-        <StackPanel Background="#E0BFBF" Margin="0,0,795,0"></StackPanel>
-        <StackPanel Background="#E0BFBF" Width="200" Margin="2,271,798,0" VerticalAlignment="Top" Height="313">
-            <Button Content="Назад" Margin="10" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" Click="bac_click">
+        <StackPanel Background="#E0BFBF" Margin="0,0,959,0"></StackPanel>
+        <StackPanel Background="#E0BFBF" Width="200" Margin="20,270,980,0" VerticalAlignment="Top" Height="313">
+            <Button Content="Назад" Margin="10" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" Click="bac_click" >
                 <Button.Style>
                     <Style TargetType="Button">
                         <Setter Property="Background" Value="Transparent"/>
@@ -33,7 +33,7 @@
                 </Button.Style>
             </Button>
         </StackPanel>
-        <ComboBox Name="ChartTypeComboBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="220,10,0,0" Width="605" SelectionChanged="ChartTypeComboBox_SelectionChanged">
+        <ComboBox Name="ChartTypeComboBox" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="332,53,0,0" Width="605" SelectionChanged="ChartTypeComboBox_SelectionChanged">
             <ComboBoxItem Content="Прибыль по годам" />
             <ComboBoxItem Content="Количество заказов по годам" />
             <ComboBoxItem Content="Количество завершённых проектов по годам" />
@@ -42,7 +42,7 @@
             <ComboBoxItem Content="Количество заявок по статусам" />
         </ComboBox>
 
-        <lvc:CartesianChart Name="ProfitChart" Margin="220,40,175,121">
+        <lvc:CartesianChart Name="ProfitChart" Margin="332,80,63,80">
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Title="Год" Labels="{Binding Years}"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
@@ -50,7 +50,7 @@
                 <lvc:Axis Title="Сумма" LabelFormatter="{Binding ValueFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
         </lvc:CartesianChart>
-        <StackPanel Margin="0,455,360,10">
+        <StackPanel Margin="0,609,360,-144">
             <Button Background="#217346" FontSize="15" Height="50" Foreground="White" Width="180" FontWeight="Bold" Click="Button_Click_Excel">
                 <Button.Template>
                     <ControlTemplate TargetType="{x:Type Button}">

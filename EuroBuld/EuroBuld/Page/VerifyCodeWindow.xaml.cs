@@ -58,7 +58,7 @@ namespace EuroBuld.Page
 
             private void RegisterUser()
             {
-                using (var context = new EuroBuldEntities16())
+                using (var context = new EuroBuldEntities17())
                 {
                     var newUser = new Users { Email = _email, Password = _password };
                     context.Users.Add(newUser);

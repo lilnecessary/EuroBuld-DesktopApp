@@ -869,6 +869,12 @@
           "lib/net462/fi-FI/ModernWpf.resources.dll": {
             "locale": "fi-FI"
           },
+          "lib/net462/fil-PH/ModernWpf.Controls.resources.dll": {
+            "locale": "fil-PH"
+          },
+          "lib/net462/fil-PH/ModernWpf.resources.dll": {
+            "locale": "fil-PH"
+          },
           "lib/net462/fr-CA/ModernWpf.Controls.resources.dll": {
             "locale": "fr-CA"
           },
@@ -2230,6 +2236,12 @@
           },
           "lib/net462/fi-FI/ModernWpf.resources.dll": {
             "locale": "fi-FI"
+          },
+          "lib/net462/fil-PH/ModernWpf.Controls.resources.dll": {
+            "locale": "fil-PH"
+          },
+          "lib/net462/fil-PH/ModernWpf.resources.dll": {
+            "locale": "fil-PH"
           },
           "lib/net462/fr-CA/ModernWpf.Controls.resources.dll": {
             "locale": "fr-CA"
@@ -3596,6 +3608,12 @@
           "lib/net462/fi-FI/ModernWpf.resources.dll": {
             "locale": "fi-FI"
           },
+          "lib/net462/fil-PH/ModernWpf.Controls.resources.dll": {
+            "locale": "fil-PH"
+          },
+          "lib/net462/fil-PH/ModernWpf.resources.dll": {
+            "locale": "fil-PH"
+          },
           "lib/net462/fr-CA/ModernWpf.Controls.resources.dll": {
             "locale": "fr-CA"
           },
@@ -4961,6 +4979,12 @@
           "lib/net462/fi-FI/ModernWpf.resources.dll": {
             "locale": "fi-FI"
           },
+          "lib/net462/fil-PH/ModernWpf.Controls.resources.dll": {
+            "locale": "fil-PH"
+          },
+          "lib/net462/fil-PH/ModernWpf.resources.dll": {
+            "locale": "fil-PH"
+          },
           "lib/net462/fr-CA/ModernWpf.Controls.resources.dll": {
             "locale": "fr-CA"
           },
@@ -6325,6 +6349,12 @@
           },
           "lib/net462/fi-FI/ModernWpf.resources.dll": {
             "locale": "fi-FI"
+          },
+          "lib/net462/fil-PH/ModernWpf.Controls.resources.dll": {
+            "locale": "fil-PH"
+          },
+          "lib/net462/fil-PH/ModernWpf.resources.dll": {
+            "locale": "fil-PH"
           },
           "lib/net462/fr-CA/ModernWpf.Controls.resources.dll": {
             "locale": "fr-CA"
@@ -9044,24 +9074,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\kazaxx\\.nuget\\packages\\": {},
+    "C:\\Users\\necessary\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
+      "projectUniqueName": "C:\\Users\\necessary\\Documents\\GitHub\\EuroBuld-DesktopApp\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
       "projectName": "EuroBuld",
-      "projectPath": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
-      "packagesPath": "C:\\Users\\kazaxx\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kazaxx\\Documents\\GitHub\\CourseWork\\EuroBuld\\EuroBuld\\obj\\",
+      "projectPath": "C:\\Users\\necessary\\Documents\\GitHub\\EuroBuld-DesktopApp\\EuroBuld\\EuroBuld\\EuroBuld.csproj",
+      "packagesPath": "C:\\Users\\necessary\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\necessary\\Documents\\GitHub\\EuroBuld-DesktopApp\\EuroBuld\\EuroBuld\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kazaxx\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\necessary\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

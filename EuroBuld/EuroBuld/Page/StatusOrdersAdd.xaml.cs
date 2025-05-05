@@ -20,12 +20,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class Status_Orders : Window
     {
-        EuroBuldEntities16 _context;
+        EuroBuldEntities17 _context;
 
         public Status_Orders()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities16();
+            _context = new EuroBuldEntities17();
         }
 
         private async void Save_Status_Click(object sender, RoutedEventArgs e)

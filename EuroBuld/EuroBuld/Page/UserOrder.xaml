@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Активные заказы пользователя"
-        Height="600" Width="1000">
+        Height="700" Width="1200">
     <Window.Resources>
         <local:StatusColorConverter x:Key="StatusColorConverter"/>
     </Window.Resources>
@@ -27,7 +27,7 @@
                 </Rectangle.Fill>
             </Rectangle>
         </StackPanel>
-        <StackPanel Margin="0,55,0,0">
+        <StackPanel Margin="-76,79,76,-24">
             <TextBlock Foreground="#23262F" Text="Профиль" 
                FontSize="17" Height="30" Width="100" Margin="0,150,650,0" 
                FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Личный кабинет" Height="600" Width="1000" Top="-22" >
+        Title="Личный кабинет" Height="700" Width="1200" Top="-22" >
     <Grid Cursor="">
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="50,15,50,0">
             <Button Background="White" BorderBrush="White" Content="Главная" FontSize="18" Height="30" Margin="5" Foreground="Gray" FontWeight="Bold" Click="Button_Click_MainWindow"/>
@@ -24,7 +24,7 @@
                 </Rectangle.Fill>
             </Rectangle>
         </StackPanel>
-        <StackPanel Margin="0,55,0,0">
+        <StackPanel Margin="-76,79,76,-24">
             <TextBlock Foreground="#430113" Text="Профиль" 
                FontSize="17" Height="30" Width="100" Margin="0,150,650,0" 
                FontWeight="Bold" TextAlignment="Center" VerticalAlignment="Center"
@@ -41,17 +41,17 @@
         <TextBlock FontSize="28" FontFamily="DM Sans 24pt 24pt Black" FontWeight="Bold" HorizontalAlignment="Left" Margin="535,111,0,377" Width="316"><Run Text="Ваш профиль"/></TextBlock>
         <StackPanel>
             <TextBlock FontSize="15" HorizontalAlignment="Left" Margin="350,180,0,351" Width="316"><Run Text="Контактная информация"/></TextBlock>
-            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="341,-330,0,350" Width="150"><Run Text="Имя"/></TextBlock>
-            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="555,-366,0,350" Width="150"><Run Text="Фамилия"/></TextBlock>
-            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="765,-365,0,350" Width="150"><Run Text="Отчество"/></TextBlock>
-            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="340,-295,0,350" Width="150"><Run Text="Номер телефона"/></TextBlock>
-            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="665,-364,0,350" Width="150"><Run Text="Адрес эл. почты"/></TextBlock>
-            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="665,-300,0,350" Width="150"><Run Text="Адрес"/></TextBlock>
-            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="340,-368,0,350" Width="150"><Run Text="Паспортные данные"/></TextBlock>
-            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="340,-305,0,350" Width="150"><Run Text="Пароль"/></TextBlock>
+            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="360,-330,0,350" Width="150"><Run Text="Имя"/></TextBlock>
+            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="640,-366,0,350" Width="150"><Run Text="Фамилия"/></TextBlock>
+            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="920,-365,0,350" Width="150"><Run Text="Отчество"/></TextBlock>
+            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="360,-295,0,350" Width="150"><Run Text="Номер телефона"/></TextBlock>
+            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="770,-364,0,350" Width="150"><Run Text="Адрес эл. почты"/></TextBlock>
+            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="770,-300,0,350" Width="150"><Run Text="Адрес"/></TextBlock>
+            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="360,-368,0,350" Width="150"><Run Text="Паспортные данные"/></TextBlock>
+            <TextBlock FontSize="12" HorizontalAlignment="Left" Margin="360,-305,0,350" Width="150"><Run Text="Пароль"/></TextBlock>
         </StackPanel>
         <StackPanel Margin="0,0,0,-2">
-            <TextBox Margin="335,240,475,324" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" Name="NameTextBox" Height="28">
+            <TextBox Margin="200,240,475,324" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" Name="NameTextBox" Height="28" Width="230">
                 <TextBox.Template>
                     <ControlTemplate TargetType="TextBox" >
                         <Border Background="{TemplateBinding Background}" 
@@ -63,7 +63,7 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBox Margin="550,-355,260,324" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="SurnameTextBox" Height="28">
+            <TextBox Margin="550,-355,260,324" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="SurnameTextBox" Height="28" Width="230">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}" >
                         <Border Background="{TemplateBinding Background}" 
@@ -75,7 +75,7 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBox Margin="755,-355,30,324" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PatronnymicTextBox" Height="28" Width="198">
+            <TextBox Margin="870,-355,30,324" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PatronnymicTextBox" Height="28" Width="230">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}" >
                         <Border Background="{TemplateBinding Background}" 
@@ -87,7 +87,7 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBox Margin="335,-280,355,259" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PhoneTextBox" Height="28">
+            <TextBox Margin="240,-280,355,259" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PhoneTextBox" Height="28" Width="390">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}" >
                         <Border Background="{TemplateBinding Background}" 
@@ -99,7 +99,7 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBox Margin="659,-287,30,259" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="EmailTextBox" Height="28">
+            <TextBox Margin="720,-287,30,259" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="EmailTextBox" Height="28" Width="378">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}" >
                         <Border Background="{TemplateBinding Background}" 
@@ -111,7 +111,7 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBox Margin="335,-220,355,195" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PassportTextBox" Height="28">
+            <TextBox Margin="240,-220,355,195" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PassportTextBox" Height="28" Width="390">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}" >
                         <Border Background="{TemplateBinding Background}" 
@@ -123,7 +123,7 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBox Margin="659,-223,30,195" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="AddressTextBox" Height="28">
+            <TextBox Margin="720,-223,30,195" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="AddressTextBox" Height="28" Width="378">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}" >
                         <Border Background="{TemplateBinding Background}" 
@@ -135,7 +135,7 @@
                     </ControlTemplate>
                 </TextBox.Template>
             </TextBox>
-            <TextBox Margin="335,-200,35,95" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PasswordTextBox" Height="28">
+            <TextBox Margin="285,-200,35,95" TextAlignment="Left" Padding="10,3,0,0" FontSize="15" FontWeight="Bold" x:Name="PasswordTextBox" Height="28" Width="755">
                 <TextBox.Template>
                     <ControlTemplate TargetType="{x:Type TextBox}" >
                         <Border Background="{TemplateBinding Background}" 

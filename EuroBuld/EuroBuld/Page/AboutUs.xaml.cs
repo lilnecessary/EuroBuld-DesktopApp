@@ -39,7 +39,7 @@ namespace EuroBuld.Page
 
         private void LoadStaff()
         {
-            using (var context = new EuroBuldEntities16())
+            using (var context = new EuroBuldEntities17())
             {
                 var staffList = context.Staff
                     .Join(context.Role,
@@ -63,7 +63,7 @@ namespace EuroBuld.Page
         }
 
 
-        private void DisplayStaff(List<StaffInfo> staffList, EuroBuldEntities16 context)
+        private void DisplayStaff(List<StaffInfo> staffList, EuroBuldEntities17 context)
         {
             foreach (var staffMember in staffList)
             {

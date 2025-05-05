@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="О нас" Height="600" Width="1000">
+        Title="О нас" Height="700" Width="1200">
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
@@ -27,7 +27,7 @@
                 </Rectangle>
 
                 <TextBlock Text="О нашей компании" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,20"/>
-                <StackPanel Orientation="Horizontal" Margin="40,0,40,20">
+                <StackPanel Orientation="Horizontal" Margin="100,0,40,20">
                     <Image Width="300" Height="250" Source="/Resources/history.jpeg" Margin="0,0,20,0" Stretch="UniformToFill"/>
                     <StackPanel Width="600">
                         <TextBlock Text="История EuroBuld" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
@@ -36,7 +36,7 @@
                     </StackPanel>
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="40,0,40,20">
+                <StackPanel Orientation="Horizontal" Margin="100,0,40,20">
                     <StackPanel Width="600">
                         <TextBlock Text="Цель EuroBuld" FontSize="24" FontWeight="Bold" Margin="0,0,0,10"/>
                         <TextBlock Text="EuroBuld предоставление высококачественных и инновационных строительных услуг, соответствующих современным стандартам и требованиям клиентов. Мы стремимся создавать надежные, безопасные и функциональные объекты, обеспечивая комплексный подход в проектировании, строительстве и обслуживании. Наша миссия заключается в улучшении городской инфраструктуры и жилых пространств." 
@@ -45,7 +45,7 @@
                     <Image Width="300" Height="250" Source="/Resources/original.jpg" Margin="20,0,0,0" Stretch="UniformToFill"/>
                 </StackPanel>
 
-                <StackPanel Margin="40,0,40,20">
+                <StackPanel Margin="100,0,40,20">
                     <TextBlock Text="Наши сотрудники" FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,20,0,10"/>
                     <TextBlock Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vulpate fames ut." 
                                FontSize="16" Foreground="Gray" HorizontalAlignment="Center" Margin="0,0,0,20"/>

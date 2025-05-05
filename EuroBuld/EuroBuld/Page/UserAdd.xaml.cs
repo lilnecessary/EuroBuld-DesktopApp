@@ -10,12 +10,12 @@ namespace EuroBuld.Page
     /// </summary>
     public partial class UserAdd : Window
     {
-        private EuroBuldEntities16 _context;
+        private EuroBuldEntities17 _context;
 
         public UserAdd()
         {
             InitializeComponent();
-            _context = new EuroBuldEntities16();
+            _context = new EuroBuldEntities17();
         }
 
         private void AddUser1_Click(object sender, RoutedEventArgs e)

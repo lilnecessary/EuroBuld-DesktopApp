@@ -6,7 +6,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="Заказы менеджера"
-        Height="600" Width="1000">
+        Height="700" Width="1200">
 
     <Window.Resources>
         <Style TargetType="DataGrid">
@@ -39,10 +39,10 @@
     </Window.Resources>
 
     <Grid Background="#FFFFFF">
-        <StackPanel Background="#E0BFBF" Margin="0,0,795,0"></StackPanel>
-        <StackPanel Background="#E0BFBF" Width="200" Margin="2,0,798,0" VerticalAlignment="Center" Height="94">
-            <Button Content="Заказы" Margin="0" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" Click="Button_Click"/>
-            <Button Content="Мои заказы" Margin="10"  Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5"/>
+        <StackPanel Background="#E0BFBF" Margin="0,0,956,0"></StackPanel>
+        <StackPanel Background="#E0BFBF" Width="200" Margin="22,0,978,0" VerticalAlignment="Center" Height="94">
+            <Button Content="Заказы" Margin="0" Background="Transparent" Foreground="Gray" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" Click="Button_Click" FontSize="20"/>
+            <Button Content="Мои заказы" Margin="10"  Background="Transparent" Foreground="#430113" BorderBrush="Transparent" BorderThickness="1" Padding="10,5" FontSize="20"/>
         </StackPanel>
         <Grid Margin="200,0,10,0">
             <Grid.RowDefinitions>
@@ -55,7 +55,7 @@
                   ItemsSource="{Binding}" 
                   VirtualizingStackPanel.IsVirtualizing="True" 
                   VirtualizingStackPanel.VirtualizationMode="Recycling" 
-                  Margin="-10,85,0,90"
+                  Margin="46,85,0,90"
                   HorizontalScrollBarVisibility="Auto"
                   Grid.Row="1" Grid.RowSpan="2" 
                   CanUserAddRows="True"

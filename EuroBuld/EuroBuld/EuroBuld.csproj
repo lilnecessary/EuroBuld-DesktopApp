@@ -80,6 +80,9 @@
   <ItemGroup>
     <Compile Include="Assets\StatusColorConverter .cs" />
     <Compile Include="Assets\User.cs" />
+    <Compile Include="DataBase\AuditLog.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBase\Customer_orders.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

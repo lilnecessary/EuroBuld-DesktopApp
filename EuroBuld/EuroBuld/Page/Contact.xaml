@@ -7,16 +7,13 @@
         xmlns:local="clr-namespace:EuroBuld.Page"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
-        Title="Контакты" Height="600" Width="1000">
-    
+        Title="Контакты" Height="700" Width="1200">
+
     <Grid>
         <ComboBox x:Name="ServiceComboBox"
           DisplayMemberPath="Item_Name"
-          SelectedValuePath="ID_Service"
-           
-          Width="400" Height="30"
-          Margin="-500,-280,0,0">
-        </ComboBox>
+          SelectedValuePath="ID_Service" Height="30"
+          Margin="49,137,745,517"/>
 
         <StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="50,15,50,0">
@@ -35,7 +32,7 @@
                 </Rectangle.Fill>
             </Rectangle>
         </StackPanel>
-        <StackPanel Margin="0,10,0,0">
+        <StackPanel Margin="-200,10,0,0">
             <TextBox x:Name="FirstNameTextBox" Width="190" Height="25" Margin="-710,190,0,0"/>
             <TextBox x:Name="LastNameTextBox" Width="190" Height="25" Margin="-290,-25,0,0"/>
             <TextBox x:Name="EmailTextBox" Width="400" Height="25" Margin="-500,28,0,0"/>
@@ -60,6 +57,6 @@
             <TextBlock Text="Адрес эл.почты:" FontSize="22" FontWeight="Bold" Margin="50,-425,550,447"/>
             <TextBlock Text="Описание:" FontSize="22" FontWeight="Bold" Margin="50,-420,550,447"/>
         </StackPanel>
-        <wv2:WebView2 Name="CartaBrowser" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="484,0,0,0" Width="500" Height="500"/>
+        <wv2:WebView2 Name="CartaBrowser" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="600,0,0,0" Width="500" Height="500"/>
     </Grid>
 </Window>
